@@ -1,3 +1,3 @@
 declare interface ObjectAnyKey {
-	[key: string]: boolean;
+	[key: string]: any;
 }

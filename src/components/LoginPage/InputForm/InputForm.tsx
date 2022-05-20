@@ -1,29 +1,17 @@
-import { CSSProperties, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-//@ts-ignore
-import { getClassNameModuleGenerator, validateEmail } from "../../../common/commonMethods.ts";
+import {
+	getClassNameModuleGenerator,
+	validateEmail,
+	isLowerLetter,
+	isUpperLetter,
+	isSpecialLetter,
+	//@ts-ignore
+} from "../../../common/commonMethods";
 import styles from "./InputForm.module.scss";
 import { HiEyeOff, HiEye } from "react-icons/hi";
 
 const cx = getClassNameModuleGenerator(styles);
-
-interface Props {
-	placeholder: string;
-	state: [stateValue: string, setStateValue: (newValue: string) => any];
-	type?: "text" | "password";
-	Icon?: React.FC;
-	styles?: CSSProperties;
-	toggleVisiblePassword?: boolean;
-	validates?: Partial<{
-		required: boolean;
-		minLength: number;
-		maxLength: number;
-		isEmail: boolean;
-		isNumber: boolean;
-		invalidSymbol: string[];
-	}>;
-	getValidateHandler?: (validateHandler: () => any) => any;
-}
 
 function InputForm({
 	placeholder,
@@ -34,28 +22,78 @@ function InputForm({
 	toggleVisiblePassword,
 	validates,
 	getValidateHandler,
-}: Props) {
+}: InputFormProps) {
 	const [passwordIsVisible, setPasswordIsVisible] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const [typed, setTyped] = useState(false);
 
 	// Validate
-	const validateHandler = () => {
-		if (!validates || !typed) return;
+	const validateHandler = (isSubmit = false) => {
+		if (!validates || (!isSubmit && !typed)) return;
+
+		const hasLowerLetter = state[0].split("").some(symbol => isLowerLetter(symbol));
+		const hasUpperLetter = state[0].split("").some(symbol => isUpperLetter(symbol));
+		const hasNumberLetter = state[0].split("").some(symbol => !Number.isNaN(Number(symbol)));
+		const hasSpecialLetter = state[0].split("").some(symbol => isSpecialLetter(symbol));
 
 		switch (true) {
+			// Required
 			case !state[0] && validates.required: {
 				return setErrorMessage("Thông tin này là bắt buộc!");
 			}
+
+			// Min - Max length
 			case validates.minLength && state[0].length < validates.minLength: {
 				return setErrorMessage(`Độ dài tối thiểu là ${validates.minLength} ký tự!`);
 			}
 			case validates.maxLength && state[0].length > validates.maxLength: {
 				return setErrorMessage(`Độ dài tối đa là ${validates.maxLength} ký tự!`);
 			}
+
+			// Email
 			case validates.isEmail && !validateEmail(state[0]): {
 				return setErrorMessage(`Chỉ cho phép điền địa chỉ email!`);
 			}
+
+			// Number
+			case validates.number === "every" && (hasLowerLetter || hasUpperLetter): {
+				return setErrorMessage("Chỉ cho phép nhập số (0 -> 9)!");
+			}
+			case validates.number === "some" && !hasNumberLetter: {
+				return setErrorMessage("Phải có ít nhất 1 chữ số!");
+			}
+
+			// LowerCase
+			case validates.lowerCase === "every" && hasUpperLetter: {
+				return setErrorMessage("Trường này bắt buộc viết thường toàn bộ!");
+			}
+			case validates.lowerCase === "some" && !hasLowerLetter: {
+				return setErrorMessage("Phải có ít nhất 1 ký tự viết thường!");
+			}
+
+			// UpperCase
+			case validates.upperCase === "every" && hasLowerLetter: {
+				return setErrorMessage("Trường này bắt buộc viết hoa toàn bộ!");
+			}
+			case validates.upperCase === "some" && !hasUpperLetter: {
+				return setErrorMessage("Phải có ít nhất 1 ký tự viết hoa!");
+			}
+
+			// Special letter
+			case validates.specialLetter === "every" &&
+				(hasLowerLetter || hasUpperLetter || hasNumberLetter): {
+				return setErrorMessage("Chỉ cho phép điền ký tự đặc biệt!");
+			}
+			case validates.specialLetter === "some" && !hasSpecialLetter: {
+				return setErrorMessage("Phải có ít nhất 1 ký tự đặc biệt!");
+			}
+
+			// Equal check
+			case validates.equalTo && validates.equalTo.value !== state[0]: {
+				return setErrorMessage(`Giá trị không khớp với ${validates.equalTo?.label}!`);
+			}
+
+			// InvalidSymbol
 			default: {
 				const invalidSymbolList: string[] = [];
 
@@ -75,7 +113,12 @@ function InputForm({
 	};
 
 	useEffect(validateHandler, [state[0]]);
-	useEffect(() => getValidateHandler && getValidateHandler(validateHandler), [state[0]]);
+	useEffect(() => {
+		if (!getValidateHandler) return;
+
+		getValidateHandler[0].current = validateHandler;
+		getValidateHandler[1]({});
+	}, [state[0]]);
 
 	return (
 		<div className={cx("input-wrapper")} style={styles}>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 //@ts-ignore
 import { getClassNameModuleGenerator } from "../../../common/commonMethods.ts";
@@ -15,28 +15,25 @@ const cx = getClassNameModuleGenerator(styles);
 function LoginForm() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [, reRenderComponent] = useState({});
 
-	const usernameValidateHandler = (handler: () => any) => {
-		return handler;
-	};
-	const passwordValidateHandler = (handler: () => any) => {
-		return handler;
-	};
+	const usernameValidateHandler = useRef<(isSubmit: boolean) => any>(() => {});
+	const passwordValidateHandler = useRef<(isSubmit: boolean) => any>(() => {});
 
 	return (
-		<div>
+		<div className={cx("login-form")}>
 			<h3 className={cx("title")}>
-				<MdSwitchAccount /> Đăng nhập tài khoản
+				<MdSwitchAccount />
+				<span>Đăng nhập tài khoản</span>
 			</h3>
 
 			<form className={cx("form")}>
 				<InputForm
-					styles={{ marginTop: "40px" }}
 					state={[username, setUsername]}
 					Icon={FaUserLock}
 					placeholder="Tên đăng nhập..."
 					validates={{ required: true }}
-					getValidateHandler={usernameValidateHandler}
+					getValidateHandler={[usernameValidateHandler, reRenderComponent]}
 				/>
 
 				<InputForm
@@ -49,9 +46,16 @@ function LoginForm() {
 					validates={{
 						required: true,
 					}}
+					getValidateHandler={[passwordValidateHandler, reRenderComponent]}
 				/>
 
-				<SubmitFormButton content="Đăng nhập" />
+				<SubmitFormButton
+					handleOnClick={() => {
+						usernameValidateHandler.current(true);
+						passwordValidateHandler.current(true);
+					}}
+					content="Đăng nhập"
+				/>
 			</form>
 		</div>
 	);

@@ -6,9 +6,15 @@ import styles from "./SubmitFormButton.module.scss";
 
 const cx = getClassNameModuleGenerator(styles);
 
-function SubmitFormButton({ content }: SubmitFormButtonType) {
+function SubmitFormButton({ content, handleOnClick }: SubmitFormButtonProps) {
 	return (
-		<button className={cx("button")} type="button">
+		<button
+			className={cx("button")}
+			type="button"
+			onClick={() => {
+				handleOnClick && handleOnClick();
+			}}
+		>
 			<p>{content}</p>
 		</button>
 	);

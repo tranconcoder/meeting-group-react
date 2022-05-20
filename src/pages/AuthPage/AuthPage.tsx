@@ -10,7 +10,7 @@ import RegisterForm from "../../components/LoginPage/RegisterForm/RegisterForm";
 const cx = getClassNameModuleGenerator(styles);
 
 function AuthPage() {
-	const [loginOrRegister, setLoginOrRegister] = useState<"login" | "register">("login");
+	const [loginOrRegister, setLoginOrRegister] = useState<LoginOrRegisterProps>("login");
 
 	return (
 		<div className={cx("wrapper")}>
@@ -39,7 +39,7 @@ function AuthPage() {
 						className={cx(loginOrRegister === "register" && "active")}
 						onClick={() => setLoginOrRegister("register")}
 					>
-						Đăng ký
+						Tạo tài khoản
 					</button>
 				</div>
 			</div>
