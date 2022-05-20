@@ -1,0 +1,14 @@
+@import "../../../styles/variables";
+
+.title {
+	color: $primaryColorDark;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+
+	> svg {
+		font-size: 40px;
+		padding: 5px;
+		margin-right: 10px;
+	}
+}

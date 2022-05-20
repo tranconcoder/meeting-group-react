@@ -1,0 +1,77 @@
+@import "../../../styles/variables";
+
+.input-wrapper {
+	.input-container {
+		position: relative;
+		color: #666;
+
+		> input {
+			width: 100%;
+			padding: 10px 34px 10px 14px;
+			border-radius: 8px;
+			font-size: 16px;
+			border: 2px solid rgb(212, 212, 212);
+			transition: all 300ms ease;
+
+			&.error {
+				border-color: red;
+
+				& + p {
+					color: red;
+				}
+			}
+
+			&:focus,
+			&:not(:placeholder-shown) {
+				& + p {
+					top: calc(-100% - 14px);
+				}
+			}
+
+			&:focus {
+				border-color: $primaryColorBlack;
+
+				& + p {
+					color: $primaryColorDark;
+				}
+			}
+		}
+
+		> p {
+			position: absolute;
+			top: 0px;
+			left: 16px;
+			display: flex;
+			align-items: center;
+			pointer-events: none;
+			user-select: none;
+			transition: all 300ms ease;
+
+			> svg {
+				width: 18px;
+				margin-right: 8px;
+			}
+		}
+
+		> .eye-container {
+			width: 20px;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			right: 14px;
+		}
+	}
+
+	.warning-container {
+		max-height: 0;
+		color: red;
+		overflow: hidden;
+		font-size: 13px;
+		margin-top: 4px;
+		transition: max-height 1000ms ease;
+
+		&.show {
+			max-height: 2rem;
+		}
+	}
+}
