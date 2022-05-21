@@ -112,7 +112,10 @@ function InputForm({
 		}
 	};
 
+	// Validate input value
 	useEffect(validateHandler, [state[0]]);
+
+	// Send validateHandler to parent components
 	useEffect(() => {
 		if (!getValidateHandler) return;
 

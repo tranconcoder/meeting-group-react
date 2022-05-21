@@ -90,8 +90,8 @@ function RegisterForm() {
 			</h3>
 
 			<div className={cx("input-container")}>
-				{inputList.map(input => (
-					<InputForm {...input} styles={{ marginTop: 30 }} />
+				{inputList.map((input, index) => (
+					<InputForm {...input} key={index} styles={{ marginTop: 30 }} />
 				))}
 			</div>
 

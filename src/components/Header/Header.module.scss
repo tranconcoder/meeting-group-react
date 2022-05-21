@@ -1,0 +1,33 @@
+.header-wrapper {
+	height: 60px;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+
+	> .header-container {
+		margin: 0 auto;
+		height: 100%;
+		width: 1200px;
+		max-width: 100%;
+		padding: 0 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		> * {
+			flex: 1;
+		}
+
+		> .center-slider {
+			overflow-x: auto;
+
+			> ul {
+				width: auto;
+				overflow: auto;
+				display: flex;
+
+				> li {
+					display: block;
+				}
+			}
+		}
+	}
+}
