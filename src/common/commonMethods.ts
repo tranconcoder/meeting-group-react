@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export const getClassNameModuleGenerator =
 	(stylesObject: any) =>
-	(...selectorList: Array<string | ObjectAnyKey>) => {
+	(...selectorList: Array<string | boolean | ObjectAnyKey>) => {
 		let classNameList = "";
 
 		for (const selector of selectorList) {
