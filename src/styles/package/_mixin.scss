@@ -1,0 +1,285 @@
+@mixin size($width, $height: $width) {
+	@if $width != false {
+		width: $width;
+	}
+
+	@if $height != false {
+		height: $height;
+	}
+}
+
+@mixin minSize($minWidth, $minHeight: $minWidth) {
+	@if $minWidth != false {
+		min-width: $minWidth;
+	}
+
+	@if $minHeight != false {
+		min-height: $minHeight;
+	}
+}
+
+@mixin maxSize($maxWidth, $maxHeight: $maxWidth) {
+	@if $maxWidth != false {
+		max-width: $maxWidth;
+	}
+
+	@if $maxHeight != false {
+		max-height: $maxHeight;
+	}
+}
+
+@mixin flex(
+	$direction: row,
+	$alignItems: flex-start,
+	$justifyContent: flex-start,
+	$inline: false
+) {
+	@if $inline == true {
+		display: inline-flex;
+	} @else {
+		display: flex;
+	}
+	flex-direction: $direction;
+	align-items: $alignItems;
+	justify-content: $justifyContent;
+}
+
+@mixin pushDownAnimation($length, $time: 0.3s) {
+	animation: animation ease $time;
+
+	@keyframes animation {
+		from {
+			transform: translateY(-$length);
+		}
+		to {
+			transform: translateY(0rem);
+		}
+	}
+}
+
+@mixin position(
+	$position,
+	$top: false,
+	$right: false,
+	$bottom: false,
+	$left: false
+) {
+	position: $position;
+
+	@if $top != false {
+		top: $top;
+	}
+	@if $right != false {
+		right: $right;
+	}
+	@if $bottom != false {
+		bottom: $bottom;
+	}
+	@if $left != false {
+		left: $left;
+	}
+}
+
+@mixin setBtn(
+	$primaryColor: #ffd900,
+	$secondColor: #fff,
+	$borderSize: 0.2rem,
+	$transition: linear 0.2s
+) {
+	border: $borderSize solid $primaryColor;
+	background-color: $primaryColor;
+	transition: $transition;
+
+	& > p {
+		color: $secondColor;
+	}
+
+	&:hover {
+		background-color: $secondColor;
+
+		& > p {
+			color: $primaryColor;
+		}
+	}
+}
+
+@mixin btnFloatRight(
+	$firstColor: #fff,
+	$secondColor: #ccc,
+	$borderSize: 0.2rem,
+	$transition: linear 1s,
+	$position: relative
+) {
+	@include position($position);
+	border: $borderSize solid $firstColor;
+	background-color: $firstColor;
+	overflow: hidden;
+
+	// HOVER handle
+	&:hover {
+		cursor: pointer;
+
+		&::before {
+			transform: translateX(100%);
+		}
+
+		> p {
+			color: $firstColor;
+		}
+	}
+
+	&::before {
+		@include size(100%);
+		@include position(absolute, 0px, 100%);
+		@include pseudo;
+		background-color: $secondColor;
+		z-index: 1;
+		transition: $transition;
+	}
+
+	> p {
+		@include position(relative);
+		color: $secondColor;
+		transition: $transition;
+		z-index: 2;
+	}
+}
+
+@mixin pseudo {
+	content: "";
+	display: block;
+}
+
+@mixin edge(
+	$width: 10rem,
+	$height: 10rem,
+	$vertical: "top",
+	$horizontal: "left",
+	$firstColor: red,
+	$secondColor: white
+) {
+	overflow: hidden;
+	z-index: -1;
+
+	@if $vertical == "top" {
+		@if $horizontal == "left" {
+			@include position(absolute, 0, false, false, 0);
+			border-radius: 50% 0 0;
+
+			&::before,
+			&::after {
+				@include position(absolute, 0, false, false, 0);
+			}
+
+			&::before {
+				border-radius: 50% 0 0;
+			}
+
+			&::after {
+				transform: translate(-50%, -50%);
+				border-radius: 0 0 50%;
+			}
+		} @else {
+			@include position(absolute, 0, 0);
+			border-radius: 0 50% 0 0;
+
+			&::before,
+			&::after {
+				@include position(absolute, 0, 0);
+			}
+
+			&::before {
+				border-radius: 0 50% 0 0;
+			}
+
+			&::after {
+				transform: translate(50%, -50%);
+				border-radius: 0 0 0 50%;
+			}
+		}
+	} @else {
+		@if $horizontal == "left" {
+			@include position(absolute, false, false, 0, 0);
+			border-radius: 0 0 0 50%;
+
+			&::before,
+			&::after {
+				@include position(absolute, false, false, 0, 0);
+			}
+
+			&::before {
+				border-radius: 0 0 0 50%;
+			}
+
+			&::after {
+				transform: translate(-50%, 50%);
+				border-radius: 0 50% 0 0;
+			}
+		} @else {
+			@include position(absolute, false, 0, 0);
+
+			&::before,
+			&::after {
+				@include position(absolute, false, 0, 0);
+			}
+
+			&::before {
+				border-radius: 0 0 50%;
+			}
+
+			&::after {
+				transform: translate(50%, 50%);
+				border-radius: 0 50% 0 0;
+			}
+		}
+	}
+
+	&::before,
+	&::after {
+		@include size(2 * $width, 2 * $height);
+		@include pseudo();
+	}
+
+	&::before {
+		background-color: $secondColor;
+		z-index: 2;
+	}
+
+	&::after {
+		background-color: $firstColor;
+		z-index: 1;
+	}
+}
+
+@mixin padHonrizontal($paddingSize) {
+	padding-left: $paddingSize;
+	padding-right: $paddingSize;
+}
+
+@mixin padVertical($paddingSize) {
+	padding-top: $paddingSize;
+	padding-bottom: $paddingSize;
+}
+
+@mixin marHonrizontal($marginSize) {
+	margin-left: $marginSize;
+	margin-right: $marginSize;
+}
+
+@mixin marVertical($marginSize) {
+	margin-top: $marginSize;
+	margin-bottom: $marginSize;
+}
+
+@mixin webkitMaxLine($lineCount) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lineCount;
+	overflow: hidden;
+}
+
+@mixin flexCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

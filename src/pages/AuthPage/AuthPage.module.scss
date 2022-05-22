@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "../../styles/package/allPackage.scss";
 
 .wrapper {
 	width: 100vw;
@@ -9,7 +9,7 @@
 }
 
 .left-slide {
-	flex: 2;
+	flex: 1;
 	overflow: hidden;
 
 	> .back-to-home-button {
@@ -34,7 +34,9 @@
 }
 
 .right-slide {
-	flex: 1;
+	width: 30%;
+	min-width: 350px;
+	max-width: 100%;
 	margin: 20px;
 	background-color: $white;
 	border-radius: 20px;

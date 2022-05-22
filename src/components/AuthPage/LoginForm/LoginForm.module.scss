@@ -1,0 +1,24 @@
+@import "../../../styles/package/allPackage.scss";
+
+.title {
+	color: $primaryColorDark;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 44px;
+
+	> svg {
+		font-size: 40px;
+		padding: 5px;
+		margin-right: 10px;
+	}
+}
+
+.google-login-container {
+	display: flex;
+	align-items: center;
+
+	> span {
+		margin-right: 30px;
+	}
+}

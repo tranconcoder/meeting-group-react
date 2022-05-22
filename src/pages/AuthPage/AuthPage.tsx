@@ -8,8 +8,8 @@ import styles from "./AuthPage.module.scss";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import thumbnails from "../../images/auth-form-left-slide-thumb-2.svg";
 
-import LoginForm from "../../components/LoginPage/LoginForm/LoginForm";
-import RegisterForm from "../../components/LoginPage/RegisterForm/RegisterForm";
+import LoginForm from "../../components/AuthPage/LoginForm/LoginForm";
+import RegisterForm from "../../components/AuthPage/RegisterForm/RegisterForm";
 
 const cx = getClassNameModuleGenerator(styles);
 

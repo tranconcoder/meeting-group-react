@@ -6,8 +6,8 @@ export const getClassNameModuleGenerator =
 		let classNameList = "";
 
 		for (const selector of selectorList) {
-			if (typeof selector === "string" && clsx(stylesObject[selector]) !== "") {
-				classNameList += " " + clsx(stylesObject[selector]);
+			if (typeof selector === "string") {
+				classNameList += (classNameList && " ") + (clsx(stylesObject[selector]) || selector);
 				continue;
 			}
 

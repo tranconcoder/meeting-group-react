@@ -1,17 +1,16 @@
+import { CSSProperties } from 'react';
+
 // SubmitFormButton
 declare interface SubmitFormButtonProps {
 	content: string;
-	handleOnClick?: () => any;
+	handleClick?: () => any;
 }
-
-// AuthPage -> LoginOrRegister
-declare type LoginOrRegisterProps = "login" | "register";
 
 // InputForm
 declare interface InputFormProps {
 	placeholder: string;
 	state: [stateValue: string, setStateValue: (newValue: string) => any];
-	type?: "text" | "password";
+	type?: 'text' | 'password';
 	Icon?: React.FC;
 	styles?: CSSProperties;
 	toggleVisiblePassword?: boolean;
@@ -21,10 +20,10 @@ declare interface InputFormProps {
 		maxLength: number;
 		isEmail: boolean;
 		invalidSymbol: string[];
-		number: "some" | "every";
-		upperCase: "some" | "every";
-		lowerCase: "some" | "every";
-		specialLetter: "some" | "every";
+		number: 'some' | 'every';
+		upperCase: 'some' | 'every';
+		lowerCase: 'some' | 'every';
+		specialLetter: 'some' | 'every';
 		equalTo: {
 			label: string;
 			value: string;
@@ -32,6 +31,19 @@ declare interface InputFormProps {
 	}>;
 	getValidateHandler?: [{ current: any }, (cloneObject: {}) => any];
 }
-declare interface InputFormValidateHandlerRef {
-	current: (isSubmit: boolean) => any;
+
+// GoogleLoginButton
+declare interface GoogleLoginButtonProps {
+	styles?: CSSProperties;
+}
+
+// ButtonProps
+declare interface ButtonProps {
+	children?: string;
+	styles?: CSSProperties;
+}
+
+// PanelBoxProps
+declare interface PanelBoxProps {
+	showBox: boolean;
 }

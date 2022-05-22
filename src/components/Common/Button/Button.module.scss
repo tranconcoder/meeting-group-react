@@ -1,0 +1,25 @@
+@import "../../../styles/package/allPackage.scss";
+
+.button {
+	padding: 8px 16px;
+	border-radius: 8px;
+	background-color: $white;
+	border: 2px solid $primaryColor;
+	transition: all 300ms ease;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $primaryColor;
+
+		> p {
+			color: $white;
+		}
+	}
+
+	> p {
+		color: $primaryColor;
+		font-size: 14px;
+		font-weight: 600;
+		transition: inherit;
+	}
+}

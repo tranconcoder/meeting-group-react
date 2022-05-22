@@ -1,0 +1,31 @@
+@import '../../../../styles/package/allPackage.scss';
+
+.link {
+	@include flex(row, center);
+	@include position(relative);
+	text-decoration: none;
+	color: $primaryColorDark;
+
+	&::before {
+		content: '';
+		@include size(0, 2px);
+		@include position(absolute, false, 50%, -3px);
+		background-color: $primaryColorDark;
+		transition: all 300ms ease;
+		transform: translateX(50%);
+	}
+
+	&:hover {
+		filter: brightness(0.8);
+
+		&::before {
+			@include size(100%, false);
+		}
+	}
+
+	> svg {
+		font-size: 18px;
+		transform: rotateZ(180deg);
+		margin-right: 10px;
+	}
+}
