@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 
 // SubmitFormButton
 declare interface SubmitFormButtonProps {
@@ -46,4 +46,9 @@ declare interface ButtonProps {
 // PanelBoxProps
 declare interface PanelBoxProps {
 	showBox: boolean;
+}
+
+// Layout1Props
+declare interface Layout1Props {
+	Body: React.FunctionComponent;
 }

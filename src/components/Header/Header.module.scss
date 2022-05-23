@@ -1,13 +1,17 @@
 @import '../../styles/package/allPackage.scss';
 
 .header-wrapper {
-	height: 60px;
+	@include size(100%, false);
+	@include position(fixed, 0, 0);
+	z-index: 100;
+	height: $headerHeight;
 	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+	background-color: $white;
 
 	> .header-container {
 		margin: 0 auto;
 		height: 100%;
-		width: 1200px;
+		width: $windowWidth;
 		max-width: 100%;
 		padding: 0 20px;
 		display: flex;

@@ -1,19 +1,8 @@
-import { useState } from "react";
-
-//@ts-ignore
-import { getClassNameModuleGenerator } from "../../common/commonMethods";
-import styles from "./HomePage.module.scss";
-
-import Header from "../../components/Header/Header";
-
-const cx = getClassNameModuleGenerator(styles);
+import HomePageBody from '../../components/HomePage/Body/Body';
+import Layout1 from '../../components/Layouts/Layout1';
 
 function HomePage() {
-	return (
-		<div className={cx("container")}>
-			<Header />
-		</div>
-	);
+	return <Layout1 Body={HomePageBody} />;
 }
 
 export default HomePage;

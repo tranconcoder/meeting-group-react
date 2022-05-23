@@ -38,12 +38,12 @@ function LoginForm() {
 				login({
 					isLogged: true,
 					accountType: 'google',
-					email: 'tranvanconkg@gmail.com',
-					username: '',
+					email: 'tranconcoder@gmail.com',
+					username: null,
 					fullName: 'Trần Văn Còn',
-					avatar: '',
-					rank: 'admin',
-					className: '12A12',
+					avatar: 'https://lh3.googleusercontent.com/ogw/ADea4I5shoTR4FEGvFq0eAbpcVH-FwE9ALF7Flps5uDz=s64-c-mo',
+					rank: null,
+					className: null,
 				})
 			);
 		}

@@ -1,0 +1,74 @@
+@import '../../../../styles/package/allPackage.scss';
+
+.banner-container {
+	@include flex(row, center);
+	margin-top: 100px;
+	padding-bottom: 80px;
+
+	.thumb-container {
+		@include size(56%, false);
+		@include position(relative);
+
+		> img {
+			@include position(relative);
+			z-index: 2;
+			user-select: none;
+			-webkit-user-drag: none;
+		}
+
+		> .background-layer {
+			@include size(1200px, 600px);
+			@include position(absolute, false, -40px, 140px);
+			background-color: rgb(241, 241, 241);
+			border-radius: 0 100rem 100rem 0;
+			transform: rotate(45deg);
+		}
+	}
+
+	.title {
+		color: $primaryColor;
+		font-weight: bolder;
+
+		> p:nth-child(1) {
+			font-size: 50px;
+		}
+
+		> p:nth-child(2) {
+			font-size: 30px;
+		}
+
+		> p:nth-child(3) {
+			@include flex(row, center, center);
+			background-image: linear-gradient(90deg, $primaryColor, $primaryColorBlack);
+			border-radius: 10px;
+			color: $white;
+			margin-top: 20px;
+			padding: 20px;
+			transition: all 0.5s ease;
+
+			&:hover {
+				cursor: pointer;
+				filter: brightness(0.9);
+			}
+
+			> svg {
+				animation: hoverActionButton 2000ms linear 0ms infinite;
+				margin-left: 10px;
+				transition: all 0.5s ease;
+				transform: rotate(90deg);
+
+				@keyframes hoverActionButton {
+					0% {
+						transform: rotate(90deg) translateX(0);
+					}
+					50% {
+						transform: rotate(90deg) translateX(4px);
+					}
+					100% {
+						transform: rotate(90deg) translateX(0);
+					}
+				}
+			}
+		}
+	}
+}

@@ -8,22 +8,24 @@ import { BiTable } from 'react-icons/bi';
 import { IoMdLogOut } from 'react-icons/io';
 import { FiMessageSquare, FiBell } from 'react-icons/fi';
 import { TiArrowSortedDown } from 'react-icons/ti';
+import { FaUserEdit } from 'react-icons/fa';
 
 import { PanelButton, PanelSlide } from '../../../../../types/componentsType/PanelBox';
 
-import { useAppDispatch, useAppSelector } from '../../../../../common/redexHooks';
+import { useAppDispatch } from '../../../../../common/redexHooks';
 import { v4 as uuidv4 } from 'uuid';
 import { useRef, useState } from 'react';
 import { logout } from '../../../../../redux/slices/auth';
+import { useNavigate } from 'react-router-dom';
 
 const cx = getClassNameModuleGenerator(styles);
 
 function PanelBox({ showBox }: PanelBoxProps) {
 	const [expandedSlideId, setExpandedSlideId] = useState('');
-	const dispatch = useAppDispatch();
-	const auth = useAppSelector(state => state.auth);
 
-	console.log(auth);
+	const dispatch = useAppDispatch();
+
+	const navigate = useNavigate();
 
 	const buttonPanelList: PanelButton[] = [
 		{
@@ -40,12 +42,21 @@ function PanelBox({ showBox }: PanelBoxProps) {
 		},
 	];
 
-	const slidePanelListRef = useRef<PanelSlide[]>([
+	const slidePanelList = useRef<PanelSlide[]>([
+		{
+			id: uuidv4(),
+			title: 'Sửa thông tin',
+			Icon: FaUserEdit,
+			handleClick: () => navigate('/profile'),
+		},
 		{
 			id: uuidv4(),
 			title: 'Đăng xuất',
 			Icon: IoMdLogOut,
-			handleClick: () => dispatch(logout()),
+			handleClick: () => {
+				dispatch(logout());
+				navigate('/auth');
+			},
 		},
 	]);
 
@@ -76,7 +87,7 @@ function PanelBox({ showBox }: PanelBoxProps) {
 
 			{/* Slider list wrapper */}
 			<ul className={cx('slide-panel-list')}>
-				{slidePanelListRef.current.map(
+				{slidePanelList.current.map(
 					({ title, handleClick: handleOnClick, Icon, childList, id }, index) => {
 						if (!childList || childList.length === 0) {
 							return (

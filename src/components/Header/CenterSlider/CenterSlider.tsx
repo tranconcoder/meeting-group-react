@@ -13,6 +13,10 @@ function CenterSlider() {
 			linkTo: '/',
 		},
 		{
+			title: 'Thông báo',
+			linkTo: '/notify',
+		},
+		{
 			title: 'Tin tức',
 			linkTo: '/news',
 		},
