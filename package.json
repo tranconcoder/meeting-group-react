@@ -2,6 +2,7 @@
 	"name": "meeting-group-react",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://tranconcoder.github.io",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.8.1",
 		"@testing-library/jest-dom": "^5.16.4",
@@ -28,7 +29,10 @@
 		"start": "react-app-rewired start",
 		"build": "react-app-rewired build",
 		"test": "react-app-rewired test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"serve": "serve -s build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -51,6 +55,7 @@
 	"devDependencies": {
 		"@types/aos": "^3.0.4",
 		"@types/uuid": "^8.3.4",
+		"gh-pages": "^4.0.0",
 		"react-app-rewired": "^2.2.1"
 	}
 }
