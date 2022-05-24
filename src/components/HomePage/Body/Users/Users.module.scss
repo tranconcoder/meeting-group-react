@@ -33,6 +33,7 @@
 				transition: all 300ms ease !important;
 
 				&:hover {
+					cursor: pointer;
 					background-color: $primaryColorBlack;
 				}
 

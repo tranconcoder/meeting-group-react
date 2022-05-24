@@ -1,0 +1,89 @@
+@import '../../../../styles/package/allPackage.scss';
+
+.images-slide-container {
+	@include size(100%, 300px);
+	@include position(relative);
+	margin-top: 80px;
+	margin-bottom: 100px;
+	border-radius: 14px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+
+	> .image-list {
+		@include size(auto, 100%);
+		white-space: nowrap;
+		overflow: hidden;
+		scroll-behavior: smooth;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		> li {
+			@include size(100%);
+			display: inline-block;
+
+			> img {
+				@include size(100%);
+				object-fit: cover;
+			}
+		}
+	}
+
+	> .progress-dot-list {
+		@include flex();
+		@include position(absolute, false, 50%, 10px);
+		transform: translateX(50%);
+
+		> li {
+			@include size(30px);
+			background-color: #eee;
+			border-radius: 50%;
+			padding: 10px;
+			background-clip: content-box;
+			transition: all 0.3s ease;
+
+			&:hover {
+				cursor: pointer;
+				background-color: $primaryColorDark;
+			}
+
+			&[data-active='true'] {
+				background-color: $primaryColor;
+			}
+
+			&:not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	> .prev-button,
+	> .next-button {
+		@include size(80px, 100%);
+		@include flexCenter();
+		background-color: transparent;
+		opacity: 0.2;
+		transition: all 300ms ease;
+
+		&:hover {
+			cursor: pointer;
+			opacity: 1;
+		}
+
+		> svg {
+			color: $white;
+			font-size: 30px;
+		}
+	}
+
+	> .prev-button {
+		@include position(absolute, 0, false, false, 0);
+		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05));
+	}
+
+	> .next-button {
+		@include position(absolute, 0, 0);
+		background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05));
+	}
+}
