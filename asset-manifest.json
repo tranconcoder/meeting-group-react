@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/meeting-group-react/static/css/main.4a50ce20.css",
-    "main.js": "/meeting-group-react/static/js/main.96aec491.js",
+    "main.js": "/meeting-group-react/static/js/main.0b42554f.js",
     "static/js/787.3ef64d51.chunk.js": "/meeting-group-react/static/js/787.3ef64d51.chunk.js",
     "static/media/images-slide (4).jpg": "/meeting-group-react/static/media/images-slide (4).73b454523ecff3bb8231.jpg",
     "static/media/images-slide (3).jpg": "/meeting-group-react/static/media/images-slide (3).3f58780c2e09e90368fb.jpg",
@@ -12,11 +12,11 @@
     "static/media/user-list-slide-thumb-2.svg": "/meeting-group-react/static/media/user-list-slide-thumb-2.cda9efca279d8af81deae41031a6e08d.svg",
     "index.html": "/meeting-group-react/index.html",
     "main.4a50ce20.css.map": "/meeting-group-react/static/css/main.4a50ce20.css.map",
-    "main.96aec491.js.map": "/meeting-group-react/static/js/main.96aec491.js.map",
+    "main.0b42554f.js.map": "/meeting-group-react/static/js/main.0b42554f.js.map",
     "787.3ef64d51.chunk.js.map": "/meeting-group-react/static/js/787.3ef64d51.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4a50ce20.css",
-    "static/js/main.96aec491.js"
+    "static/js/main.0b42554f.js"
   ]
 }
