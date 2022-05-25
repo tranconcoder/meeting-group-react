@@ -1,7 +1,7 @@
 {
 	"name": "meeting-group-react",
 	"version": "0.1.0",
-	"homepage": "https://tranconcoder.github.io/meeting-group-react/",
+	"homepage": "./src/index.tsx",
 	"proxy": "http://localhost:5000",
 	"private": true,
 	"dependencies": {
