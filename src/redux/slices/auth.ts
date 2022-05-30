@@ -15,7 +15,9 @@ const authSlice = createSlice({
 	name: 'auth',
 	initialState,
 	reducers: {
-		login: (state, action: PayloadAction<InitAuthStore>) => action.payload,
+		login: (state, action: PayloadAction<InitAuthStore>) => {
+			return action.payload;
+		},
 		logout: () => initialState,
 		changeProfile: (state, action: PayloadAction<Partial<InitAuthStore>>) => ({
 			...state,

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 
 import { MdPersonAdd } from 'react-icons/md';
-import { RiLockPasswordLine, RiLockPasswordFill } from 'react-icons/ri';
+import { RiLockPasswordLine } from 'react-icons/ri';
 import { HiOutlineMail } from 'react-icons/hi';
 import { CgRename } from 'react-icons/cg';
 

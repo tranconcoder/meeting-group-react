@@ -1,20 +1,21 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
 export const getClassNameModuleGenerator =
 	(stylesObject: any) =>
 	(...selectorList: Array<string | boolean | ObjectAnyKey>) => {
-		let classNameList = "";
+		let classNameList = '';
 
 		for (const selector of selectorList) {
-			if (typeof selector === "string") {
-				classNameList += (classNameList && " ") + (clsx(stylesObject[selector]) || selector);
+			if (typeof selector === 'string') {
+				classNameList +=
+					(classNameList && ' ') + (clsx(stylesObject[selector]) || selector);
 				continue;
 			}
 
-			if (typeof selector === "object") {
+			if (typeof selector === 'object') {
 				for (const key in selector) {
 					if (selector[key]) {
-						classNameList += " " + clsx(stylesObject[key]);
+						classNameList += ' ' + clsx(stylesObject[key]);
 					}
 				}
 			}
@@ -40,6 +41,7 @@ export const isUpperLetter = (str: string) => {
 };
 
 export const isSpecialLetter = (str: string) => {
+	// eslint-disable-next-line no-useless-escape
 	const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 	return specialChars.test(str);

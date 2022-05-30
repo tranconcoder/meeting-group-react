@@ -1,7 +1,5 @@
-import { HiLogin } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
-
 //@ts-ignore
+import { Link } from 'react-router-dom';
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
 import CenterSlider from './CenterSlider/CenterSlider';
 import styles from './Header.module.scss';

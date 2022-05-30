@@ -53,6 +53,8 @@ function LoginForm() {
 		if (isLogged) {
 			navigate('/');
 		}
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isLogged]);
 
 	return (

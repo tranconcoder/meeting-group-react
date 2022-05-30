@@ -30,8 +30,6 @@ function ImagesSlide() {
 		const imageListElm = imageListRef.current as HTMLUListElement;
 		const scrollStep = imageListElm.clientWidth;
 
-		console.log(currentImageIndex);
-
 		imageListElm.scrollLeft = scrollStep * currentImageIndex;
 	}, [currentImageIndex]);
 
@@ -44,6 +42,8 @@ function ImagesSlide() {
 		return () => {
 			clearTimeout(timeoutId);
 		};
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentImageIndex]);
 
 	return (

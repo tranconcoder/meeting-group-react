@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
 //@ts-ignore

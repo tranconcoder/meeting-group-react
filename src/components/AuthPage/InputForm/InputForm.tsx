@@ -121,6 +121,8 @@ function InputForm({
 	// Validate input value
 	useEffect(() => {
 		validateHandler();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state[0]]);
 
 	// Send validateHandler to parent components
@@ -129,6 +131,8 @@ function InputForm({
 
 		getValidateHandler[0].current = validateHandler;
 		getValidateHandler[1]({});
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state[0]]);
 
 	return (
