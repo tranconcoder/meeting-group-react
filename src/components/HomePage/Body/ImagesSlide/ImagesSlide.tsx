@@ -31,7 +31,6 @@ function ImagesSlide() {
 	useEffect(() => {
 		imageNameList.forEach(imageName => {
 			import(`../../../../images/${imageName}`).then(image => {
-				console.log(image);
 				setImageList(prev => [...prev, image]);
 			});
 		});
