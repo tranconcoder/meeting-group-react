@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/meeting-group-react/static/css/main.a6bcdbce.css",
-    "main.js": "/meeting-group-react/static/js/main.a5df4693.js",
+    "main.js": "/meeting-group-react/static/js/main.37cbacde.js",
     "static/js/241.96232548.chunk.js": "/meeting-group-react/static/js/241.96232548.chunk.js",
     "static/js/719.7b886498.chunk.js": "/meeting-group-react/static/js/719.7b886498.chunk.js",
     "static/js/318.ab154cc8.chunk.js": "/meeting-group-react/static/js/318.ab154cc8.chunk.js",
@@ -10,9 +10,17 @@
     "static/js/778.fb4e0d12.chunk.js": "/meeting-group-react/static/js/778.fb4e0d12.chunk.js",
     "static/js/978.c4ce556f.chunk.js": "/meeting-group-react/static/js/978.c4ce556f.chunk.js",
     "static/js/619.5912907e.chunk.js": "/meeting-group-react/static/js/619.5912907e.chunk.js",
+    "static/js/262.cda2af00.chunk.js": "/meeting-group-react/static/js/262.cda2af00.chunk.js",
+    "static/js/478.849c64c3.chunk.js": "/meeting-group-react/static/js/478.849c64c3.chunk.js",
+    "static/js/833.a8f17a0b.chunk.js": "/meeting-group-react/static/js/833.a8f17a0b.chunk.js",
+    "static/js/18.337d6876.chunk.js": "/meeting-group-react/static/js/18.337d6876.chunk.js",
     "static/js/402.73359a3d.chunk.js": "/meeting-group-react/static/js/402.73359a3d.chunk.js",
     "static/js/618.fadb28ac.chunk.js": "/meeting-group-react/static/js/618.fadb28ac.chunk.js",
     "static/js/787.eb6381ce.chunk.js": "/meeting-group-react/static/js/787.eb6381ce.chunk.js",
+    "static/media/image-slide-8.jpg": "/meeting-group-react/static/media/image-slide-8.5b1f0328198b37b14a35.jpg",
+    "static/media/image-slide-6.jpg": "/meeting-group-react/static/media/image-slide-6.8d2d950ace86ab5484cf.jpg",
+    "static/media/image-slide-5.jpg": "/meeting-group-react/static/media/image-slide-5.fa6d28fe4af1cbdf8307.jpg",
+    "static/media/image-slide-7.jpg": "/meeting-group-react/static/media/image-slide-7.357a28e117bb38469e98.jpg",
     "static/media/image-slide-4.jpg": "/meeting-group-react/static/media/image-slide-4.73b454523ecff3bb8231.jpg",
     "static/media/image-slide-3.jpg": "/meeting-group-react/static/media/image-slide-3.3f58780c2e09e90368fb.jpg",
     "static/media/image-slide-2.jpg": "/meeting-group-react/static/media/image-slide-2.a9fa842781637921928a.jpg",
@@ -24,11 +32,11 @@
     "static/media/user-list-slide-thumb-2.svg": "/meeting-group-react/static/media/user-list-slide-thumb-2.cda9efca279d8af81deae41031a6e08d.svg",
     "index.html": "/meeting-group-react/index.html",
     "main.a6bcdbce.css.map": "/meeting-group-react/static/css/main.a6bcdbce.css.map",
-    "main.a5df4693.js.map": "/meeting-group-react/static/js/main.a5df4693.js.map",
+    "main.37cbacde.js.map": "/meeting-group-react/static/js/main.37cbacde.js.map",
     "787.eb6381ce.chunk.js.map": "/meeting-group-react/static/js/787.eb6381ce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a6bcdbce.css",
-    "static/js/main.a5df4693.js"
+    "static/js/main.37cbacde.js"
   ]
 }
