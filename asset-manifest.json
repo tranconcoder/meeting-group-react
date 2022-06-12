@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/meeting-group-react/static/css/main.a6bcdbce.css",
-    "main.js": "/meeting-group-react/static/js/main.e27dba94.js",
+    "main.js": "/meeting-group-react/static/js/main.a5df4693.js",
     "static/js/241.96232548.chunk.js": "/meeting-group-react/static/js/241.96232548.chunk.js",
     "static/js/719.7b886498.chunk.js": "/meeting-group-react/static/js/719.7b886498.chunk.js",
     "static/js/318.ab154cc8.chunk.js": "/meeting-group-react/static/js/318.ab154cc8.chunk.js",
@@ -24,11 +24,11 @@
     "static/media/user-list-slide-thumb-2.svg": "/meeting-group-react/static/media/user-list-slide-thumb-2.cda9efca279d8af81deae41031a6e08d.svg",
     "index.html": "/meeting-group-react/index.html",
     "main.a6bcdbce.css.map": "/meeting-group-react/static/css/main.a6bcdbce.css.map",
-    "main.e27dba94.js.map": "/meeting-group-react/static/js/main.e27dba94.js.map",
+    "main.a5df4693.js.map": "/meeting-group-react/static/js/main.a5df4693.js.map",
     "787.eb6381ce.chunk.js.map": "/meeting-group-react/static/js/787.eb6381ce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a6bcdbce.css",
-    "static/js/main.e27dba94.js"
+    "static/js/main.a5df4693.js"
   ]
 }
