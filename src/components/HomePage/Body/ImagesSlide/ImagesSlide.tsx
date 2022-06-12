@@ -11,6 +11,10 @@ const imageNameList: string[] = [
 	'image-slide-2.jpg',
 	'image-slide-3.jpg',
 	'image-slide-4.jpg',
+	'image-slide-5.jpg',
+	'image-slide-6.jpg',
+	'image-slide-7.jpg',
+	'image-slide-8.jpg',
 ];
 
 function ImagesSlide() {
