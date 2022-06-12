@@ -1,1 +1,1 @@
-declare type ImageAppearDirection = 'left' | 'right' | 'none';
+export type ImageAppearDirection = 'left' | 'right' | 'none';

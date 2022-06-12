@@ -1,13 +1,13 @@
 import React, { CSSProperties, ReactElement } from 'react';
 
 // SubmitFormButton
-declare interface SubmitFormButtonProps {
+export interface SubmitFormButtonProps {
 	content: string;
 	handleClick?: () => any;
 }
 
 // InputForm
-declare interface InputFormProps {
+export interface InputFormProps {
 	placeholder: string;
 	state: [stateValue: string, setStateValue: (newValue: string) => any];
 	type?: 'text' | 'password';
@@ -33,22 +33,22 @@ declare interface InputFormProps {
 }
 
 // GoogleLoginButton
-declare interface GoogleLoginButtonProps {
+export interface GoogleLoginButtonProps {
 	styles?: CSSProperties;
 }
 
 // ButtonProps
-declare interface ButtonProps {
+export interface ButtonProps {
 	children?: string;
 	styles?: CSSProperties;
 }
 
 // PanelBoxProps
-declare interface PanelBoxProps {
+export interface PanelBoxProps {
 	showBox: boolean;
 }
 
 // Layout1Props
-declare interface Layout1Props {
+export interface Layout1Props {
 	Body: React.FunctionComponent;
 }

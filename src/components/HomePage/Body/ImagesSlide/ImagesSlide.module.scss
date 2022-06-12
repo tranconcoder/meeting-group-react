@@ -12,9 +12,7 @@
 	> .image-list {
 		@include size(auto, 100%);
 		white-space: nowrap;
-		overflow: hidden;
-		scroll-behavior: smooth;
-		scroll-margin-left: 100%;
+		transition: all ease 500ms;
 
 		&::-webkit-scrollbar {
 			display: none;

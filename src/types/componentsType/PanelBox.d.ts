@@ -1,12 +1,12 @@
 import { IconType } from 'react-icons';
 
-declare interface PanelButton {
+export interface PanelButton {
 	title: string;
 	Icon: IconType;
 	handleClick?: () => void;
 }
 
-declare interface PanelSlide {
+export interface PanelSlide {
 	id: string;
 	title: string;
 	Icon: IconType;

@@ -1,2 +1,2 @@
 // AuthPage -> LoginOrRegister
-declare type LoginOrRegisterProps = "login" | "register";
+export type LoginOrRegisterProps = 'login' | 'register';

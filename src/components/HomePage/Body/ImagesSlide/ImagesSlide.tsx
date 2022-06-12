@@ -2,18 +2,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
 import styles from './ImagesSlide.module.scss';
-import imageSlide1 from '../../../../images/images-slide (1).jpg';
-import imageSlide2 from '../../../../images/images-slide (2).jpg';
-import imageSlide3 from '../../../../images/images-slide (3).jpg';
-import imageSlide4 from '../../../../images/images-slide (4).jpg';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const cx = getClassNameModuleGenerator(styles);
 
-function ImagesSlide() {
-	const imageList: string[] = [imageSlide1, imageSlide2, imageSlide3, imageSlide4];
+const imageNameList: string[] = [
+	'image-slide-1.jpg',
+	'image-slide-2.jpg',
+	'image-slide-3.jpg',
+	'image-slide-4.jpg',
+];
 
+function ImagesSlide() {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+	const [imageList, setImageList] = useState<Array<{ default: string }>>([]);
 
 	const imageListRef = useRef<HTMLUListElement>(null);
 
@@ -25,23 +27,30 @@ function ImagesSlide() {
 		setCurrentImageIndex(prev => (prev === 0 ? imageList.length - 1 : prev - 1));
 	};
 
+	// Dynamic import imageList
+	useEffect(() => {
+		imageNameList.forEach(imageName => {
+			import(`../../../../images/${imageName}`).then(image => {
+				console.log(image);
+				setImageList(prev => [...prev, image]);
+			});
+		});
+	}, []);
+
 	// Set scroll after rendered
 	useEffect(() => {
 		const imageListElm = imageListRef.current as HTMLUListElement;
-		const scrollStep = imageListElm.clientWidth;
 
-		imageListElm.scrollLeft = scrollStep * currentImageIndex;
+		imageListElm.style.transform = `translateX(-${currentImageIndex * 100}%)`;
 	}, [currentImageIndex]);
 
 	// Auto next slide
 	useEffect(() => {
 		const timeoutId = setTimeout(() => {
 			handleClickNextButton();
-		}, 10000);
+		}, 20000);
 
-		return () => {
-			clearTimeout(timeoutId);
-		};
+		return () => clearTimeout(timeoutId);
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentImageIndex]);
@@ -56,7 +65,7 @@ function ImagesSlide() {
 			<ul className={cx('image-list')} ref={imageListRef} onScroll={e => e.preventDefault()}>
 				{imageList.map((image, index) => (
 					<li key={index}>
-						<img src={image} alt="" />
+						<img src={image.default} alt="" />
 					</li>
 				))}
 			</ul>

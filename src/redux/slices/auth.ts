@@ -1,5 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import type { InitAuthStore } from '../../types/initStore';
+
 const initialState: InitAuthStore = {
 	isLogged: false,
 	accountType: null,

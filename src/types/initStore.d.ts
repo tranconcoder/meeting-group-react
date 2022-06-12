@@ -1,5 +1,5 @@
 // Auth store
-declare interface InitAuthStore {
+export interface InitAuthStore {
 	isLogged: boolean;
 	accountType: null | 'default' | 'google';
 	email: null | string;

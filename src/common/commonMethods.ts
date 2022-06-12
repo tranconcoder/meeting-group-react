@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import type { ObjectAnyKey } from '../types/common';
+
 export const getClassNameModuleGenerator =
 	(stylesObject: any) =>
 	(...selectorList: Array<string | boolean | ObjectAnyKey>) => {

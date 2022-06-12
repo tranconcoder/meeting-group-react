@@ -1,4 +1,4 @@
 // InputForm
-declare interface InputFormValidateHandlerRef {
+export interface InputFormValidateHandlerRef {
 	current: (isSubmit: boolean) => any;
 }

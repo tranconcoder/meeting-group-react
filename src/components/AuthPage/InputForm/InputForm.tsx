@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { InputFormProps } from '../../../types/props';
 import {
@@ -118,6 +118,13 @@ function InputForm({
 		}
 	};
 
+	const handleChangeInput = (e: any) => {
+		state[1](e.target.value);
+		setTyped(true);
+	};
+
+	const handleClickEyeIcon = () => setPasswordIsVisible(!passwordIsVisible);
+
 	// Validate input value
 	useEffect(() => {
 		validateHandler();
@@ -143,10 +150,7 @@ function InputForm({
 					type={type === 'password' ? (passwordIsVisible ? 'text' : 'password') : 'text'}
 					placeholder=" "
 					value={state[0]}
-					onChange={e => {
-						state[1](e.target.value);
-						setTyped(true);
-					}}
+					onChange={handleChangeInput}
 				/>
 
 				<p>
@@ -155,10 +159,7 @@ function InputForm({
 				</p>
 
 				{toggleVisiblePassword && state[0] && (
-					<div
-						className={cx('eye-container')}
-						onClick={() => setPasswordIsVisible(!passwordIsVisible)}
-					>
+					<div className={cx('eye-container')} onClick={handleClickEyeIcon}>
 						{passwordIsVisible ? <HiEyeOff /> : <HiEye />}
 					</div>
 				)}
