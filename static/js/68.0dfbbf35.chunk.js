@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeeting_group_react=self.webpackChunkmeeting_group_react||[]).push([[68],{68:function(e,t,s){e.exports=s.p+"static/media/home-thumb.d45e41b75243effb6d21.svg"}}]);

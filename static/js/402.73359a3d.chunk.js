@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeeting_group_react=self.webpackChunkmeeting_group_react||[]).push([[402],{402:function(e,t,s){e.exports=s.p+"static/media/user-list-slide-thumb-2.cda9efca279d8af81dea.svg"}}]);

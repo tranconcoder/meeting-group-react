@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeeting_group_react=self.webpackChunkmeeting_group_react||[]).push([[241],{241:function(e,t,s){e.exports=s.p+"static/media/auth-form-left-slide-thumb-2.1141d72474f4b718b98b.svg"}}]);

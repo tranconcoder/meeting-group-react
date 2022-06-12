@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmeeting_group_react=self.webpackChunkmeeting_group_react||[]).push([[978],{978:function(e,t,c){e.exports=c.p+"static/media/image-slide-3.3f58780c2e09e90368fb.jpg"}}]);
