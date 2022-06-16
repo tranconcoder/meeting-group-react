@@ -1,13 +1,13 @@
 //@ts-ignore
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import { getClassNameModuleGenerator } from '../../common/commonMethods';
 import Banner from './Banner/Banner';
-import styles from './Body.module.scss';
+import styles from './HomePageComp.module.scss';
 import ImagesSlide from './ImagesSlide/ImagesSlide';
 import Users from './Users/Users';
 
 const cx = getClassNameModuleGenerator(styles);
 
-function HomePageBody() {
+function HomePageComp() {
 	return (
 		<div className={cx('container')}>
 			<Banner />
@@ -19,4 +19,4 @@ function HomePageBody() {
 	);
 }
 
-export default HomePageBody;
+export default HomePageComp;

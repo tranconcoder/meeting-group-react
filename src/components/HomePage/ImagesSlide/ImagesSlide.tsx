@@ -1,6 +1,6 @@
 //@ts-ignore
-import React, { useEffect, useRef, useState } from 'react';
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import { useEffect, useRef, useState } from 'react';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import styles from './ImagesSlide.module.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -34,7 +34,7 @@ function ImagesSlide() {
 	// Dynamic import imageList
 	useEffect(() => {
 		imageNameList.forEach(imageName => {
-			import(`../../../../images/${imageName}`).then(image => {
+			import(`../../../images/image-slide/${imageName}`).then(image => {
 				setImageList(prev => [...prev, image]);
 			});
 		});

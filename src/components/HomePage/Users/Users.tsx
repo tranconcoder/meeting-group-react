@@ -4,10 +4,10 @@ import { BsFillPersonCheckFill } from 'react-icons/bs';
 import { FaChalkboardTeacher, FaUser } from 'react-icons/fa';
 
 //@ts-ignore
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import styles from './Users.module.scss';
 
-import userSlideListThumb from '../../../../images/user-list-slide-thumb-2.svg';
+import userSlideListThumb from '../../../images/user-list-slide-thumb-2.svg';
 
 const cx = getClassNameModuleGenerator(styles);
 

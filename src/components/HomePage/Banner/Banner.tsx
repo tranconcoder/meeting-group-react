@@ -1,9 +1,9 @@
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
 //@ts-ignore
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 
-import thumb from '../../../../images/home-thumb.svg';
+import thumb from '../../../images/home-thumb.svg';
 import styles from './Banner.module.scss';
 
 const cx = getClassNameModuleGenerator(styles);
