@@ -1,22 +1,16 @@
 {
   "files": {
-    "main.css": "/meeting-group-react/static/css/main.a6bcdbce.css",
-    "main.js": "/meeting-group-react/static/js/main.37cbacde.js",
-    "static/js/241.96232548.chunk.js": "/meeting-group-react/static/js/241.96232548.chunk.js",
-    "static/js/719.7b886498.chunk.js": "/meeting-group-react/static/js/719.7b886498.chunk.js",
-    "static/js/318.ab154cc8.chunk.js": "/meeting-group-react/static/js/318.ab154cc8.chunk.js",
-    "static/js/68.0dfbbf35.chunk.js": "/meeting-group-react/static/js/68.0dfbbf35.chunk.js",
-    "static/js/126.bc1a7880.chunk.js": "/meeting-group-react/static/js/126.bc1a7880.chunk.js",
-    "static/js/778.fb4e0d12.chunk.js": "/meeting-group-react/static/js/778.fb4e0d12.chunk.js",
-    "static/js/978.c4ce556f.chunk.js": "/meeting-group-react/static/js/978.c4ce556f.chunk.js",
-    "static/js/619.5912907e.chunk.js": "/meeting-group-react/static/js/619.5912907e.chunk.js",
-    "static/js/262.cda2af00.chunk.js": "/meeting-group-react/static/js/262.cda2af00.chunk.js",
-    "static/js/478.849c64c3.chunk.js": "/meeting-group-react/static/js/478.849c64c3.chunk.js",
-    "static/js/833.a8f17a0b.chunk.js": "/meeting-group-react/static/js/833.a8f17a0b.chunk.js",
-    "static/js/18.337d6876.chunk.js": "/meeting-group-react/static/js/18.337d6876.chunk.js",
-    "static/js/402.73359a3d.chunk.js": "/meeting-group-react/static/js/402.73359a3d.chunk.js",
-    "static/js/618.fadb28ac.chunk.js": "/meeting-group-react/static/js/618.fadb28ac.chunk.js",
-    "static/js/787.eb6381ce.chunk.js": "/meeting-group-react/static/js/787.eb6381ce.chunk.js",
+    "main.css": "/meeting-group-react/static/css/main.9294e197.css",
+    "main.js": "/meeting-group-react/static/js/main.189b4e25.js",
+    "static/js/529.1612462e.chunk.js": "/meeting-group-react/static/js/529.1612462e.chunk.js",
+    "static/js/474.bfc66c81.chunk.js": "/meeting-group-react/static/js/474.bfc66c81.chunk.js",
+    "static/js/611.4a1456f1.chunk.js": "/meeting-group-react/static/js/611.4a1456f1.chunk.js",
+    "static/js/925.f031599e.chunk.js": "/meeting-group-react/static/js/925.f031599e.chunk.js",
+    "static/js/762.265a951b.chunk.js": "/meeting-group-react/static/js/762.265a951b.chunk.js",
+    "static/js/432.9f258f78.chunk.js": "/meeting-group-react/static/js/432.9f258f78.chunk.js",
+    "static/js/873.8e5e8257.chunk.js": "/meeting-group-react/static/js/873.8e5e8257.chunk.js",
+    "static/js/172.2db64c15.chunk.js": "/meeting-group-react/static/js/172.2db64c15.chunk.js",
+    "static/js/787.3ef64d51.chunk.js": "/meeting-group-react/static/js/787.3ef64d51.chunk.js",
     "static/media/image-slide-8.jpg": "/meeting-group-react/static/media/image-slide-8.5b1f0328198b37b14a35.jpg",
     "static/media/image-slide-6.jpg": "/meeting-group-react/static/media/image-slide-6.8d2d950ace86ab5484cf.jpg",
     "static/media/image-slide-5.jpg": "/meeting-group-react/static/media/image-slide-5.fa6d28fe4af1cbdf8307.jpg",
@@ -25,18 +19,16 @@
     "static/media/image-slide-3.jpg": "/meeting-group-react/static/media/image-slide-3.3f58780c2e09e90368fb.jpg",
     "static/media/image-slide-2.jpg": "/meeting-group-react/static/media/image-slide-2.a9fa842781637921928a.jpg",
     "static/media/image-slide-1.jpg": "/meeting-group-react/static/media/image-slide-1.52985db59a4edb9b051e.jpg",
-    "static/media/auth-form-left-slide-thumb.svg": "/meeting-group-react/static/media/auth-form-left-slide-thumb.179d4be9d914700ed517.svg",
     "static/media/auth-form-left-slide-thumb-2.svg": "/meeting-group-react/static/media/auth-form-left-slide-thumb-2.1141d72474f4b718b98be144c98a3639.svg",
     "static/media/home-thumb.svg": "/meeting-group-react/static/media/home-thumb.d45e41b75243effb6d2151b256985681.svg",
-    "static/media/user-list-slide-thumb.svg": "/meeting-group-react/static/media/user-list-slide-thumb.731e5ef120c9a23ee35b.svg",
     "static/media/user-list-slide-thumb-2.svg": "/meeting-group-react/static/media/user-list-slide-thumb-2.cda9efca279d8af81deae41031a6e08d.svg",
     "index.html": "/meeting-group-react/index.html",
-    "main.a6bcdbce.css.map": "/meeting-group-react/static/css/main.a6bcdbce.css.map",
-    "main.37cbacde.js.map": "/meeting-group-react/static/js/main.37cbacde.js.map",
-    "787.eb6381ce.chunk.js.map": "/meeting-group-react/static/js/787.eb6381ce.chunk.js.map"
+    "main.9294e197.css.map": "/meeting-group-react/static/css/main.9294e197.css.map",
+    "main.189b4e25.js.map": "/meeting-group-react/static/js/main.189b4e25.js.map",
+    "787.3ef64d51.chunk.js.map": "/meeting-group-react/static/js/787.3ef64d51.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6bcdbce.css",
-    "static/js/main.37cbacde.js"
+    "static/css/main.9294e197.css",
+    "static/js/main.189b4e25.js"
   ]
 }
