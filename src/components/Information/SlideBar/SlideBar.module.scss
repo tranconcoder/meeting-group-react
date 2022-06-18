@@ -1,0 +1,5 @@
+@import '../../../styles/package/allPackage.scss';
+
+.slide-bar {
+	@include size(100%, false);
+}
