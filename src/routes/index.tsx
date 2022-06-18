@@ -1,8 +1,9 @@
-import Profile from '../components/Information/Profile/Profile';
 import AuthPage from '../pages/AuthPage/AuthPage';
 import HomePage from '../pages/HomePage/HomePage';
 import NothingPage from '../pages/NothingPage/NothingPage';
 import { RouteListType } from '../types/routes';
+
+import informationRoute from './informationRoute';
 
 export default [
 	{
@@ -18,13 +19,7 @@ export default [
 	{
 		title: 'informationPage',
 		path: '/information',
-		childrenRoute: [
-			{
-				title: 'profile',
-				path: 'profile',
-				reactElement: <Profile />,
-			},
-		],
+		childrenRoute: [...informationRoute],
 	},
 	{
 		title: 'informationPage',

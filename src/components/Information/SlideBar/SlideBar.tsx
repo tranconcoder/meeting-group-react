@@ -1,13 +1,17 @@
-import React from 'react';
-
 //@ts-ignore
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
-import styles from './InfomationSlideBar.module.scss';
+
+import styles from './SlideBar.module.scss';
+import slideBarLogo from '../../../images/information-slide-bar/logo.png';
 
 const cx = getClassNameModuleGenerator(styles);
 
 function InformationSlideBar() {
-	return <div>Left Slide Bar</div>;
+	return (
+		<div className={cx('slide-bar')}>
+			<img src={slideBarLogo} alt="slide-bar" />
+		</div>
+	);
 }
 
 export default InformationSlideBar;

@@ -5,7 +5,7 @@ interface RouteType {
 	title: string;
 	path: string;
 	reactElement: ReactElement;
-	customAttributes: Omit<RouteObject, 'children'>;
+	customAttributes?: Omit<RouteObject, 'children'>;
 	childrenRoute?: Array<RouteType>;
 }
 

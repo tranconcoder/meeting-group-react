@@ -1,16 +1,62 @@
 @import '../../../styles/package/allPackage.scss';
 
 .information-layout {
+	$slideBarWidth: 60px;
+
 	@include size(100vh, 100vw);
+	@include position(relative);
 	@include flex(row);
 
 	> .left-slide-bar {
-		@include size(100%, 50px);
-		border-right: 1px solid #ccc;
+		@include size($slideBarWidth, 100%);
+		@include position(fixed, 0, false, false, 0);
+		border-right: 1px solid #eee;
+		transition: all 300ms ease;
+
+		> .container {
+			@include size(100%);
+			overflow: hidden;
+			padding: 10px;
+		}
+
+		&.hide {
+			transform: translateX(-$slideBarWidth);
+
+			& + .content-board {
+				margin-left: 0;
+			}
+
+			> .toggle-slide-bar-button > svg {
+				transform: rotate(180deg) translateX(-3px);
+			}
+		}
+
+		> .toggle-slide-bar-button {
+			@include size(24px);
+			@include flex(row, center, center);
+			@include position(absolute, 50%, 0);
+			background-color: #eee;
+			border-radius: 50%;
+			transform: translateX(50%);
+			box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+
+			> svg {
+				transition: all 300ms ease;
+				color: $primaryColorBlack;
+			}
+
+			&:hover {
+				background-color: #e5e5e5;
+				cursor: pointer;
+			}
+		}
 	}
 
 	> .content-board {
 		@include size(100%, false);
+		margin-left: $slideBarWidth;
 		flex: 1;
+		transition: all 300ms ease;
+		padding: 10px;
 	}
 }
