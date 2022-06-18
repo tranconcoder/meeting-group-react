@@ -1,0 +1,34 @@
+@import '../../styles/package/allPackage.scss';
+
+.nothing-page {
+	@include size(100vw, 100vh);
+	@include flex(column, center, center);
+
+	> img {
+		@include size(700px, false);
+		@include maxSize(100%, false);
+	}
+
+	> .text-box {
+		@include flex(column, center);
+
+		> h1 {
+			font-size: 40px;
+			text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+			background: -webkit-linear-gradient(0deg, rgb(0, 255, 187), rgb(0, 238, 255));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		> a {
+			@include flex(row, center);
+			font-size: 16px;
+			font-weight: 600;
+			padding: 10px;
+
+			> svg {
+				font-size: 1.4em;
+			}
+		}
+	}
+}

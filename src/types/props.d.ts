@@ -41,6 +41,7 @@ export interface GoogleLoginButtonProps {
 export interface ButtonProps {
 	children?: string;
 	styles?: CSSProperties;
+	to?: string;
 }
 
 // PanelBoxProps

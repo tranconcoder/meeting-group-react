@@ -1,18 +1,20 @@
 @import '../../../styles/package/allPackage.scss';
 
 .images-slide-container {
-	@include size(100%, 300px);
+	@include size(100%, 400px);
 	@include position(relative);
 	margin-top: 80px;
 	margin-bottom: 100px;
-	border-radius: 14px;
+	border-radius: 6px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 	overflow: hidden;
+	will-change: auto;
 
 	> .image-list {
 		@include size(auto, 100%);
 		white-space: nowrap;
 		transition: all ease 500ms;
+		will-change: transform;
 
 		&::-webkit-scrollbar {
 			display: none;

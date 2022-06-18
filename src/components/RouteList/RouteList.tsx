@@ -1,20 +1,23 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Routelist from '../../routes';
+import RouteListData from '../../routes';
+import { RouteListType } from '../../types/routes';
 
 function RouteList() {
-	return (
-		<Routes>
-			{Routelist.map((route, index) => (
-				<Route
-					{...route.customAttributes}
-					key={index}
-					element={route.reactElement}
-					path={route.path}
-				/>
-			))}
-		</Routes>
-	);
+	const renderList = (routeList: RouteListType) => {
+		return routeList.map((route, index) => (
+			<Route
+				{...route.customAttributes}
+				key={index}
+				element={route.reactElement}
+				path={route.path}
+			>
+				{route.childrenRoute && renderList(route.childrenRoute)}
+			</Route>
+		));
+	};
+
+	return <Routes>{renderList(RouteListData)}</Routes>;
 }
 
 export default RouteList;

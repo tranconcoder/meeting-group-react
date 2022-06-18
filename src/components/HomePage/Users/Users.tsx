@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { IconType } from 'react-icons';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
-import { FaChalkboardTeacher, FaUser } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaHome, FaSchool, FaUser } from 'react-icons/fa';
 
 //@ts-ignore
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
@@ -37,16 +37,16 @@ function Users() {
 			Icon: FaChalkboardTeacher,
 		},
 		{
-			title: 'Học sinh',
+			title: 'Nhà trường',
 			description:
-				'Giải pháp giúp học sinh theo dõi quá trình học tập, cùng nhau thảo luận học hỏi kiến thức.',
-			Icon: BsFillPersonCheckFill,
+				'Tăng khả năng quản lý, thống kê và liên kết dễ dàng với giáo viên và học sinh.',
+			Icon: FaSchool,
 		},
 		{
-			title: 'Giáo viên',
+			title: 'Gia đình',
 			description:
-				'Cung cấp công cụ theo dõi, thống kê lớp học, trao đổi dữ liệu lớp với nhà trường nhanh chóng.',
-			Icon: FaChalkboardTeacher,
+				'Nhận thông tin nhanh về học sinh, cung cấp giải pháp trao đổi với nhà trường tiện lợi nhất.',
+			Icon: FaHome,
 		},
 	]);
 
