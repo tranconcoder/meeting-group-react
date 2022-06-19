@@ -1,6 +1,6 @@
 //@ts-ignore
-import { Link } from 'react-router-dom';
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
+
 import CenterSlider from './CenterSlider/CenterSlider';
 import styles from './Header.module.scss';
 import LeftSlider from './LeftSlider/LeftSlider';

@@ -1,19 +1,25 @@
+import type { RouteInformationType } from '../types/routes';
+
 import Profile from '../components/Information/Profile/Profile';
 import InformationLayout from '../components/Layouts/Information/InformationLayout';
+import NeedAuth from '../components/NeedAuth/NeedAuth';
 import NothingPage from '../pages/NothingPage/NothingPage';
-import { RouteListType } from '../types/routes';
 
-const informationRoute: RouteListType = [
-	{
-		title: 'profile',
+const informationRoute: RouteInformationType = {
+	profile: {
 		path: 'profile',
-		reactElement: <InformationLayout ContentBoard={Profile} />,
+		fullPath: '',
+		reactElement: (
+			<NeedAuth>
+				<InformationLayout ContentBoard={Profile} />
+			</NeedAuth>
+		),
 	},
-	{
-		title: 'others',
+	others: {
 		path: '*',
+		fullPath: '',
 		reactElement: <NothingPage />,
 	},
-];
+};
 
 export default informationRoute;

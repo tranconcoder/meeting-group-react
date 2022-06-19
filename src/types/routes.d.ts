@@ -1,12 +1,21 @@
 import { ReactElement } from 'react';
 import { RouteObject } from 'react-router-dom';
 
-interface RouteType {
-	title: string;
+export interface RouteType<T = null> {
 	path: string;
-	reactElement: ReactElement;
+	fullPath: string;
+	reactElement?: ReactElement;
 	customAttributes?: Omit<RouteObject, 'children'>;
-	childrenRoute?: Array<RouteType>;
+	childrenRoute?: T;
 }
 
-export type RouteListType = Array<RouteType>;
+export interface RouteInformationType {
+	profile: RouteType;
+	others: RouteType;
+}
+export interface RouteRootType {
+	homePage: RouteType;
+	authPage: RouteType;
+	informationPage: RouteType<RouteInformationType>;
+	nothingPage: RouteType;
+}

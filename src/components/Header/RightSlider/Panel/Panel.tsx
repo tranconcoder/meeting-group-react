@@ -1,6 +1,6 @@
 //@ts-ignore
 import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
-import { useAppSelector } from '../../../../common/redexHooks';
+import { useAppSelector } from '../../../../common/reduxHooks';
 import styles from './Panel.module.scss';
 
 import defaultAvatar from '../../../../images/default-avatar-2.png';
@@ -16,11 +16,7 @@ function Panel() {
 	const toggleBoxVisible = () => setShowBox(!showBox);
 
 	return (
-		<button
-			className={cx('panel')}
-			onBlur={toggleBoxVisible}
-			onFocus={toggleBoxVisible}
-		>
+		<button className={cx('panel')} onBlur={toggleBoxVisible} onFocus={toggleBoxVisible}>
 			<span className={cx('left-slider')}>
 				<span className={cx('full-name')}>{fullName}</span>
 				<span className={cx('email')}>{email}</span>

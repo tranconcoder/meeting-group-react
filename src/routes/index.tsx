@@ -1,29 +1,51 @@
 import AuthPage from '../pages/AuthPage/AuthPage';
 import HomePage from '../pages/HomePage/HomePage';
 import NothingPage from '../pages/NothingPage/NothingPage';
-import { RouteListType } from '../types/routes';
+import { RouteRootType, RouteType } from '../types/routes';
 
 import informationRoute from './informationRoute';
 
-export default [
-	{
-		title: 'homePage',
-		path: '/',
+const routeRoot: RouteRootType = {
+	homePage: {
+		path: '',
+		fullPath: '',
 		reactElement: <HomePage />,
 	},
-	{
-		title: 'authPage',
-		path: '/auth',
+	authPage: {
+		path: 'auth',
+		fullPath: '',
 		reactElement: <AuthPage />,
 	},
-	{
-		title: 'informationPage',
-		path: '/information',
-		childrenRoute: [...informationRoute],
+	informationPage: {
+		path: 'information',
+		fullPath: '',
+		childrenRoute: informationRoute,
 	},
-	{
-		title: 'informationPage',
+	nothingPage: {
 		path: '*',
+		fullPath: '',
 		reactElement: <NothingPage />,
 	},
-] as RouteListType;
+};
+
+function addFullPath(routeList: any, currentPath: string) {
+	for (const key in routeList) {
+		const route: RouteType = routeList[key as keyof RouteRootType];
+
+		handleAddPath(route, currentPath);
+	}
+
+	function handleAddPath(routeToAdd: RouteType, currentPath: string) {
+		routeToAdd.fullPath = `${currentPath}/${routeToAdd.path}`;
+
+		if (routeToAdd.childrenRoute) {
+			addFullPath(routeToAdd.childrenRoute, routeToAdd.fullPath);
+		}
+	}
+
+	return routeList;
+}
+
+console.log(addFullPath(routeRoot, ''));
+
+export default routeRoot as RouteRootType;

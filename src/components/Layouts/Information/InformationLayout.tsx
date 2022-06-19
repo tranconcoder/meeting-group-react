@@ -12,12 +12,21 @@ import { TiChevronLeft } from 'react-icons/ti';
 const cx = getClassNameModuleGenerator(styles);
 
 function InformationLayout({ ContentBoard }: InformationLayoutProps) {
-	const [hideSlideBar, setHideSlideBar] = useState(true);
+	const [hideSlideBar, setHideSlideBar] = useState(false);
+	const [titleContent, setTitleContent] = useState('');
 
 	const handleToggleSlideBar = () => setHideSlideBar(!hideSlideBar);
 
 	return (
 		<div className={cx('information-layout')}>
+			<div
+				className={cx('title-box-container', {
+					show: titleContent,
+				})}
+			>
+				<p></p>
+			</div>
+
 			<div
 				className={cx('left-slide-bar', {
 					hide: hideSlideBar,

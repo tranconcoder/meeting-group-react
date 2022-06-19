@@ -2,4 +2,33 @@
 
 .slide-bar {
 	@include size(100%, false);
+
+	> ul {
+		@include flex(column, center);
+
+		> li {
+			@include size(40px);
+			@include flex(row, center, center);
+			@include position(relative);
+			border-radius: 4px;
+			transition: background-color 300ms ease;
+			font-size: 18px;
+			color: $primaryColorBlack;
+
+			&:not(:first-child) {
+				margin-top: 4px;
+			}
+
+			&:hover {
+				color: $primaryColorDark;
+				background-color: #efefef;
+				cursor: pointer;
+			}
+
+			> span {
+				@include position(absolute, 50%, false, false, 100%);
+				transform: translate(4px, -50%);
+			}
+		}
+	}
 }

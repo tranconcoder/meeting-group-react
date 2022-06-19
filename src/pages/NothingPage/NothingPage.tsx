@@ -15,7 +15,11 @@ function NothingPage() {
 	const backToPreviousPage = () => navigate(-1);
 
 	return (
-		<div className={cx('nothing-page')} data-aos="fade-up" data-aos-delay="200">
+		<div
+			className={cx('nothing-page')}
+			data-aos="fade-up"
+			data-aos-delay="200"
+		>
 			<img src={nothingBackground} alt="error-404-background" />
 
 			<div className={cx('text-box')}>
@@ -23,7 +27,7 @@ function NothingPage() {
 
 				<a onClick={backToPreviousPage}>
 					<TiArrowLeft />
-					<span>Chuyển tới trang chủ</span>
+					<span>Quay lại</span>
 				</a>
 			</div>
 		</div>

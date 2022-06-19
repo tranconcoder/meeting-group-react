@@ -1,18 +1,21 @@
-import { PanelBoxProps } from '../../../../../types/props';
+import type {
+	PanelButton,
+	PanelSlide,
+} from '../../../../../types/componentsType/PanelBox';
+import type { PanelBoxProps } from '../../../../../types/props';
 
 //@ts-ignore
 import { getClassNameModuleGenerator } from '../../../../../common/commonMethods';
-import styles from './PanelBox.module.scss';
+import routeRoot from '../../../../../routes';
 
+import styles from './PanelBox.module.scss';
 import { BiTable } from 'react-icons/bi';
 import { IoMdLogOut } from 'react-icons/io';
 import { FiMessageSquare, FiBell } from 'react-icons/fi';
 import { TiArrowSortedDown } from 'react-icons/ti';
 import { FaUserEdit } from 'react-icons/fa';
 
-import { PanelButton, PanelSlide } from '../../../../../types/componentsType/PanelBox';
-
-import { useAppDispatch } from '../../../../../common/redexHooks';
+import { useAppDispatch } from '../../../../../common/reduxHooks';
 import { v4 as uuidv4 } from 'uuid';
 import { useRef, useState } from 'react';
 import { logout } from '../../../../../redux/slices/auth';
@@ -47,7 +50,11 @@ function PanelBox({ showBox }: PanelBoxProps) {
 			id: uuidv4(),
 			title: 'Sửa thông tin',
 			Icon: FaUserEdit,
-			handleClick: () => navigate('/profile'),
+			handleClick: () =>
+				navigate(
+					routeRoot.informationPage.childrenRoute?.profile.fullPath ||
+						'/'
+				),
 		},
 		{
 			id: uuidv4(),
@@ -55,7 +62,7 @@ function PanelBox({ showBox }: PanelBoxProps) {
 			Icon: IoMdLogOut,
 			handleClick: () => {
 				dispatch(logout());
-				navigate('/auth');
+				navigate(routeRoot.authPage.fullPath);
 			},
 		},
 	]);
@@ -88,7 +95,16 @@ function PanelBox({ showBox }: PanelBoxProps) {
 			{/* Slider list wrapper */}
 			<ul className={cx('slide-panel-list')}>
 				{slidePanelList.current.map(
-					({ title, handleClick: handleOnClick, Icon, childList, id }, index) => {
+					(
+						{
+							title,
+							handleClick: handleOnClick,
+							Icon,
+							childList,
+							id,
+						},
+						index
+					) => {
 						if (!childList || childList.length === 0) {
 							return (
 								<li
@@ -123,12 +139,18 @@ function PanelBox({ showBox }: PanelBoxProps) {
 									>
 										{childList.map(
 											(
-												{ title, handleClick: handleOnClick, Icon },
+												{
+													title,
+													handleClick: handleOnClick,
+													Icon,
+												},
 												index
 											) => (
 												<li
 													key={index}
-													onClick={stopPropagation(handleOnClick)}
+													onClick={stopPropagation(
+														handleOnClick
+													)}
 												>
 													<Icon />
 													<span>{title}</span>

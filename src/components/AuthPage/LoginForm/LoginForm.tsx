@@ -10,7 +10,7 @@ import { HiLockClosed } from 'react-icons/hi';
 import InputForm from '../InputForm/InputForm';
 import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
 import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
-import { useAppDispatch, useAppSelector } from '../../../common/redexHooks';
+import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
 import { login } from '../../../redux/slices/auth';
 import { useNavigate } from 'react-router-dom';
 
