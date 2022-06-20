@@ -5,8 +5,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import { HiOutlineMail } from 'react-icons/hi';
 import { CgRename } from 'react-icons/cg';
 
-//@ts-ignore
-import { getClassNameModuleGenerator } from '../../../common/commonMethods.ts';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import { InputFormProps } from '../../../types/props';
 
 import InputForm from '../InputForm/InputForm';
@@ -33,15 +32,25 @@ function RegisterForm() {
 			placeholder: 'Họ và tên',
 			state: [fullName, setFullName],
 			Icon: CgRename,
-			validates: { required: true, minLength: 2, maxLength: 30 },
-			getValidateHandler: [fullNameValidateHandler, reRenderComponent],
+			validates: {
+				required: true,
+				minLength: 2,
+				maxLength: 30,
+			},
+			getValidateHandler: [
+				fullNameValidateHandler,
+				reRenderComponent,
+			],
 		},
 		{
 			placeholder: 'Địa chỉ email',
 			state: [email, setEmail],
 			Icon: HiOutlineMail,
 			validates: { required: true, isEmail: true },
-			getValidateHandler: [emailValidateHandler, reRenderComponent],
+			getValidateHandler: [
+				emailValidateHandler,
+				reRenderComponent,
+			],
 		},
 		{
 			type: 'password',
@@ -58,7 +67,10 @@ function RegisterForm() {
 				specialLetter: 'some',
 			},
 			toggleVisiblePassword: true,
-			getValidateHandler: [passwordValidateHandler, reRenderComponent],
+			getValidateHandler: [
+				passwordValidateHandler,
+				reRenderComponent,
+			],
 		},
 		{
 			type: 'password',
@@ -73,7 +85,10 @@ function RegisterForm() {
 				},
 			},
 			toggleVisiblePassword: true,
-			getValidateHandler: [retypePasswordValidateHandler, reRenderComponent],
+			getValidateHandler: [
+				retypePasswordValidateHandler,
+				reRenderComponent,
+			],
 		},
 	];
 
@@ -93,11 +108,18 @@ function RegisterForm() {
 
 			<div className={cx('input-container')}>
 				{inputList.map((input, index) => (
-					<InputForm {...input} key={index} styles={{ marginTop: 30 }} />
+					<InputForm
+						{...input}
+						key={index}
+						styles={{ marginTop: 30 }}
+					/>
 				))}
 			</div>
 
-			<SubmitFormButton content="Tạo tài khoản" handleClick={handleSubmitButton} />
+			<SubmitFormButton
+				content="Tạo tài khoản"
+				handleClick={handleSubmitButton}
+			/>
 		</div>
 	);
 }

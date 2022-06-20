@@ -1,4 +1,4 @@
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
 import Banner from './Banner/Banner';
 import styles from './HomePageComp.module.scss';

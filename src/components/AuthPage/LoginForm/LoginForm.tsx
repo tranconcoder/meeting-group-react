@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-//@ts-ignore
-import { getClassNameModuleGenerator } from '../../../common/commonMethods.ts';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import styles from './LoginForm.module.scss';
 import { MdSwitchAccount } from 'react-icons/md';
 import { FaUserLock } from 'react-icons/fa';
@@ -10,7 +9,10 @@ import { HiLockClosed } from 'react-icons/hi';
 import InputForm from '../InputForm/InputForm';
 import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
 import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
-import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
+import {
+	useAppDispatch,
+	useAppSelector,
+} from '../../../common/reduxHooks';
 import { login } from '../../../redux/slices/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,12 +28,18 @@ function LoginForm() {
 	const dispatch = useAppDispatch();
 	const isLogged = useAppSelector(state => state.auth.isLogged);
 
-	const usernameValidateHandler = useRef<(isSubmit: boolean) => any>(() => {});
-	const passwordValidateHandler = useRef<(isSubmit: boolean) => any>(() => {});
+	const usernameValidateHandler = useRef<
+		(isSubmit: boolean) => any
+	>(() => {});
+	const passwordValidateHandler = useRef<
+		(isSubmit: boolean) => any
+	>(() => {});
 
 	const handleSubmitLogin = () => {
-		const usernameCheckResult = !!usernameValidateHandler.current(true);
-		const passwordCheckResult = !!passwordValidateHandler.current(true);
+		const usernameCheckResult =
+			!!usernameValidateHandler.current(true);
+		const passwordCheckResult =
+			!!passwordValidateHandler.current(true);
 
 		if (usernameCheckResult && passwordCheckResult) {
 			dispatch(
@@ -76,7 +84,10 @@ function LoginForm() {
 					Icon={FaUserLock}
 					placeholder="Tên đăng nhập..."
 					validates={{ required: true }}
-					getValidateHandler={[usernameValidateHandler, reRenderComponent]}
+					getValidateHandler={[
+						usernameValidateHandler,
+						reRenderComponent,
+					]}
 					styles={{ marginTop: 30 }}
 				/>
 
@@ -90,10 +101,16 @@ function LoginForm() {
 					validates={{
 						required: true,
 					}}
-					getValidateHandler={[passwordValidateHandler, reRenderComponent]}
+					getValidateHandler={[
+						passwordValidateHandler,
+						reRenderComponent,
+					]}
 				/>
 
-				<SubmitFormButton handleClick={handleSubmitLogin} content="Đăng nhập" />
+				<SubmitFormButton
+					handleClick={handleSubmitLogin}
+					content="Đăng nhập"
+				/>
 			</form>
 		</div>
 	);

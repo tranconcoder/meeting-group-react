@@ -3,7 +3,7 @@ import { Layout1Props } from '../../types/props';
 
 import Header from '../Header/Header';
 
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
 import styles from './Layout1.module.scss';
 

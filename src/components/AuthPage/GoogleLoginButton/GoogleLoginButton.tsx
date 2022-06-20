@@ -1,6 +1,6 @@
 import { GoogleLoginButtonProps } from '../../../types/props';
 
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import { BsGoogle } from 'react-icons/bs';
 import styles from './GoogleLoginButton.module.scss';

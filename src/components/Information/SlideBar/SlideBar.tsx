@@ -1,20 +1,54 @@
+import type {
+	InformationSlideBarProps,
+	TimeoutOrNull,
+} from '../../../types/componentsType/InformationSlideBar';
 import type { SlideBarSelectionList } from '../../../types/storage/slideBar';
 
-import { useNavigate } from 'react-router-dom';
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import slideBarSelectionList from '../../../storage/informationSlideBar';
 
 import styles from './SlideBar.module.scss';
-import { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+import { useRef, useState } from 'react';
 
 const cx = getClassNameModuleGenerator(styles);
 
-function InformationSlideBar() {
+function InformationSlideBar({
+	titleContent,
+	setTitleContent,
+}: InformationSlideBarProps) {
 	const navigate = useNavigate();
+
+	let { current: setTitleTimeoutId } = useRef<TimeoutOrNull>(null);
+
+	let { current: blurTimeoutId } = useRef<TimeoutOrNull>(null);
 
 	const [slideActived, setSlideActived] = useState(
 		slideBarSelectionList[0].id
 	);
+
+	const handleOnMouseEnter = (selectionTitle: string) => {
+		clearTimeout(blurTimeoutId as NodeJS.Timeout);
+		blurTimeoutId = null;
+
+		if (titleContent) {
+			setTitleContent(selectionTitle);
+		} else {
+			setTitleTimeoutId = setTimeout(() => {
+				setTitleContent(selectionTitle);
+			}, 800);
+		}
+	};
+
+	const handleOnMouseLeave = () => {
+		clearTimeout(setTitleTimeoutId as NodeJS.Timeout);
+		setTitleTimeoutId = null;
+
+		blurTimeoutId = setTimeout(() => {
+			setTitleContent('');
+		}, 1000);
+	};
 
 	const renderSlideBarSelectionList = (
 		...slideSelectionGroupList: Array<SlideBarSelectionList>
@@ -22,21 +56,30 @@ function InformationSlideBar() {
 		// Map and render groups
 		return slideSelectionGroupList.map((group, index) => (
 			<ul key={index}>
-				{group.map(({ icon: Icon, id, handleClick, path }, index) => (
-					<li
-						key={index}
-						onClick={() => {
-							setSlideActived(id);
-							path && navigate(path);
-							handleClick && handleClick();
-						}}
-						className={cx({
-							active: slideActived === id,
-						})}
-					>
-						<Icon />
-					</li>
-				))}
+				{group.map(
+					(
+						{ icon: Icon, id, title, handleClick, path },
+						index
+					) => (
+						<li
+							key={index}
+							onMouseEnter={() =>
+								handleOnMouseEnter(title)
+							}
+							onMouseLeave={handleOnMouseLeave}
+							onClick={() => {
+								setSlideActived(id);
+								path && navigate(path);
+								handleClick && handleClick();
+							}}
+							className={cx({
+								active: slideActived === id,
+							})}
+						>
+							<Icon />
+						</li>
+					)
+				)}
 			</ul>
 		));
 	};

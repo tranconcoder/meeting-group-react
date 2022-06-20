@@ -1,4 +1,4 @@
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
 
 import CenterSlider from './CenterSlider/CenterSlider';

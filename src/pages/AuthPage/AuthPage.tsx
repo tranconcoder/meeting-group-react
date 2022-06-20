@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router';
 
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
 import styles from './AuthPage.module.scss';
 import { IoMdArrowRoundBack } from 'react-icons/io';
@@ -18,7 +18,8 @@ const cx = getClassNameModuleGenerator(styles);
 function AuthPage() {
 	const navigate = useNavigate();
 
-	const [loginOrRegister, setLoginOrRegister] = useState<LoginOrRegisterProps>('login');
+	const [loginOrRegister, setLoginOrRegister] =
+		useState<LoginOrRegisterProps>('login');
 
 	return (
 		<div className={cx('wrapper')}>
@@ -35,14 +36,20 @@ function AuthPage() {
 			<div className={cx('right-slide')}>
 				{/* Body */}
 				<div className={cx('body')}>
-					{loginOrRegister === 'login' ? <LoginForm /> : <RegisterForm />}
+					{loginOrRegister === 'login' ? (
+						<LoginForm />
+					) : (
+						<RegisterForm />
+					)}
 				</div>
 
 				{/* Footer */}
 				<div className={cx('footer')}>
 					{/* Login button */}
 					<button
-						className={cx(loginOrRegister === 'login' && 'active')}
+						className={cx(
+							loginOrRegister === 'login' && 'active'
+						)}
 						onClick={() => setLoginOrRegister('login')}
 					>
 						Đăng nhập
@@ -50,7 +57,9 @@ function AuthPage() {
 
 					{/* Register button */}
 					<button
-						className={cx(loginOrRegister === 'register' && 'active')}
+						className={cx(
+							loginOrRegister === 'register' && 'active'
+						)}
 						onClick={() => setLoginOrRegister('register')}
 					>
 						Tạo tài khoản

@@ -30,16 +30,23 @@ const routeRoot: RouteRootType = {
 
 function addFullPath(routeList: any, currentPath: string) {
 	for (const key in routeList) {
-		const route: RouteType = routeList[key as keyof RouteRootType];
+		const route: RouteType =
+			routeList[key as keyof RouteRootType];
 
 		handleAddPath(route, currentPath);
 	}
 
-	function handleAddPath(routeToAdd: RouteType, currentPath: string) {
+	function handleAddPath(
+		routeToAdd: RouteType,
+		currentPath: string
+	) {
 		routeToAdd.fullPath = `${currentPath}/${routeToAdd.path}`;
 
 		if (routeToAdd.childrenRoute) {
-			addFullPath(routeToAdd.childrenRoute, routeToAdd.fullPath);
+			addFullPath(
+				routeToAdd.childrenRoute,
+				routeToAdd.fullPath
+			);
 		}
 	}
 

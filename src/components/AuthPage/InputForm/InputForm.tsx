@@ -7,7 +7,7 @@ import {
 	isLowerLetter,
 	isUpperLetter,
 	isSpecialLetter,
-	//@ts-ignore
+	//
 } from '../../../common/commonMethods';
 
 import styles from './InputForm.module.scss';
@@ -33,10 +33,18 @@ function InputForm({
 	const validateHandler = (isSubmit = false) => {
 		if (!validates || (!isSubmit && !typed)) return;
 
-		const hasLowerLetter = state[0].split('').some(symbol => isLowerLetter(symbol));
-		const hasUpperLetter = state[0].split('').some(symbol => isUpperLetter(symbol));
-		const hasNumberLetter = state[0].split('').some(symbol => !Number.isNaN(Number(symbol)));
-		const hasSpecialLetter = state[0].split('').some(symbol => isSpecialLetter(symbol));
+		const hasLowerLetter = state[0]
+			.split('')
+			.some(symbol => isLowerLetter(symbol));
+		const hasUpperLetter = state[0]
+			.split('')
+			.some(symbol => isUpperLetter(symbol));
+		const hasNumberLetter = state[0]
+			.split('')
+			.some(symbol => !Number.isNaN(Number(symbol)));
+		const hasSpecialLetter = state[0]
+			.split('')
+			.some(symbol => isSpecialLetter(symbol));
 
 		// Return falsy -> error
 		switch (true) {
@@ -46,21 +54,32 @@ function InputForm({
 			}
 
 			// Min - Max length
-			case validates.minLength && state[0].length < validates.minLength: {
-				return setErrorMessage(`Độ dài tối thiểu là ${validates.minLength} ký tự!`);
+			case validates.minLength &&
+				state[0].length < validates.minLength: {
+				return setErrorMessage(
+					`Độ dài tối thiểu là ${validates.minLength} ký tự!`
+				);
 			}
-			case validates.maxLength && state[0].length > validates.maxLength: {
-				return setErrorMessage(`Độ dài tối đa là ${validates.maxLength} ký tự!`);
+			case validates.maxLength &&
+				state[0].length > validates.maxLength: {
+				return setErrorMessage(
+					`Độ dài tối đa là ${validates.maxLength} ký tự!`
+				);
 			}
 
 			// Email
 			case validates.isEmail && !validateEmail(state[0]): {
-				return setErrorMessage(`Chỉ cho phép điền địa chỉ email!`);
+				return setErrorMessage(
+					`Chỉ cho phép điền địa chỉ email!`
+				);
 			}
 
 			// Number
-			case validates.number === 'every' && (hasLowerLetter || hasUpperLetter): {
-				return setErrorMessage('Chỉ cho phép nhập số (0 -> 9)!');
+			case validates.number === 'every' &&
+				(hasLowerLetter || hasUpperLetter): {
+				return setErrorMessage(
+					'Chỉ cho phép nhập số (0 -> 9)!'
+				);
 			}
 			case validates.number === 'some' && !hasNumberLetter: {
 				return setErrorMessage('Phải có ít nhất 1 chữ số!');
@@ -68,32 +87,50 @@ function InputForm({
 
 			// LowerCase
 			case validates.lowerCase === 'every' && hasUpperLetter: {
-				return setErrorMessage('Trường này bắt buộc viết thường toàn bộ!');
+				return setErrorMessage(
+					'Trường này bắt buộc viết thường toàn bộ!'
+				);
 			}
 			case validates.lowerCase === 'some' && !hasLowerLetter: {
-				return setErrorMessage('Phải có ít nhất 1 ký tự viết thường!');
+				return setErrorMessage(
+					'Phải có ít nhất 1 ký tự viết thường!'
+				);
 			}
 
 			// UpperCase
 			case validates.upperCase === 'every' && hasLowerLetter: {
-				return setErrorMessage('Trường này bắt buộc viết hoa toàn bộ!');
+				return setErrorMessage(
+					'Trường này bắt buộc viết hoa toàn bộ!'
+				);
 			}
 			case validates.upperCase === 'some' && !hasUpperLetter: {
-				return setErrorMessage('Phải có ít nhất 1 ký tự viết hoa!');
+				return setErrorMessage(
+					'Phải có ít nhất 1 ký tự viết hoa!'
+				);
 			}
 
 			// Special letter
 			case validates.specialLetter === 'every' &&
-				(hasLowerLetter || hasUpperLetter || hasNumberLetter): {
-				return setErrorMessage('Chỉ cho phép điền ký tự đặc biệt!');
+				(hasLowerLetter ||
+					hasUpperLetter ||
+					hasNumberLetter): {
+				return setErrorMessage(
+					'Chỉ cho phép điền ký tự đặc biệt!'
+				);
 			}
-			case validates.specialLetter === 'some' && !hasSpecialLetter: {
-				return setErrorMessage('Phải có ít nhất 1 ký tự đặc biệt!');
+			case validates.specialLetter === 'some' &&
+				!hasSpecialLetter: {
+				return setErrorMessage(
+					'Phải có ít nhất 1 ký tự đặc biệt!'
+				);
 			}
 
 			// Equal check
-			case validates.equalTo && validates.equalTo.value !== state[0]: {
-				return setErrorMessage(`Giá trị không khớp với ${validates.equalTo?.label}!`);
+			case validates.equalTo &&
+				validates.equalTo.value !== state[0]: {
+				return setErrorMessage(
+					`Giá trị không khớp với ${validates.equalTo?.label}!`
+				);
 			}
 
 			// InvalidSymbol
@@ -108,7 +145,9 @@ function InputForm({
 
 				if (invalidSymbolList.length > 0) {
 					return setErrorMessage(
-						`Chứa ký tự không được phép ${invalidSymbolList.join(', ')}`
+						`Chứa ký tự không được phép ${invalidSymbolList.join(
+							', '
+						)}`
 					);
 				}
 
@@ -123,7 +162,8 @@ function InputForm({
 		setTyped(true);
 	};
 
-	const handleClickEyeIcon = () => setPasswordIsVisible(!passwordIsVisible);
+	const handleClickEyeIcon = () =>
+		setPasswordIsVisible(!passwordIsVisible);
 
 	// Validate input value
 	useEffect(() => {
@@ -147,7 +187,13 @@ function InputForm({
 			<label className={cx('input-container')}>
 				<input
 					className={cx({ error: errorMessage })}
-					type={type === 'password' ? (passwordIsVisible ? 'text' : 'password') : 'text'}
+					type={
+						type === 'password'
+							? passwordIsVisible
+								? 'text'
+								: 'password'
+							: 'text'
+					}
 					placeholder=" "
 					value={state[0]}
 					onChange={handleChangeInput}
@@ -159,13 +205,22 @@ function InputForm({
 				</p>
 
 				{toggleVisiblePassword && state[0] && (
-					<div className={cx('eye-container')} onClick={handleClickEyeIcon}>
+					<div
+						className={cx('eye-container')}
+						onClick={handleClickEyeIcon}
+					>
 						{passwordIsVisible ? <HiEyeOff /> : <HiEye />}
 					</div>
 				)}
 			</label>
 
-			<p className={cx('warning-container', { show: errorMessage })}>{errorMessage}</p>
+			<p
+				className={cx('warning-container', {
+					show: errorMessage,
+				})}
+			>
+				{errorMessage}
+			</p>
 		</div>
 	);
 }

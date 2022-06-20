@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { IconType } from 'react-icons';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
-import { FaChalkboardTeacher, FaHome, FaSchool, FaUser } from 'react-icons/fa';
+import {
+	FaChalkboardTeacher,
+	FaHome,
+	FaSchool,
+	FaUser,
+} from 'react-icons/fa';
 
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import styles from './Users.module.scss';
 
@@ -59,23 +64,32 @@ function Users() {
 
 			<div className={cx('content')}>
 				{/* Thumbnails */}
-				<img src={userSlideListThumb} alt="" data-aos="zoom-in-right" />
+				<img
+					src={userSlideListThumb}
+					alt=""
+					data-aos="zoom-in-right"
+				/>
 
 				<ul className={cx('user-slide-list')}>
-					{userSlideList.map(({ title, Icon, description, handleClick }, index) => (
-						<li key={index} data-aos="zoom-in-left">
-							<h3>
-								<Icon />
-								<span>{title}</span>
-							</h3>
+					{userSlideList.map(
+						(
+							{ title, Icon, description, handleClick },
+							index
+						) => (
+							<li key={index} data-aos="zoom-in-left">
+								<h3>
+									<Icon />
+									<span>{title}</span>
+								</h3>
 
-							<p>{description}</p>
+								<p>{description}</p>
 
-							<button onClick={handleClick}>
-								<p>Xem ngay!</p>
-							</button>
-						</li>
-					))}
+								<button onClick={handleClick}>
+									<p>Xem ngay!</p>
+								</button>
+							</li>
+						)
+					)}
 				</ul>
 			</div>
 		</div>

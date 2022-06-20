@@ -1,4 +1,4 @@
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import styles from './LeftSlider.module.scss';
 

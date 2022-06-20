@@ -1,6 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, To, useNavigate } from 'react-router-dom';
 
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../common/commonMethods';
 import styles from './NothingPage.module.scss';
 
@@ -21,7 +21,7 @@ function NothingPage() {
 			<div className={cx('text-box')}>
 				<h1>Trang này không tồn tại!</h1>
 
-				<Link to={-1} replace>
+				<Link to={-1 as To} replace>
 					<TiArrowLeft />
 					<span>Quay lại</span>
 				</Link>

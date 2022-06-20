@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 
-//@ts-ignore
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import routeRoot from '../../../routes/index';
+
 import styles from './CenterSlider.module.scss';
 
 const cx = getClassNameModuleGenerator(styles);
@@ -10,7 +11,7 @@ function CenterSlider() {
 	const tabList = [
 		{
 			title: 'Trang chủ',
-			linkTo: '/',
+			linkTo: routeRoot.homePage.fullPath,
 		},
 		{
 			title: 'Thông báo',
@@ -21,7 +22,7 @@ function CenterSlider() {
 			linkTo: '/news',
 		},
 		{
-			title: 'Công cụ',
+			title: 'Tính năng',
 			linkTo: '/tools',
 		},
 	];

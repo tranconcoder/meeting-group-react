@@ -1,7 +1,7 @@
 import { HiLogin } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
-//@ts-ignore
+//
 import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
 import styles from './LoginButton.module.scss';
 
