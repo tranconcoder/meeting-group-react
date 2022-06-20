@@ -46,6 +46,4 @@ function addFullPath(routeList: any, currentPath: string) {
 	return routeList;
 }
 
-console.log(addFullPath(routeRoot, ''));
-
-export default routeRoot as RouteRootType;
+export default addFullPath(routeRoot, '') as RouteRootType;

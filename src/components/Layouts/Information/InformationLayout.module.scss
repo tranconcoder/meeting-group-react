@@ -7,6 +7,22 @@
 	@include position(relative);
 	@include flex(row);
 
+	> .title-box-container {
+		@include position(fixed, false, 50%, 30px);
+		color: $white;
+		transform: translate(50%, 4px) scale(0.3);
+		padding: 10px 30px;
+		border-radius: 4px;
+		background-color: rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		transition: all 300ms ease;
+
+		&.show {
+			opacity: 1;
+			transform: translate(50%, 0) scale(1);
+		}
+	}
+
 	> .left-slide-bar {
 		@include size($slideBarWidth, 100%);
 		@include position(fixed, 0, false, false, 0);

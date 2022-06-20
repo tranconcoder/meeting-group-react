@@ -1,7 +1,7 @@
-import { Route, Routes } from 'react-router-dom';
-
-import RouteListData from '../../routes';
 import type { RouteRootType, RouteType } from '../../types/routes';
+
+import { Route, Routes } from 'react-router-dom';
+import routeRoot from '../../routes';
 
 function RouteList() {
 	const renderList = (routeList: RouteRootType) => {
@@ -19,7 +19,7 @@ function RouteList() {
 		);
 	};
 
-	return <Routes>{renderList(RouteListData)}</Routes>;
+	return <Routes>{renderList(routeRoot)}</Routes>;
 }
 
 export default RouteList;

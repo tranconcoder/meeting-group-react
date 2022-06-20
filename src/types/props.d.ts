@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { CSSProperties, ReactElement, ReactNode } from 'react';
 
 // SubmitFormButton
 export interface SubmitFormButtonProps {
@@ -39,9 +39,9 @@ export interface GoogleLoginButtonProps {
 
 // ButtonProps
 export interface ButtonProps {
-	children?: string;
+	children?: ReactNode;
 	styles?: CSSProperties;
-	to?: string;
+	to?: string | number;
 }
 
 // PanelBoxProps

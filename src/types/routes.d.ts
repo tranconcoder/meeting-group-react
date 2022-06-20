@@ -11,7 +11,6 @@ export interface RouteType<T = null> {
 
 export interface RouteInformationType {
 	profile: RouteType;
-	others: RouteType;
 }
 export interface RouteRootType {
 	homePage: RouteType;

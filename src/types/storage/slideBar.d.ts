@@ -1,6 +1,7 @@
 import type { IconType } from 'react-icons';
 
 export interface SlideBarSelection {
+	id: string;
 	title: string;
 	icon: IconType;
 	path: string;

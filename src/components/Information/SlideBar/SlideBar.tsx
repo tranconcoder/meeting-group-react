@@ -1,17 +1,20 @@
-//@ts-ignore
-import { useNavigate } from 'react-router-dom';
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
-
-import slideBarSelectionList from '../../../storage/informationSlideBar';
-
 import type { SlideBarSelectionList } from '../../../types/storage/slideBar';
 
+import { useNavigate } from 'react-router-dom';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import slideBarSelectionList from '../../../storage/informationSlideBar';
+
 import styles from './SlideBar.module.scss';
+import { useState } from 'react';
 
 const cx = getClassNameModuleGenerator(styles);
 
 function InformationSlideBar() {
 	const navigate = useNavigate();
+
+	const [slideActived, setSlideActived] = useState(
+		slideBarSelectionList[0].id
+	);
 
 	const renderSlideBarSelectionList = (
 		...slideSelectionGroupList: Array<SlideBarSelectionList>
@@ -19,15 +22,19 @@ function InformationSlideBar() {
 		// Map and render groups
 		return slideSelectionGroupList.map((group, index) => (
 			<ul key={index}>
-				{group.map(({ icon: Icon, title, handleClick, path }, index) => (
+				{group.map(({ icon: Icon, id, handleClick, path }, index) => (
 					<li
 						key={index}
 						onClick={() => {
+							setSlideActived(id);
 							path && navigate(path);
 							handleClick && handleClick();
 						}}
+						className={cx({
+							active: slideActived === id,
+						})}
 					>
-						{typeof Icon === 'string' ? <img src={Icon} alt={title} /> : <Icon />}
+						<Icon />
 					</li>
 				))}
 			</ul>
@@ -35,7 +42,9 @@ function InformationSlideBar() {
 	};
 
 	return (
-		<div className={cx('slide-bar')}>{renderSlideBarSelectionList(slideBarSelectionList)}</div>
+		<div className={cx('slide-bar')}>
+			{renderSlideBarSelectionList(slideBarSelectionList)}
+		</div>
 	);
 }
 

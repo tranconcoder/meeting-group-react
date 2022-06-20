@@ -10,10 +10,6 @@ import { TiArrowLeft } from 'react-icons/ti';
 const cx = getClassNameModuleGenerator(styles);
 
 function NothingPage() {
-	const navigate = useNavigate();
-
-	const backToPreviousPage = () => navigate(-1);
-
 	return (
 		<div
 			className={cx('nothing-page')}
@@ -25,10 +21,10 @@ function NothingPage() {
 			<div className={cx('text-box')}>
 				<h1>Trang này không tồn tại!</h1>
 
-				<a onClick={backToPreviousPage}>
+				<Link to={-1} replace>
 					<TiArrowLeft />
 					<span>Quay lại</span>
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

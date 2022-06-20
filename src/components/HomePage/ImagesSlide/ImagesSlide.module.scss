@@ -66,6 +66,7 @@
 		background-color: transparent;
 		opacity: 0.2;
 		transition: all 300ms ease;
+		z-index: 1;
 
 		&:hover {
 			cursor: pointer;
@@ -80,11 +81,19 @@
 
 	> .prev-button {
 		@include position(absolute, 0, false, false, 0);
-		background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05));
+		background-image: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 0.3),
+			rgba(0, 0, 0, 0.05)
+		);
 	}
 
 	> .next-button {
 		@include position(absolute, 0, 0);
-		background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05));
+		background-image: linear-gradient(
+			-90deg,
+			rgba(0, 0, 0, 0.3),
+			rgba(0, 0, 0, 0.05)
+		);
 	}
 }

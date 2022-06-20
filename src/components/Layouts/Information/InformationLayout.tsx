@@ -1,19 +1,17 @@
-import { useState } from 'react';
+import type { InformationLayoutProps } from '../../../types/componentsType/InformationLayout';
 
-//@ts-ignore
+import { useState } from 'react';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import InformationSlideBar from '../../Information/SlideBar/SlideBar';
 
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
-import { InformationLayoutProps } from '../../../types/componentsType/InformationLayout';
-
-import styles from './InformationLayout.module.scss';
 import { TiChevronLeft } from 'react-icons/ti';
+import styles from './InformationLayout.module.scss';
 
 const cx = getClassNameModuleGenerator(styles);
 
 function InformationLayout({ ContentBoard }: InformationLayoutProps) {
 	const [hideSlideBar, setHideSlideBar] = useState(false);
-	const [titleContent, setTitleContent] = useState('');
+	const [titleContent, setTitleContent] = useState('Hello');
 
 	const handleToggleSlideBar = () => setHideSlideBar(!hideSlideBar);
 
@@ -24,7 +22,7 @@ function InformationLayout({ ContentBoard }: InformationLayoutProps) {
 					show: titleContent,
 				})}
 			>
-				<p></p>
+				<p>{titleContent}</p>
 			</div>
 
 			<div
@@ -36,7 +34,10 @@ function InformationLayout({ ContentBoard }: InformationLayoutProps) {
 					<InformationSlideBar />
 				</div>
 
-				<button className={cx('toggle-slide-bar-button')} onClick={handleToggleSlideBar}>
+				<button
+					className={cx('toggle-slide-bar-button')}
+					onClick={handleToggleSlideBar}
+				>
 					<TiChevronLeft />
 				</button>
 			</div>

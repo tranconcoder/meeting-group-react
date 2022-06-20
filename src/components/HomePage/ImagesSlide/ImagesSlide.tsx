@@ -1,6 +1,6 @@
-//@ts-ignore
 import { useEffect, useRef, useState } from 'react';
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+
 import styles from './ImagesSlide.module.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -19,24 +19,32 @@ const imageNameList: string[] = [
 
 function ImagesSlide() {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
-	const [imageList, setImageList] = useState<Array<{ default: string }>>([]);
+	const [imageList, setImageList] = useState<
+		Array<{ default: string }>
+	>([]);
 
 	const imageListRef = useRef<HTMLUListElement>(null);
 
 	const handleClickNextButton = () => {
-		setCurrentImageIndex(prev => (prev === imageList.length - 1 ? 0 : prev + 1));
+		setCurrentImageIndex(prev =>
+			prev === imageList.length - 1 ? 0 : prev + 1
+		);
 	};
 
 	const handleClickPrevButton = () => {
-		setCurrentImageIndex(prev => (prev === 0 ? imageList.length - 1 : prev - 1));
+		setCurrentImageIndex(prev =>
+			prev === 0 ? imageList.length - 1 : prev - 1
+		);
 	};
 
 	// Dynamic import imageList
 	useEffect(() => {
 		imageNameList.forEach(imageName => {
-			import(`../../../images/image-slide/${imageName}`).then(image => {
-				setImageList(prev => [...prev, image]);
-			});
+			import(`../../../images/image-slide/${imageName}`).then(
+				image => {
+					setImageList(prev => [...prev, image]);
+				}
+			);
 		});
 	}, []);
 
@@ -44,7 +52,9 @@ function ImagesSlide() {
 	useEffect(() => {
 		const imageListElm = imageListRef.current as HTMLUListElement;
 
-		imageListElm.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+		imageListElm.style.transform = `translateX(-${
+			currentImageIndex * 100
+		}%)`;
 	}, [currentImageIndex]);
 
 	// Auto next slide
@@ -59,13 +69,23 @@ function ImagesSlide() {
 	}, [currentImageIndex]);
 
 	return (
-		<div data-aos="fade-up" className={cx('images-slide-container')}>
-			<button className={cx('prev-button')} onClick={handleClickPrevButton}>
+		<div
+			data-aos="fade-up"
+			className={cx('images-slide-container')}
+		>
+			<button
+				className={cx('prev-button')}
+				onClick={handleClickPrevButton}
+			>
 				<FaChevronLeft />
 			</button>
 
 			{/* Image list */}
-			<ul className={cx('image-list')} ref={imageListRef} onScroll={e => e.preventDefault()}>
+			<ul
+				className={cx('image-list')}
+				ref={imageListRef}
+				onScroll={e => e.preventDefault()}
+			>
 				{imageList.map((image, index) => (
 					<li key={index}>
 						<img src={image.default} alt="" />
@@ -78,13 +98,20 @@ function ImagesSlide() {
 				{imageList.map((image, index) => (
 					<li
 						key={index}
-						data-active={currentImageIndex === index ? 'true' : 'false'}
+						data-active={
+							currentImageIndex === index
+								? 'true'
+								: 'false'
+						}
 						onClick={() => setCurrentImageIndex(index)}
 					></li>
 				))}
 			</ul>
 
-			<button className={cx('next-button')} onClick={handleClickNextButton}>
+			<button
+				className={cx('next-button')}
+				onClick={handleClickNextButton}
+			>
 				<FaChevronRight />
 			</button>
 		</div>
