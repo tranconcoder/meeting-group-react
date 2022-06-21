@@ -1,0 +1,96 @@
+@import '../../../../styles/package/allPackage.scss';
+
+.profile-information {
+	> h2 {
+		color: $primaryColorBlack;
+	}
+
+	> .container {
+		@include size(100%, false);
+		@include flex(row, space-between);
+		padding: 20px;
+		border-radius: 10px;
+		background-image: linear-gradient(
+			90deg,
+			$primaryColor,
+			$primaryColorBlack
+		);
+		margin-top: 10px;
+		border: 1px solid $primaryColor;
+
+		> .information {
+			flex: 1;
+			margin-top: 10px;
+			color: $white;
+
+			> .full-name {
+			}
+
+			> .id-wrapper {
+				@include flex(row, center);
+
+				> .id {
+				}
+
+				> .copy-icon-wrapper {
+					@include position(relative);
+					@include flex(row, center);
+					margin-left: 6px;
+
+					&.copied {
+						> .copied-icon {
+							visibility: visible;
+						}
+					}
+
+					> .copied-icon,
+					> .copy-icon {
+						&:hover {
+							cursor: pointer;
+
+							& ~ .title {
+								opacity: 1;
+							}
+						}
+					}
+
+					> .copied-icon {
+						@include position(absolute, 0, 0);
+						visibility: hidden;
+					}
+
+					> .title {
+						@include position(
+							absolute,
+							50%,
+							false,
+							false,
+							calc(100% + 10px)
+						);
+						font-size: 12px;
+						padding: 8px 12px;
+						border-radius: 6px;
+						background-color: $primaryColor;
+						white-space: nowrap;
+						opacity: 0;
+						transform: translateY(-50%);
+						transition: all 300ms ease;
+					}
+				}
+			}
+		}
+
+		> .avatar {
+			@include size(128px);
+			background-color: $white;
+			border-radius: inherit;
+			padding: 10px;
+
+			> img {
+				@include size(100%);
+				border-radius: inherit;
+				object-fit: cover;
+			}
+		}
+	}
+}

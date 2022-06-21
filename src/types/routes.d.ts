@@ -6,15 +6,22 @@ export interface RouteType<T = null> {
 	fullPath: string;
 	reactElement?: ReactElement;
 	customAttributes?: Omit<RouteObject, 'children'>;
-	childrenRoute?: T;
+	childrenRoute: T;
+}
+
+export interface RouteNotChildType<T = null> {
+	path: string;
+	fullPath: string;
+	reactElement?: ReactElement;
+	customAttributes?: Omit<RouteObject, 'children'>;
 }
 
 export interface RouteInformationType {
-	profile: RouteType;
+	profile: RouteNotChildType;
 }
 export interface RouteRootType {
-	homePage: RouteType;
-	authPage: RouteType;
+	homePage: RouteNotChildType;
+	authPage: RouteNotChildType;
 	informationPage: RouteType<RouteInformationType>;
-	nothingPage: RouteType;
+	nothingPage: RouteNotChildType;
 }

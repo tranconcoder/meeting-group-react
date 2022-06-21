@@ -1,20 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
-
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import styles from './LoginForm.module.scss';
 import { MdSwitchAccount } from 'react-icons/md';
 import { FaUserLock } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
 
-import InputForm from '../InputForm/InputForm';
-import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
-import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
+import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import { login } from '../../../redux/slices/auth';
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 import {
 	useAppDispatch,
 	useAppSelector,
 } from '../../../common/reduxHooks';
-import { login } from '../../../redux/slices/auth';
-import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import InputForm from '../InputForm/InputForm';
+import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
+import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
 
 const cx = getClassNameModuleGenerator(styles);
 
@@ -44,12 +44,13 @@ function LoginForm() {
 		if (usernameCheckResult && passwordCheckResult) {
 			dispatch(
 				login({
+					id: uuidv4(),
 					isLogged: true,
 					accountType: 'google',
 					email: 'tranconcoder@gmail.com',
 					username: null,
 					fullName: 'Trần Văn Còn',
-					avatar: 'https://lh3.googleusercontent.com/ogw/ADea4I5shoTR4FEGvFq0eAbpcVH-FwE9ALF7Flps5uDz=s64-c-mo',
+					avatar: 'https://lh3.googleusercontent.com/ogw/ADea4I5shoTR4FEGvFq0eAbpcVH-FwE9ALF7Flps5uDz=s128-c-mo',
 					rank: null,
 					className: null,
 				})

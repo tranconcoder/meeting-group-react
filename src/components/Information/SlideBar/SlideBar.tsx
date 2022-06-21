@@ -69,7 +69,10 @@ function InformationSlideBar({
 							onMouseLeave={handleOnMouseLeave}
 							onClick={() => {
 								setSlideActived(id);
-								path && navigate(path);
+								path &&
+									navigate(path, {
+										replace: true,
+									});
 								handleClick && handleClick();
 							}}
 							className={cx({

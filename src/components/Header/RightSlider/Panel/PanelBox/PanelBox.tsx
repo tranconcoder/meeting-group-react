@@ -52,8 +52,8 @@ function PanelBox({ showBox }: PanelBoxProps) {
 			Icon: FaUserEdit,
 			handleClick: () =>
 				navigate(
-					routeRoot.informationPage.childrenRoute?.profile
-						.fullPath || '/'
+					routeRoot.informationPage.childrenRoute.profile
+						.fullPath
 				),
 		},
 		{

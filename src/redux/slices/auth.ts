@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { InitAuthStore } from '../../types/initStore';
 
 const initialState: InitAuthStore = {
+	id: '',
 	isLogged: false,
 	accountType: null,
 	email: null,
@@ -21,7 +22,10 @@ const authSlice = createSlice({
 			return action.payload;
 		},
 		logout: () => initialState,
-		changeProfile: (state, action: PayloadAction<Partial<InitAuthStore>>) => ({
+		changeProfile: (
+			state,
+			action: PayloadAction<Partial<InitAuthStore>>
+		) => ({
 			...state,
 			...action.payload,
 		}),

@@ -5,7 +5,7 @@ import { RouteRootType, RouteType } from '../types/routes';
 
 import informationRoute from './informationRoute';
 
-const routeRoot: RouteRootType = {
+const routeRoot: RouteRootType = getAndFormatRouteRoot({
 	homePage: {
 		path: '',
 		fullPath: '',
@@ -26,9 +26,12 @@ const routeRoot: RouteRootType = {
 		fullPath: '',
 		reactElement: <NothingPage />,
 	},
-};
+});
 
-function addFullPath(routeList: any, currentPath: string) {
+function getAndFormatRouteRoot(
+	routeList: any,
+	currentPath: string = ''
+) {
 	for (const key in routeList) {
 		const route: RouteType =
 			routeList[key as keyof RouteRootType];
@@ -43,7 +46,7 @@ function addFullPath(routeList: any, currentPath: string) {
 		routeToAdd.fullPath = `${currentPath}/${routeToAdd.path}`;
 
 		if (routeToAdd.childrenRoute) {
-			addFullPath(
+			getAndFormatRouteRoot(
 				routeToAdd.childrenRoute,
 				routeToAdd.fullPath
 			);
@@ -53,4 +56,4 @@ function addFullPath(routeList: any, currentPath: string) {
 	return routeList;
 }
 
-export default addFullPath(routeRoot, '') as RouteRootType;
+export default routeRoot;
