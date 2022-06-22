@@ -1,28 +1,43 @@
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
-import { useAppSelector } from '../../../../common/reduxHooks';
-import { useState } from 'react';
-import { QRCodeSVG } from 'qrcode.react';
-
-import styles from './InformationBox.module.scss';
-import { RiFileCopyFill, RiFileCopyLine } from 'react-icons/ri';
+import { HiDownload } from 'react-icons/hi';
+import { IoMdEye } from 'react-icons/io';
+import { FaStickyNote, FaUserCircle } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import defaultAvatar from '../../../../images/default-avatar-2.png';
+import styles from './InformationBox.module.scss';
+
+import { useRef } from 'react';
+import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import {
+	useAppDispatch,
+	useAppSelector,
+} from '../../../../common/reduxHooks';
+import { setDataToPreview } from '../../../../redux/slices/qrCode';
+
+import CopyButton from '../../../Common/CopyButton/CopyButton';
+import QRCode from '../../../Common/QRCode/QRCode';
 
 const cx = getClassNameModuleGenerator(styles);
 
 function InformationBox() {
-	const [copied, setCopied] = useState(false);
+	let { current: downloadQrAction } = useRef<() => any>();
+
 	const {
-		username,
-		avatar,
-		fullName,
 		id: userId,
+		avatar,
+		username,
+		fullName,
+		email,
+		className,
+		description,
 	} = useAppSelector(state => state.auth);
 
-	const handleCopyUserId = () => {
-		navigator.clipboard.writeText(userId);
-		setCopied(true);
+	const dispatch = useAppDispatch();
 
-		setTimeout(() => setCopied(false), 3000);
+	const showPreviewQrCode = () => {
+		dispatch(setDataToPreview(avatar || defaultAvatar));
+	};
+	const getDownloadQrAction = (downloadAction: () => any) => {
+		downloadQrAction = downloadAction;
 	};
 
 	return (
@@ -33,30 +48,52 @@ function InformationBox() {
 				<div className={cx('information')}>
 					<h2 className={cx('full-name')}>{fullName}</h2>
 
-					<p className={cx('id-wrapper')}>
+					<div className={cx('id-wrapper')}>
 						<span className={cx('id')}>{userId}</span>
+						<CopyButton
+							content={userId}
+							duration={3000}
+						/>
+					</div>
 
-						<span
-							className={cx('copy-icon-wrapper', {
-								copied,
-							})}
-							onClick={handleCopyUserId}
-						>
-							<RiFileCopyLine
-								className={cx('copy-icon')}
-							/>
+					<div className={cx('email-wrapper')}>
+						<MdEmail />
+						<span>{email}</span>
+					</div>
 
-							<RiFileCopyFill
-								className={cx('copied-icon')}
-							/>
+					<div className={cx('class-name-wrapper')}>
+						<FaStickyNote />
+						<span>{className}</span>
+					</div>
 
-							<p className={cx('title')}>
-								{copied
-									? 'Đã sao chép'
-									: 'Nhấn để sao chép'}
-							</p>
-						</span>
-					</p>
+					<div className={cx('description-wrapper')}>
+						<pre>{description}</pre>
+					</div>
+				</div>
+
+				<div className={cx('qr-code-wrapper')}>
+					<QRCode
+						style={{
+							background: '#fff',
+							padding: '10px',
+							borderRadius: '10px',
+						}}
+						getDownloadAction={getDownloadQrAction}
+						size={128}
+						value={avatar || defaultAvatar}
+					/>
+
+					<IoMdEye
+						className={cx('preview-button')}
+						onClick={showPreviewQrCode}
+					/>
+
+					<HiDownload
+						onClick={() =>
+							downloadQrAction && downloadQrAction()
+						}
+						className={cx('download-button')}
+					/>
 				</div>
 
 				<div className={cx('avatar')}>
@@ -65,8 +102,6 @@ function InformationBox() {
 						alt={username || 'user-avatar'}
 					/>
 				</div>
-
-				<QRCodeSVG value={avatar || ''} />
 			</div>
 		</section>
 	);

@@ -16,4 +16,11 @@ export interface InitAuthStore {
 		| 'admin'
 		| 'owner';
 	className: null | string | string[];
+	sharedUrl: string;
+	description: string;
+}
+
+// qrCode store
+export interface InitQrCodeStore {
+	dataToPreview: string;
 }

@@ -18,7 +18,8 @@ export const getClassNameModuleGenerator =
 			if (typeof selector === 'object') {
 				for (const key in selector) {
 					if (selector[key]) {
-						classNameList += ' ' + clsx(stylesObject[key]);
+						classNameList +=
+							' ' + clsx(stylesObject[key]);
 					}
 				}
 			}
@@ -48,4 +49,9 @@ export const isSpecialLetter = (str: string) => {
 	const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 	return specialChars.test(str);
+};
+
+export const copyToClipBoard = (blob: Blob) => {
+	const dataToCopy = [new ClipboardItem({ [blob.type]: blob })];
+	navigator.clipboard.write(dataToCopy);
 };

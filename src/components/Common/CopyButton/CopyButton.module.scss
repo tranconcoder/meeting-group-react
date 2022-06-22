@@ -1,0 +1,16 @@
+.copied-icon,
+.copy-icon {
+	display: none;
+
+	&.visible {
+		display: block;
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		& ~ .title {
+			opacity: 1;
+		}
+	}
+}

@@ -12,6 +12,8 @@ const initialState: InitAuthStore = {
 	avatar: null,
 	rank: null,
 	className: null,
+	sharedUrl: '',
+	description: '',
 };
 
 const authSlice = createSlice({

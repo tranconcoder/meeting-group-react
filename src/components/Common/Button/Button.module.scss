@@ -1,4 +1,4 @@
-@import "../../../styles/package/allPackage.scss";
+@import '../../../styles/package/allPackage.scss';
 
 .button {
 	padding: 8px 16px;
@@ -17,6 +17,7 @@
 	}
 
 	> p {
+		@include flex(row, center);
 		color: $primaryColor;
 		font-size: 14px;
 		font-weight: 600;

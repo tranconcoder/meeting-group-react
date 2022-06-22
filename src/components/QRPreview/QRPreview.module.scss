@@ -1,0 +1,78 @@
+@import '../../styles/package/allPackage.scss';
+
+.qr-code-preview-wrapper {
+	@include position(fixed, 0, 0, 0, 0);
+	animation: showQrCodePreview 400ms ease forwards;
+	z-index: 1000;
+
+	> .qr-code-preview-box {
+		$paddingEdge: 10px;
+
+		@include size(auto);
+		@include position(absolute, 50%, 50%);
+		transform: translate(50%, -50%);
+		padding: $paddingEdge;
+		border-radius: 10px;
+		background-color: $white;
+		z-index: 2;
+
+		> .header {
+			@include flex(row, center, space-between);
+			border-bottom: 1px solid #eee;
+			padding-bottom: $paddingEdge;
+			font-size: 16px;
+
+			> svg {
+				font-size: 1.3em;
+				padding: 6px;
+				box-sizing: content-box;
+				border-radius: 4px;
+				transition: all 300ms ease;
+
+				&:hover {
+					background-color: #eee;
+					cursor: pointer;
+				}
+			}
+		}
+
+		.download-button,
+		.copy-button {
+			@include size(100%, false);
+			@include flex(row, center);
+			padding: 10px;
+			border-radius: 4px;
+			background-color: $primaryColor;
+			color: $white;
+			font-size: 15px;
+			margin-top: 10px;
+
+			&:hover {
+				opacity: 0.8;
+				cursor: pointer;
+			}
+
+			> svg {
+				font-size: 1.3em;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	> .background {
+		@include position(absolute, 0, 0, 0, 0);
+		background-color: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+	}
+
+	@keyframes showQrCodePreview {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+}

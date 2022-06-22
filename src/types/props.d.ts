@@ -1,4 +1,12 @@
-import React, { CSSProperties, ReactElement, ReactNode } from 'react';
+import React, {
+	CSSProperties,
+	Dispatch,
+	PropsWithChildren,
+	ReactElement,
+	ReactNode,
+	SetStateAction,
+} from 'react';
+import { JsxElement } from 'typescript';
 
 // SubmitFormButton
 export interface SubmitFormButtonProps {
@@ -9,7 +17,10 @@ export interface SubmitFormButtonProps {
 // InputForm
 export interface InputFormProps {
 	placeholder: string;
-	state: [stateValue: string, setStateValue: (newValue: string) => any];
+	state: [
+		stateValue: string,
+		setStateValue: (newValue: string) => any
+	];
 	type?: 'text' | 'password';
 	Icon?: React.FC;
 	styles?: CSSProperties;
@@ -51,5 +62,47 @@ export interface PanelBoxProps {
 
 // Layout1Props
 export interface Layout1Props {
-	Body: React.FunctionComponent;
+	Body: PropsWithChildren;
+}
+
+export interface AddTitleProps {
+	children: ReactNode;
+	title: string;
+	onClick?: (
+		titleState: string,
+		setTitleState: Dispatch<SetStateAction<string>>
+	) => void;
+}
+
+// QRCodeProps
+type QRProps = {
+	value: string;
+	size: number;
+	level: string;
+	bgColor: string;
+	fgColor: string;
+	style?: CSSProperties;
+	includeMargin: boolean;
+	imageSettings?: {
+		src: string;
+		height: number;
+		width: number;
+		excavate: boolean;
+		x?: number;
+		y?: number;
+	};
+};
+
+// QRCodeProps
+export interface QRCodeProps extends Partial<QRProps> {
+	value: string;
+	getCanvas?: (element: HTMLCanvasElement) => any;
+	getDownloadAction?: (downloadAction: () => any) => any;
+}
+
+// CopyButtonProps
+export interface CopyButtonProps {
+	duration?: number;
+	content: string;
+	style?: CSSProperties;
 }

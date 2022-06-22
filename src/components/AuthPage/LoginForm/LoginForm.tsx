@@ -52,7 +52,9 @@ function LoginForm() {
 					fullName: 'Trần Văn Còn',
 					avatar: 'https://lh3.googleusercontent.com/ogw/ADea4I5shoTR4FEGvFq0eAbpcVH-FwE9ALF7Flps5uDz=s128-c-mo',
 					rank: null,
-					className: null,
+					className: '12A12',
+					sharedUrl: 'https://www.google.com/',
+					description: `Officia consequat dolor exercitation cillum sunt commodo aute. Deserunt laborum est commodo consectetur est fugiat voluptate consectetur voluptate exercitation. Cupidatat fugiat eiusmod est nisi ex.\n\nUllamco sint veniam enim cupidatat culpa commodo officia sit dolore non consequat. Laborum quis exercitation magna tempor. Pariatur nulla mollit dolor do magna aliquip fugiat dolor. Tempor commodo laborum cupidatat exercitation eu elit aliqua do eiusmod. Reprehenderit duis labore aute do enim cillum reprehenderit. Nisi Lorem nisi consequat eiusmod magna laborum deserunt laborum cillum culpa. Fugiat culpa Lorem laboris consectetur ad ullamco veniam laboris.`,
 				})
 			);
 		}
