@@ -6,6 +6,7 @@ import React, {
 	ReactNode,
 	SetStateAction,
 } from 'react';
+import { IconType } from 'react-icons';
 import { JsxElement } from 'typescript';
 
 // SubmitFormButton
@@ -22,7 +23,7 @@ export interface InputFormProps {
 		setStateValue: (newValue: string) => any
 	];
 	type?: 'text' | 'password';
-	Icon?: React.FC;
+	Icon?: IconType;
 	styles?: CSSProperties;
 	toggleVisiblePassword?: boolean;
 	validates?: Partial<{
@@ -104,5 +105,19 @@ export interface QRCodeProps extends Partial<QRProps> {
 export interface CopyButtonProps {
 	duration?: number;
 	content: string;
+	style?: CSSProperties;
+}
+
+// InformationPage
+// ProfilePage
+// Title
+export interface InformationPageProfileTitleProps {
+	content: string;
+	tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+	icon?: {
+		src: IconType;
+		scale: number;
+		style?: CSSProperties;
+	};
 	style?: CSSProperties;
 }

@@ -1,0 +1,10 @@
+@import '../../../../styles/package/allPackage.scss';
+
+.title {
+	@include flex(row, center);
+	color: $primaryColor;
+
+	> svg {
+		font-size: 1.4em;
+	}
+}

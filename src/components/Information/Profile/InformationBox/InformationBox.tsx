@@ -15,6 +15,8 @@ import { setDataToPreview } from '../../../../redux/slices/qrCode';
 
 import CopyButton from '../../../Common/CopyButton/CopyButton';
 import QRCode from '../../../Common/QRCode/QRCode';
+import { FiUser } from 'react-icons/fi';
+import Title from '../Title/Title';
 
 const cx = getClassNameModuleGenerator(styles);
 
@@ -42,7 +44,16 @@ function InformationBox() {
 
 	return (
 		<section className={cx('profile-information')}>
-			<h2>Thông tin tài khoản</h2>
+			<Title
+				tag="h2"
+				content="Thông tin tài khoản"
+				icon={{
+					src: FiUser,
+					scale: 1.2,
+					style: { marginRight: 4 },
+				}}
+				style={{ alignItems: 'flex-start' }}
+			/>
 
 			<div className={cx('container')}>
 				<div className={cx('information')}>

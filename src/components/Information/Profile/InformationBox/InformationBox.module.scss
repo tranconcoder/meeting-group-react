@@ -2,7 +2,7 @@
 
 .profile-information {
 	> h2 {
-		color: $primaryColorBlack;
+		color: $primaryColor;
 	}
 
 	> .container {
@@ -45,10 +45,6 @@
 				> span {
 					margin-left: 10px;
 				}
-
-				> pre {
-					white-space: pre-wrap;
-				}
 			}
 
 			> .email-wrapper {
@@ -61,6 +57,15 @@
 				> svg {
 					font-size: 25px;
 					margin-left: 1px;
+				}
+			}
+
+			> .description-wrapper {
+				margin-top: 30px;
+
+				> pre {
+					font-size: 15px;
+					white-space: pre-wrap;
 				}
 			}
 		}

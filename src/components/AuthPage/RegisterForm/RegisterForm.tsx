@@ -8,7 +8,7 @@ import { CgRename } from 'react-icons/cg';
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 import { InputFormProps } from '../../../types/props';
 
-import InputForm from '../InputForm/InputForm';
+import InputForm from '../../Common/InputForm/InputForm';
 import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
 
 import styles from './RegisterForm.module.scss';

@@ -1,0 +1,16 @@
+@import '../../../../styles/package/allPackage.scss';
+
+.container {
+	margin-top: 20px;
+
+	> h2.title {
+		@include flex(row, center);
+		color: $primaryColor;
+		font-size: 24px;
+
+		> svg {
+			font-size: 1.3em;
+			margin-right: 4px;
+		}
+	}
+}

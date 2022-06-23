@@ -12,7 +12,7 @@ import {
 	useAppSelector,
 } from '../../../common/reduxHooks';
 import { v4 as uuidv4 } from 'uuid';
-import InputForm from '../InputForm/InputForm';
+import InputForm from '../../Common/InputForm/InputForm';
 import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
 import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
 
