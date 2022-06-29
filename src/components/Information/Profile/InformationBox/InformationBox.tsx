@@ -1,6 +1,6 @@
 import { HiDownload } from 'react-icons/hi';
 import { IoMdEye } from 'react-icons/io';
-import { FaStickyNote, FaUserCircle } from 'react-icons/fa';
+import { FaStickyNote } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import defaultAvatar from '../../../../images/default-avatar-2.png';
 import styles from './InformationBox.module.scss';

@@ -1,9 +1,13 @@
-import AuthPage from '../pages/AuthPage/AuthPage';
-import HomePage from '../pages/HomePage/HomePage';
-import NothingPage from '../pages/NothingPage/NothingPage';
 import { RouteRootType, RouteType } from '../types/routes';
 
 import informationRoute from './informationRoute';
+import * as Yup from 'yup';
+
+import FormikForm from '../components/Common/Form/Form';
+import Input from '../components/Common/Form/Input/Input';
+import AuthPage from '../pages/AuthPage/AuthPage';
+import HomePage from '../pages/HomePage/HomePage';
+import NothingPage from '../pages/NothingPage/NothingPage';
 
 const routeRoot: RouteRootType = getAndFormatRouteRoot({
 	homePage: {

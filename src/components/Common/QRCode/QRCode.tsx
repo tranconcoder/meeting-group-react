@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { QRCodeProps } from '../../../types/props';
 
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
 // import styles from './QRCode.module.scss';
 import { QRCodeCanvas } from 'qrcode.react';
 
@@ -32,6 +31,8 @@ function QRCode({
 				link.remove();
 			});
 		}
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	// Received canvasElement to parent component
@@ -40,6 +41,8 @@ function QRCode({
 			qrCodeWrapperRef.current.querySelector('canvas');
 
 		if (getCanvas) getCanvas(qrCodeElement);
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

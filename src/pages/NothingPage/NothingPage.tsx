@@ -1,4 +1,4 @@
-import { Link, To, useNavigate } from 'react-router-dom';
+import { Link, To } from 'react-router-dom';
 
 //
 import { getClassNameModuleGenerator } from '../../common/commonMethods';

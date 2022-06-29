@@ -14,7 +14,7 @@ function SubmitFormButton({
 	return (
 		<button
 			className={cx('button')}
-			type="button"
+			type="submit"
 			onClick={() => handleClick && handleClick()}
 		>
 			<p>{content}</p>

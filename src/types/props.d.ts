@@ -1,4 +1,4 @@
-import React, {
+import type {
 	CSSProperties,
 	Dispatch,
 	PropsWithChildren,
@@ -6,8 +6,10 @@ import React, {
 	ReactNode,
 	SetStateAction,
 } from 'react';
-import { IconType } from 'react-icons';
-import { JsxElement } from 'typescript';
+import type { IconType } from 'react-icons';
+import type { ObjectAnyKey } from './common';
+
+import { object as YupObject } from 'yup';
 
 // SubmitFormButton
 export interface SubmitFormButtonProps {
@@ -16,32 +18,15 @@ export interface SubmitFormButtonProps {
 }
 
 // InputForm
-export interface InputFormProps {
-	placeholder: string;
-	state: [
-		stateValue: string,
-		setStateValue: (newValue: string) => any
-	];
+export interface InputProps {
+	placeholder?: string;
 	type?: 'text' | 'password';
+	isFastField?: boolean;
 	Icon?: IconType;
 	styles?: CSSProperties;
 	toggleVisiblePassword?: boolean;
-	validates?: Partial<{
-		required: boolean;
-		minLength: number;
-		maxLength: number;
-		isEmail: boolean;
-		invalidSymbol: string[];
-		number: 'some' | 'every';
-		upperCase: 'some' | 'every';
-		lowerCase: 'some' | 'every';
-		specialLetter: 'some' | 'every';
-		equalTo: {
-			label: string;
-			value: string;
-		};
-	}>;
 	getValidateHandler?: [{ current: any }, (cloneObject: {}) => any];
+	name: string;
 }
 
 // GoogleLoginButton
@@ -120,4 +105,17 @@ export interface InformationPageProfileTitleProps {
 		style?: CSSProperties;
 	};
 	style?: CSSProperties;
+}
+
+// FormProps
+const yupObject = YupObject();
+export interface FormProps {
+	initialValues: ObjectAnyKey;
+	onSubmit: (
+		values: Values,
+		formikHelpers?: FormikHelpers<Values>
+	) => void;
+	validationSchema: typeof yupObject;
+	children: ReactNode;
+	className?: string;
 }

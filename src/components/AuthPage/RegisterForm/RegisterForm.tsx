@@ -1,126 +1,90 @@
-import { useState, useRef } from 'react';
-
+import styles from './RegisterForm.module.scss';
 import { MdPersonAdd } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { HiOutlineMail } from 'react-icons/hi';
 import { CgRename } from 'react-icons/cg';
 
+import FormikForm from '../../Common/Form/Form';
+import {
+	emailValidate,
+	fullNameValidate,
+	getRetypePasswordValidate,
+	passwordValidate,
+	usernameValidate,
+} from '../../../config/validateConfig';
 import { getClassNameModuleGenerator } from '../../../common/commonMethods';
-import { InputFormProps } from '../../../types/props';
+import * as Yup from 'yup';
 
-import InputForm from '../../Common/InputForm/InputForm';
 import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
-
-import styles from './RegisterForm.module.scss';
+import Input from '../../Common/Form/Input/Input';
+import { FaUser } from 'react-icons/fa';
 
 const cx = getClassNameModuleGenerator(styles);
 
 function RegisterForm() {
-	const [fullName, setFullName] = useState('');
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [retypePassword, setRetypePassword] = useState('');
-	const [, reRenderComponent] = useState({});
-
-	const fullNameValidateHandler = useRef<any>();
-	const emailValidateHandler = useRef<any>();
-	const passwordValidateHandler = useRef<any>();
-	const retypePasswordValidateHandler = useRef<any>();
-
-	const inputList: InputFormProps[] = [
-		{
-			placeholder: 'Họ và tên',
-			state: [fullName, setFullName],
-			Icon: CgRename,
-			validates: {
-				required: true,
-				minLength: 2,
-				maxLength: 30,
-			},
-			getValidateHandler: [
-				fullNameValidateHandler,
-				reRenderComponent,
-			],
-		},
-		{
-			placeholder: 'Địa chỉ email',
-			state: [email, setEmail],
-			Icon: HiOutlineMail,
-			validates: { required: true, isEmail: true },
-			getValidateHandler: [
-				emailValidateHandler,
-				reRenderComponent,
-			],
-		},
-		{
-			type: 'password',
-			placeholder: 'Mật khẩu',
-			state: [password, setPassword],
-			Icon: RiLockPasswordLine,
-			validates: {
-				required: true,
-				minLength: 8,
-				maxLength: 30,
-				upperCase: 'some',
-				lowerCase: 'some',
-				number: 'some',
-				specialLetter: 'some',
-			},
-			toggleVisiblePassword: true,
-			getValidateHandler: [
-				passwordValidateHandler,
-				reRenderComponent,
-			],
-		},
-		{
-			type: 'password',
-			placeholder: 'Xác nhận mật khẩu',
-			state: [retypePassword, setRetypePassword],
-			Icon: RiLockPasswordLine,
-			validates: {
-				required: true,
-				equalTo: {
-					value: password,
-					label: 'Mật khẩu trước đó',
-				},
-			},
-			toggleVisiblePassword: true,
-			getValidateHandler: [
-				retypePasswordValidateHandler,
-				reRenderComponent,
-			],
-		},
-	];
-
-	const handleSubmitButton = () => {
-		fullNameValidateHandler.current(true);
-		emailValidateHandler.current(true);
-		passwordValidateHandler.current(true);
-		retypePasswordValidateHandler.current(true);
+	const formInitialValues = {
+		username: '',
+		fullName: '',
+		email: '',
+		password: '',
+		retypePassword: '',
 	};
+	const validationsSchema = Yup.object({
+		username: usernameValidate,
+		fullName: fullNameValidate,
+		email: emailValidate,
+		password: passwordValidate,
+		retypePassword: getRetypePasswordValidate('password'),
+	});
 
 	return (
-		<div className={cx('register-form')}>
+		<FormikForm
+			className={cx('register-form')}
+			initialValues={formInitialValues}
+			onSubmit={() => console.log('submited')}
+			validationSchema={validationsSchema}
+		>
 			<h3 className={cx('title')}>
 				<MdPersonAdd />
 				<span>Tạo tài khoản mới</span>
 			</h3>
 
 			<div className={cx('input-container')}>
-				{inputList.map((input, index) => (
-					<InputForm
-						{...input}
-						key={index}
-						styles={{ marginTop: 30 }}
-					/>
-				))}
+				<Input
+					name="username"
+					placeholder="Tên đăng nhập..."
+					Icon={FaUser}
+				/>
+
+				<Input
+					name="email"
+					placeholder="Địa chỉ email..."
+					Icon={HiOutlineMail}
+				/>
+
+				<Input
+					name="fullName"
+					placeholder="Họ và tên..."
+					Icon={CgRename}
+				/>
+
+				<Input
+					name="password"
+					type="password"
+					placeholder="Mật khẩu..."
+					Icon={RiLockPasswordLine}
+				/>
+
+				<Input
+					name="retypePassword"
+					type="password"
+					placeholder="Xác nhận mật khẩu..."
+					Icon={RiLockPasswordLine}
+				/>
 			</div>
 
-			<SubmitFormButton
-				content="Tạo tài khoản"
-				handleClick={handleSubmitButton}
-			/>
-		</div>
+			<SubmitFormButton content="Tạo tài khoản" />
+		</FormikForm>
 	);
 }
 

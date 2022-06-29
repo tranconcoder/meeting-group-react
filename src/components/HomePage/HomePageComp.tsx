@@ -5,8 +5,6 @@ import styles from './HomePageComp.module.scss';
 import ImagesSlide from './ImagesSlide/ImagesSlide';
 import Users from './Users/Users';
 
-import AnalysisImage from '../../images/analysis-2.svg';
-
 const cx = getClassNameModuleGenerator(styles);
 
 function HomePageComp() {

@@ -1,7 +1,6 @@
 import { IoIosCopy, IoMdClose } from 'react-icons/io';
 import styles from './QRPreview.module.scss';
 
-import { QRCodeCanvas } from 'qrcode.react';
 import { Dispatch, Fragment, SetStateAction, useRef } from 'react';
 import { HiFolderDownload } from 'react-icons/hi';
 import {
