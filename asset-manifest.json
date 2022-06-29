@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/meeting-group-react/static/css/main.9625a7e3.css",
-    "main.js": "/meeting-group-react/static/js/main.d954c5a7.js",
-    "static/js/529.1612462e.chunk.js": "/meeting-group-react/static/js/529.1612462e.chunk.js",
-    "static/js/474.bfc66c81.chunk.js": "/meeting-group-react/static/js/474.bfc66c81.chunk.js",
+    "main.css": "/meeting-group-react/static/css/main.e20a5d76.css",
+    "main.js": "/meeting-group-react/static/js/main.a0e571d8.js",
+    "static/js/529.f5f26237.chunk.js": "/meeting-group-react/static/js/529.f5f26237.chunk.js",
+    "static/js/474.9c31c49c.chunk.js": "/meeting-group-react/static/js/474.9c31c49c.chunk.js",
     "static/js/611.4a1456f1.chunk.js": "/meeting-group-react/static/js/611.4a1456f1.chunk.js",
-    "static/js/925.f031599e.chunk.js": "/meeting-group-react/static/js/925.f031599e.chunk.js",
-    "static/js/762.265a951b.chunk.js": "/meeting-group-react/static/js/762.265a951b.chunk.js",
-    "static/js/432.9f258f78.chunk.js": "/meeting-group-react/static/js/432.9f258f78.chunk.js",
-    "static/js/873.8e5e8257.chunk.js": "/meeting-group-react/static/js/873.8e5e8257.chunk.js",
-    "static/js/172.2db64c15.chunk.js": "/meeting-group-react/static/js/172.2db64c15.chunk.js",
+    "static/js/925.48f91d46.chunk.js": "/meeting-group-react/static/js/925.48f91d46.chunk.js",
+    "static/js/762.2e312307.chunk.js": "/meeting-group-react/static/js/762.2e312307.chunk.js",
+    "static/js/432.790ec53b.chunk.js": "/meeting-group-react/static/js/432.790ec53b.chunk.js",
+    "static/js/873.0ff9cb8e.chunk.js": "/meeting-group-react/static/js/873.0ff9cb8e.chunk.js",
+    "static/js/172.c08e1434.chunk.js": "/meeting-group-react/static/js/172.c08e1434.chunk.js",
     "static/js/787.3ef64d51.chunk.js": "/meeting-group-react/static/js/787.3ef64d51.chunk.js",
     "static/media/image-slide-8.jpg": "/meeting-group-react/static/media/image-slide-8.5b1f0328198b37b14a35.jpg",
     "static/media/image-slide-6.jpg": "/meeting-group-react/static/media/image-slide-6.8d2d950ace86ab5484cf.jpg",
@@ -19,17 +19,17 @@
     "static/media/image-slide-3.jpg": "/meeting-group-react/static/media/image-slide-3.3f58780c2e09e90368fb.jpg",
     "static/media/image-slide-2.jpg": "/meeting-group-react/static/media/image-slide-2.a9fa842781637921928a.jpg",
     "static/media/image-slide-1.jpg": "/meeting-group-react/static/media/image-slide-1.52985db59a4edb9b051e.jpg",
-    "static/media/auth-form-left-slide-thumb-2.svg": "/meeting-group-react/static/media/auth-form-left-slide-thumb-2.1141d72474f4b718b98be144c98a3639.svg",
+    "static/media/auth-form-left-slide-thumb-2.svg": "/meeting-group-react/static/media/auth-form-left-slide-thumb-2.ee71e7c8943b2d3ccbc7885675557c68.svg",
     "static/media/home-thumb.svg": "/meeting-group-react/static/media/home-thumb.d45e41b75243effb6d2151b256985681.svg",
-    "static/media/nothing-background.svg": "/meeting-group-react/static/media/nothing-background.d7299a45f47c62ce1525de587c0858fe.svg",
+    "static/media/nothing-background.svg": "/meeting-group-react/static/media/nothing-background.004f4cf7b8a87726adb535693ca4e61b.svg",
     "static/media/user-list-slide-thumb-2.svg": "/meeting-group-react/static/media/user-list-slide-thumb-2.cda9efca279d8af81deae41031a6e08d.svg",
     "index.html": "/meeting-group-react/index.html",
-    "main.9625a7e3.css.map": "/meeting-group-react/static/css/main.9625a7e3.css.map",
-    "main.d954c5a7.js.map": "/meeting-group-react/static/js/main.d954c5a7.js.map",
+    "main.e20a5d76.css.map": "/meeting-group-react/static/css/main.e20a5d76.css.map",
+    "main.a0e571d8.js.map": "/meeting-group-react/static/js/main.a0e571d8.js.map",
     "787.3ef64d51.chunk.js.map": "/meeting-group-react/static/js/787.3ef64d51.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9625a7e3.css",
-    "static/js/main.d954c5a7.js"
+    "static/css/main.e20a5d76.css",
+    "static/js/main.a0e571d8.js"
   ]
 }
