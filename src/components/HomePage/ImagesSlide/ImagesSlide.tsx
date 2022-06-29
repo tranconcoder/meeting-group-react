@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 
 import styles from './ImagesSlide.module.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 const imageNameList: string[] = [
 	'image-slide-1.jpg',
@@ -19,9 +19,7 @@ const imageNameList: string[] = [
 
 function ImagesSlide() {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
-	const [imageList, setImageList] = useState<
-		Array<{ default: string }>
-	>([]);
+	const [imageList, setImageList] = useState<Array<{ default: string }>>([]);
 
 	const imageListRef = useRef<HTMLUListElement>(null);
 
@@ -40,11 +38,9 @@ function ImagesSlide() {
 	// Dynamic import imageList
 	useEffect(() => {
 		imageNameList.forEach(imageName => {
-			import(`../../../images/image-slide/${imageName}`).then(
-				image => {
-					setImageList(prev => [...prev, image]);
-				}
-			);
+			import(`../../../images/image-slide/${imageName}`).then(image => {
+				setImageList(prev => [...prev, image]);
+			});
 		});
 	}, []);
 
@@ -69,10 +65,7 @@ function ImagesSlide() {
 	}, [currentImageIndex]);
 
 	return (
-		<div
-			data-aos="fade-up"
-			className={cx('images-slide-container')}
-		>
+		<div data-aos="fade-up" className={cx('images-slide-container')}>
 			<button
 				className={cx('prev-button')}
 				onClick={handleClickPrevButton}
@@ -99,9 +92,7 @@ function ImagesSlide() {
 					<li
 						key={index}
 						data-active={
-							currentImageIndex === index
-								? 'true'
-								: 'false'
+							currentImageIndex === index ? 'true' : 'false'
 						}
 						onClick={() => setCurrentImageIndex(index)}
 					></li>

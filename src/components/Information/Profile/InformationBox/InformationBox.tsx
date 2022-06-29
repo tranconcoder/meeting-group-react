@@ -6,11 +6,8 @@ import defaultAvatar from '../../../../images/default-avatar-2.png';
 import styles from './InformationBox.module.scss';
 
 import { useRef } from 'react';
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
-import {
-	useAppDispatch,
-	useAppSelector,
-} from '../../../../common/reduxHooks';
+import classNames from 'classnames/bind';
+import { useAppDispatch, useAppSelector } from '../../../../common/reduxHooks';
 import { setDataToPreview } from '../../../../redux/slices/qrCode';
 
 import CopyButton from '../../../Common/CopyButton/CopyButton';
@@ -18,7 +15,7 @@ import QRCode from '../../../Common/QRCode/QRCode';
 import { FiUser } from 'react-icons/fi';
 import Title from '../Title/Title';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function InformationBox() {
 	let { current: downloadQrAction } = useRef<() => any>();
@@ -61,10 +58,7 @@ function InformationBox() {
 
 					<div className={cx('id-wrapper')}>
 						<span className={cx('id')}>{userId}</span>
-						<CopyButton
-							content={userId}
-							duration={3000}
-						/>
+						<CopyButton content={userId} duration={3000} />
 					</div>
 
 					<div className={cx('email-wrapper')}>
@@ -100,9 +94,7 @@ function InformationBox() {
 					/>
 
 					<HiDownload
-						onClick={() =>
-							downloadQrAction && downloadQrAction()
-						}
+						onClick={() => downloadQrAction && downloadQrAction()}
 						className={cx('download-button')}
 					/>
 				</div>

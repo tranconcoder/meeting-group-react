@@ -1,16 +1,13 @@
 import React from 'react';
 
 //
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import { SubmitFormButtonProps } from '../../../types/props';
 import styles from './SubmitFormButton.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
-function SubmitFormButton({
-	content,
-	handleClick,
-}: SubmitFormButtonProps) {
+function SubmitFormButton({ content, handleClick }: SubmitFormButtonProps) {
 	return (
 		<button
 			className={cx('button')}

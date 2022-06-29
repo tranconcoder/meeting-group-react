@@ -1,11 +1,11 @@
 import styles from './Title.module.scss';
 
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import { InformationPageProfileTitleProps } from '../../../../types/props';
 import { CSSProperties } from 'react';
 import { FaHome } from 'react-icons/fa';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Title({
 	content,

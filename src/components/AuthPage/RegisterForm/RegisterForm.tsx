@@ -12,14 +12,14 @@ import {
 	passwordValidate,
 	usernameValidate,
 } from '../../../config/validateConfig';
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import * as Yup from 'yup';
 
 import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
 import Input from '../../Common/Form/Input/Input';
 import { FaUser } from 'react-icons/fa';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function RegisterForm() {
 	const formInitialValues = {

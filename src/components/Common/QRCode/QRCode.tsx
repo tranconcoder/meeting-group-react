@@ -4,7 +4,7 @@ import { QRCodeProps } from '../../../types/props';
 // import styles from './QRCode.module.scss';
 import { QRCodeCanvas } from 'qrcode.react';
 
-// const cx = getClassNameModuleGenerator(styles);
+// const cx = classNames.bind(styles);
 
 function QRCode({
 	value,
@@ -24,9 +24,7 @@ function QRCode({
 				const link = document.createElement('a');
 
 				link.download = 'qrCode.jpg';
-				link.href = (
-					qrCodeElement as HTMLCanvasElement
-				).toDataURL();
+				link.href = (qrCodeElement as HTMLCanvasElement).toDataURL();
 				link.click();
 				link.remove();
 			});

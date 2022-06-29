@@ -4,7 +4,7 @@ import type {
 } from '../../../types/componentsType/InformationSlideBar';
 import type { SlideBarSelectionList } from '../../../types/storage/slideBar';
 
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import slideBarSelectionList from '../../../storage/informationSlideBar';
 
 import styles from './SlideBar.module.scss';
@@ -12,7 +12,7 @@ import styles from './SlideBar.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useRef, useState } from 'react';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function InformationSlideBar({
 	titleContent,
@@ -57,15 +57,10 @@ function InformationSlideBar({
 		return slideSelectionGroupList.map((group, index) => (
 			<ul key={index}>
 				{group.map(
-					(
-						{ icon: Icon, id, title, handleClick, path },
-						index
-					) => (
+					({ icon: Icon, id, title, handleClick, path }, index) => (
 						<li
 							key={index}
-							onMouseEnter={() =>
-								handleOnMouseEnter(title)
-							}
+							onMouseEnter={() => handleOnMouseEnter(title)}
 							onMouseLeave={handleOnMouseLeave}
 							onClick={() => {
 								setSlideActived(id);

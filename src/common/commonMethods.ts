@@ -1,33 +1,3 @@
-import clsx from 'clsx';
-
-import type { ObjectAnyKey } from '../types/common';
-
-export const getClassNameModuleGenerator =
-	(stylesObject: any) =>
-	(...selectorList: Array<string | boolean | ObjectAnyKey>) => {
-		let classNameList = '';
-
-		for (const selector of selectorList) {
-			if (typeof selector === 'string') {
-				classNameList +=
-					(classNameList && ' ') +
-					(clsx(stylesObject[selector]) || selector);
-				continue;
-			}
-
-			if (typeof selector === 'object') {
-				for (const key in selector) {
-					if (selector[key]) {
-						classNameList +=
-							' ' + clsx(stylesObject[key]);
-					}
-				}
-			}
-		}
-
-		return classNameList;
-	};
-
 export const validateEmail = (email: string) => {
 	return String(email)
 		.toLowerCase()

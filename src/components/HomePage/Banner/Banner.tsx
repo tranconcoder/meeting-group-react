@@ -1,12 +1,11 @@
 import { FaLongArrowAltRight } from 'react-icons/fa';
 
-//
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 
 import thumb from '../../../images/home-thumb.svg';
 import styles from './Banner.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Banner() {
 	return (

@@ -1,13 +1,13 @@
 import { Link, To } from 'react-router-dom';
 
 //
-import { getClassNameModuleGenerator } from '../../common/commonMethods';
+import classNames from 'classnames/bind';
 import styles from './NothingPage.module.scss';
 
 import nothingBackground from '../../images/nothing-page/nothing-background.svg';
 import { TiArrowLeft } from 'react-icons/ti';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function NothingPage() {
 	return (

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import routeRoot from '../../../routes/index';
 
 import styles from './CenterSlider.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function CenterSlider() {
 	const tabList = [

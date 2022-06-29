@@ -1,11 +1,11 @@
 import type { ButtonProps } from '../../../types/props';
 
 import { To, useNavigate } from 'react-router-dom';
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 
 import styles from './Button.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Button({ children, styles, to }: ButtonProps) {
 	const navigate = useNavigate();

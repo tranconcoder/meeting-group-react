@@ -4,10 +4,10 @@ import { Layout1Props } from '../../types/props';
 import Header from '../Header/Header';
 
 //
-import { getClassNameModuleGenerator } from '../../common/commonMethods';
+import classNames from 'classnames/bind';
 import styles from './Layout1.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Layout1({ Body }: Layout1Props) {
 	return (

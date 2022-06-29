@@ -1,11 +1,11 @@
 import { GoogleLoginButtonProps } from '../../../types/props';
 
 //
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import { BsGoogle } from 'react-icons/bs';
 import styles from './GoogleLoginButton.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function GoogleLogin({ styles }: GoogleLoginButtonProps) {
 	return (

@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 
 import styles from './Profile.module.scss';
 
 import InformationBox from './InformationBox/InformationBox';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Profile() {
 	return (

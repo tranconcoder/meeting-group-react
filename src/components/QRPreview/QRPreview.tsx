@@ -3,20 +3,15 @@ import styles from './QRPreview.module.scss';
 
 import { Dispatch, Fragment, SetStateAction, useRef } from 'react';
 import { HiFolderDownload } from 'react-icons/hi';
-import {
-	copyToClipBoard,
-	getClassNameModuleGenerator,
-} from '../../common/commonMethods';
-import {
-	useAppDispatch,
-	useAppSelector,
-} from '../../common/reduxHooks';
+import classNames from 'classnames/bind';
+import { copyToClipBoard } from '../../common/commonMethods';
+import { useAppDispatch, useAppSelector } from '../../common/reduxHooks';
 import { setDataToPreview } from '../../redux/slices/qrCode';
 
 import AddTitle from '../Common/AddTitle/AddTitle';
 import QRCode from '../Common/QRCode/QRCode';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function QRPreview() {
 	let { current: downloadQrAction } = useRef<() => any>();
@@ -68,9 +63,7 @@ function QRPreview() {
 
 						<div className={cx('body')}>
 							<QRCode
-								getDownloadAction={
-									getDownloadQrAction
-								}
+								getDownloadAction={getDownloadQrAction}
 								getCanvas={getQrCanvasElement}
 								size={320}
 								value={dataToPreviewQrCode}

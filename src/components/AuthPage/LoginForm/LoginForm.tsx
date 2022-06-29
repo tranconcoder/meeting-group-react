@@ -3,14 +3,11 @@ import { MdSwitchAccount } from 'react-icons/md';
 import { FaUserLock } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
 
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import { login } from '../../../redux/slices/auth';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import {
-	useAppDispatch,
-	useAppSelector,
-} from '../../../common/reduxHooks';
+import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
 import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 
@@ -23,7 +20,7 @@ import {
 } from '../../../config/validateConfig';
 import Input from '../../Common/Form/Input/Input';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function LoginForm() {
 	const formInitValues = {
@@ -59,32 +56,30 @@ function LoginForm() {
 	};
 
 	useEffect(() => {
-		if (isLogged) {
-			navigate('/');
-		}
+		if (isLogged) navigate('/');
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isLogged]);
 
 	return (
-		<div className={cx('login-form')}>
-			<h3 className={cx('title')}>
-				<MdSwitchAccount />
-				<span>Đăng nhập tài khoản</span>
-			</h3>
+		<FormikForm
+			initialValues={formInitValues}
+			onSubmit={handleSubmitLogin}
+			validationSchema={formValidationsSchema}
+			className={cx('form')}
+		>
+			<div className={cx('login-form')}>
+				<h3 className={cx('title')}>
+					<MdSwitchAccount />
+					<span>Đăng nhập tài khoản</span>
+				</h3>
 
-			{/* login with google account */}
-			<div className={cx('google-login-container')}>
-				<span>Hoặc</span>
-				<GoogleLoginButton />
-			</div>
+				{/* login with google account */}
+				<div className={cx('google-login-container')}>
+					<span>Hoặc</span>
+					<GoogleLoginButton />
+				</div>
 
-			<FormikForm
-				initialValues={formInitValues}
-				onSubmit={handleSubmitLogin}
-				validationSchema={formValidationsSchema}
-				className={cx('form')}
-			>
 				<Input
 					name="username"
 					Icon={FaUserLock}
@@ -99,8 +94,8 @@ function LoginForm() {
 				/>
 
 				<SubmitFormButton content="Đăng nhập" />
-			</FormikForm>
-		</div>
+			</div>
+		</FormikForm>
 	);
 }
 

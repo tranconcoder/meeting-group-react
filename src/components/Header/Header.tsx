@@ -1,12 +1,12 @@
 //
-import { getClassNameModuleGenerator } from '../../common/commonMethods';
+import classNames from 'classnames/bind';
 
 import CenterSlider from './CenterSlider/CenterSlider';
 import styles from './Header.module.scss';
 import LeftSlider from './LeftSlider/LeftSlider';
 import RightSlider from './RightSlider/RightSlider';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Header() {
 	return (

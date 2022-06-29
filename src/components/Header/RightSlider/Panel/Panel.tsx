@@ -1,5 +1,5 @@
 //
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import { useAppSelector } from '../../../../common/reduxHooks';
 import styles from './Panel.module.scss';
 
@@ -7,12 +7,10 @@ import defaultAvatar from '../../../../images/default-avatar-2.png';
 import { useState } from 'react';
 import PanelBox from './PanelBox/PanelBox';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Panel() {
-	const { fullName, avatar, email } = useAppSelector(
-		state => state.auth
-	);
+	const { fullName, avatar, email } = useAppSelector(state => state.auth);
 	const [showBox, setShowBox] = useState(false);
 
 	const toggleBoxVisible = () => setShowBox(!showBox);

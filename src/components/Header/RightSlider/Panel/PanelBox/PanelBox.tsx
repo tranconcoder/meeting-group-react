@@ -5,7 +5,7 @@ import type {
 import type { PanelBoxProps } from '../../../../../types/props';
 
 //
-import { getClassNameModuleGenerator } from '../../../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import routeRoot from '../../../../../routes';
 
 import styles from './PanelBox.module.scss';
@@ -21,7 +21,7 @@ import { useRef, useState } from 'react';
 import { logout } from '../../../../../redux/slices/auth';
 import { useNavigate } from 'react-router-dom';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function PanelBox({ showBox }: PanelBoxProps) {
 	const [expandedSlideId, setExpandedSlideId] = useState('');
@@ -52,8 +52,7 @@ function PanelBox({ showBox }: PanelBoxProps) {
 			Icon: FaUserEdit,
 			handleClick: () =>
 				navigate(
-					routeRoot.informationPage.childrenRoute.profile
-						.fullPath
+					routeRoot.informationPage.childrenRoute.profile.fullPath
 				),
 		},
 		{
@@ -84,14 +83,12 @@ function PanelBox({ showBox }: PanelBoxProps) {
 			<h4 className={cx('button-panel-list-title')}>Menu</h4>
 
 			<ul className={cx('button-panel-list')}>
-				{buttonPanelList.map(
-					({ handleClick, Icon, title }, index) => (
-						<li key={index} onClick={handleClick}>
-							<Icon />
-							<span>{title}</span>
-						</li>
-					)
-				)}
+				{buttonPanelList.map(({ handleClick, Icon, title }, index) => (
+					<li key={index} onClick={handleClick}>
+						<Icon />
+						<span>{title}</span>
+					</li>
+				))}
 			</ul>
 
 			{/* Slider list wrapper */}
@@ -112,9 +109,7 @@ function PanelBox({ showBox }: PanelBoxProps) {
 								<li
 									key={index}
 									className={cx('single')}
-									onClick={stopPropagation(
-										handleOnClick
-									)}
+									onClick={stopPropagation(handleOnClick)}
 								>
 									<Icon />
 									<span>{title}</span>
@@ -122,18 +117,12 @@ function PanelBox({ showBox }: PanelBoxProps) {
 							);
 						} else {
 							return (
-								<li
-									key={index}
-									className={cx('multiple')}
-								>
+								<li key={index} className={cx('multiple')}>
 									<div
 										className={cx('main-slide')}
 										onClick={() =>
-											setExpandedSlideId(
-												previousId =>
-													previousId === id
-														? ''
-														: id
+											setExpandedSlideId(previousId =>
+												previousId === id ? '' : id
 											)
 										}
 									>
@@ -143,21 +132,15 @@ function PanelBox({ showBox }: PanelBoxProps) {
 									</div>
 
 									<ul
-										className={cx(
-											'child-list-container',
-											{
-												expand:
-													expandedSlideId ===
-													id,
-											}
-										)}
+										className={cx('child-list-container', {
+											expand: expandedSlideId === id,
+										})}
 									>
 										{childList.map(
 											(
 												{
 													title,
-													handleClick:
-														handleOnClick,
+													handleClick: handleOnClick,
 													Icon,
 												},
 												index
@@ -169,9 +152,7 @@ function PanelBox({ showBox }: PanelBoxProps) {
 													)}
 												>
 													<Icon />
-													<span>
-														{title}
-													</span>
+													<span>{title}</span>
 												</li>
 											)
 										)}

@@ -5,9 +5,9 @@ import { HiEyeOff, HiEye } from 'react-icons/hi';
 import { ErrorMessage, FastField, Field, FieldProps } from 'formik';
 
 import React, { useState } from 'react';
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import classNames from 'classnames/bind';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function Input({
 	placeholder = ' ',

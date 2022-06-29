@@ -2,10 +2,10 @@ import { HiLogin } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
 //
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import styles from './LoginButton.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function LoginButton() {
 	return (

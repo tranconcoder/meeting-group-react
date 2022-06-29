@@ -13,6 +13,7 @@
 		"@types/react": "^18.0.9",
 		"@types/react-dom": "^18.0.4",
 		"aos": "^3.0.0-beta.6",
+		"classnames": "^2.3.1",
 		"clsx": "^1.1.1",
 		"formik": "^2.2.9",
 		"qrcode.react": "^3.0.2",

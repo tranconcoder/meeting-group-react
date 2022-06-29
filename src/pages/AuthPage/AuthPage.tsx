@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 //
-import { getClassNameModuleGenerator } from '../../common/commonMethods';
+import classNames from 'classnames/bind';
 import styles from './AuthPage.module.scss';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import thumbnails from '../../images/auth-form-left-slide-thumb-2.svg';
@@ -13,7 +13,7 @@ import RegisterForm from '../../components/AuthPage/RegisterForm/RegisterForm';
 
 import type { LoginOrRegisterProps } from '../../types/state';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function AuthPage() {
 	const navigate = useNavigate();
@@ -47,9 +47,7 @@ function AuthPage() {
 				<div className={cx('footer')}>
 					{/* Login button */}
 					<button
-						className={cx(
-							loginOrRegister === 'login' && 'active'
-						)}
+						className={cx(loginOrRegister === 'login' && 'active')}
 						onClick={() => setLoginOrRegister('login')}
 					>
 						Đăng nhập

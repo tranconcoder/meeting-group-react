@@ -1,20 +1,15 @@
 import { useState } from 'react';
 import { IconType } from 'react-icons';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
-import {
-	FaChalkboardTeacher,
-	FaHome,
-	FaSchool,
-	FaUser,
-} from 'react-icons/fa';
+import { FaChalkboardTeacher, FaHome, FaSchool, FaUser } from 'react-icons/fa';
 
 //
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import styles from './Users.module.scss';
 
 import userSlideListThumb from '../../../images/user-list-slide-thumb-2.svg';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 interface UserSlide {
 	title: string;
@@ -64,18 +59,11 @@ function Users() {
 
 			<div className={cx('content')}>
 				{/* Thumbnails */}
-				<img
-					src={userSlideListThumb}
-					alt=""
-					data-aos="zoom-in-right"
-				/>
+				<img src={userSlideListThumb} alt="" data-aos="zoom-in-right" />
 
 				<ul className={cx('user-slide-list')}>
 					{userSlideList.map(
-						(
-							{ title, Icon, description, handleClick },
-							index
-						) => (
+						({ title, Icon, description, handleClick }, index) => (
 							<li key={index} data-aos="zoom-in-left">
 								<h3>
 									<Icon />

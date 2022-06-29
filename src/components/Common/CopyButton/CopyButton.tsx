@@ -1,12 +1,12 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { RiFileCopyFill, RiFileCopyLine } from 'react-icons/ri';
 
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import { CopyButtonProps } from '../../../types/props';
 import AddTitle from '../AddTitle/AddTitle';
 import styles from './CopyButton.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function CopyButton({ duration = 1000, content }: CopyButtonProps) {
 	const [isCopied, setIsCopied] = useState<boolean>(false);

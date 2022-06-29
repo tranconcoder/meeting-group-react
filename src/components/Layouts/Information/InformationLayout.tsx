@@ -1,14 +1,14 @@
 import type { InformationLayoutProps } from '../../../types/componentsType/InformationLayout';
 
 import { useState } from 'react';
-import { getClassNameModuleGenerator } from '../../../common/commonMethods';
+import classNames from 'classnames/bind';
 
 import styles from './InformationLayout.module.scss';
 import { TiChevronLeft } from 'react-icons/ti';
 
 import InformationSlideBar from '../../Information/SlideBar/SlideBar';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function InformationLayout({ ContentBoard }: InformationLayoutProps) {
 	const [hideSlideBar, setHideSlideBar] = useState(false);

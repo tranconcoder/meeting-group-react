@@ -1,10 +1,10 @@
 import { BiMessageSquareEdit } from 'react-icons/bi';
 
-import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
+import classNames from 'classnames/bind';
 import Title from '../Title/Title';
 import styles from './ChangeInfo.module.scss';
 
-const cx = getClassNameModuleGenerator(styles);
+const cx = classNames.bind(styles);
 
 function ChangeInfo() {
 	return (
