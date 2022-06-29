@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { BiMessageSquareEdit } from 'react-icons/bi';
 
 import { getClassNameModuleGenerator } from '../../../../common/commonMethods';
-import { useAppSelector } from '../../../../common/reduxHooks';
 import Title from '../Title/Title';
 import styles from './ChangeInfo.module.scss';
 
