@@ -1,4 +1,4 @@
-@import '../../../styles/package/allPackage.scss';
+@import 'src/styles/package/allPackage.scss';
 
 .right-slider {
 	@include flex(row, center, flex-end);

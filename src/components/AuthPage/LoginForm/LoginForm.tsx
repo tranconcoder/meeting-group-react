@@ -33,18 +33,19 @@ function LoginForm() {
 	});
 
 	const navigate = useNavigate();
-
 	const dispatch = useAppDispatch();
 	const isLogged = useAppSelector(state => state.auth.isLogged);
 
-	const handleSubmitLogin = () => {
+	const handleSubmitLogin = (formData: typeof formInitValues) => {
+		console.log(formData);
+
 		dispatch(
 			login({
 				id: uuidv4(),
 				isLogged: true,
 				accountType: 'google',
 				email: 'tranconcoder@gmail.com',
-				username: null,
+				username: formData.username,
 				fullName: 'Trần Văn Còn',
 				avatar: 'https://lh3.googleusercontent.com/ogw/ADea4I5shoTR4FEGvFq0eAbpcVH-FwE9ALF7Flps5uDz=s128-c-mo',
 				rank: null,

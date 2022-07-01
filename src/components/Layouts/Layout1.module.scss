@@ -1,4 +1,4 @@
-@import '../../styles/package/allPackage.scss';
+@import 'src/styles/package/allPackage.scss';
 
 .body-container {
 	@include size(var(--window-width), false);

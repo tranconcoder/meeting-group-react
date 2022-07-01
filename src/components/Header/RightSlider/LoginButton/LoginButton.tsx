@@ -11,6 +11,7 @@ function LoginButton() {
 	return (
 		<Link className={cx('link')} to="/auth">
 			<HiLogin />
+
 			<span>Đăng nhập</span>
 		</Link>
 	);

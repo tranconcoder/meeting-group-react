@@ -6,7 +6,7 @@ import { useAppDispatch } from '../../../../../../common/reduxHooks';
 
 import classNames from 'classnames/bind';
 import { v4 as uuidv4 } from 'uuid';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUserEdit } from 'react-icons/fa';
 import { logout } from '../../../../../../redux/slices/auth';
@@ -19,8 +19,7 @@ function SlideList() {
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
 	const [expandedSlideId, setExpandedSlideId] = useState('');
-
-	const slidePanelList = useRef<PanelSlide[]>([
+	const [slidePanelList] = useState<PanelSlide[]>([
 		{
 			id: uuidv4(),
 			title: 'Sửa thông tin',
@@ -29,6 +28,17 @@ function SlideList() {
 				navigate(
 					routeRoot.informationPage.childrenRoute.profile.fullPath
 				),
+			childList: [
+				{
+					id: uuidv4(),
+					title: 'Đăng xuất',
+					Icon: IoMdLogOut,
+					handleClick: () => {
+						dispatch(logout());
+						navigate(routeRoot.authPage.fullPath);
+					},
+				},
+			],
 		},
 		{
 			id: uuidv4(),
@@ -54,7 +64,7 @@ function SlideList() {
 
 	return (
 		<ul className={cx('slide-panel-list')}>
-			{slidePanelList.current.map(
+			{slidePanelList.map(
 				(
 					{ title, handleClick: handleOnClick, Icon, childList, id },
 					index

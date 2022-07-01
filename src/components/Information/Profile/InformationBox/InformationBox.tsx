@@ -58,7 +58,7 @@ function InformationBox() {
 
 					<div className={cx('id-wrapper')}>
 						<span className={cx('id')}>{userId}</span>
-						<CopyButton content={userId} duration={3000} />
+						<CopyButton content={userId || ''} duration={3000} />
 					</div>
 
 					<div className={cx('email-wrapper')}>

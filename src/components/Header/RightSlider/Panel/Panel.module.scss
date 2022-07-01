@@ -1,4 +1,4 @@
-@import '../../../../styles/package/allPackage.scss';
+@import 'src/styles/package/allPackage.scss';
 
 .panel {
 	@include flex(row, center);

@@ -26,7 +26,7 @@ function Panel() {
 				<span className={cx('email')}>{email}</span>
 			</span>
 
-			<img src={avatar || defaultAvatar} alt="" />
+			<img src={avatar || defaultAvatar} alt={fullName || ''} />
 
 			{/* Panel box */}
 			<PanelBox showBox={showBox} />

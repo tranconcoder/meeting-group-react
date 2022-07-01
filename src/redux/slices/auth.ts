@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { InitAuthStore } from '../../types/initStore';
 
 const initialState: InitAuthStore = {
-	id: '',
+	id: null,
 	isLogged: false,
 	accountType: null,
 	email: null,
@@ -12,8 +12,8 @@ const initialState: InitAuthStore = {
 	avatar: null,
 	rank: null,
 	className: null,
-	sharedUrl: '',
-	description: '',
+	sharedUrl: null,
+	description: null,
 };
 
 const authSlice = createSlice({
