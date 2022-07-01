@@ -46,11 +46,11 @@
 
 			&:hover {
 				cursor: pointer;
-				background-color: $primaryColorDark;
+				background-color: var(--primary-color-dark);
 			}
 
 			&[data-active='true'] {
-				background-color: $primaryColor;
+				background-color: var(--primary-color);
 			}
 
 			&:not(:first-child) {
@@ -74,7 +74,7 @@
 		}
 
 		> svg {
-			color: $white;
+			color: var(--white-color);
 			font-size: 30px;
 		}
 	}

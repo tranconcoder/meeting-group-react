@@ -4,7 +4,7 @@
 	margin-top: 50px;
 
 	.title {
-		color: $primaryColorBlack;
+		color: var(--primary-color-black);
 
 		> span {
 			margin-left: 10px;
@@ -27,14 +27,14 @@
 
 			> li {
 				padding: 20px;
-				background-color: $primaryColor;
+				background-color: var(--primary-color);
 				border-radius: 8px;
-				color: $white;
+				color: var(--white-color);
 				transition: all 300ms ease !important;
 
 				&:hover {
 					cursor: pointer;
-					background-color: $primaryColorBlack;
+					background-color: var(--primary-color-black);
 				}
 
 				> h3 {

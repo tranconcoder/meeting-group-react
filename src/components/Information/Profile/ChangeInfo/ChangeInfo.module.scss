@@ -5,7 +5,7 @@
 
 	> h2.title {
 		@include flex(row, center);
-		color: $primaryColor;
+		color: var(--primary-color);
 		font-size: 24px;
 
 		> svg {

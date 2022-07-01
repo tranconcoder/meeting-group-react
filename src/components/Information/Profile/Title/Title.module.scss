@@ -2,7 +2,7 @@
 
 .title {
 	@include flex(row, center);
-	color: $primaryColor;
+	color: var(--primary-color);
 
 	> svg {
 		font-size: 1.4em;

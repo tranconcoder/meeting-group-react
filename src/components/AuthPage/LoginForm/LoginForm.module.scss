@@ -1,7 +1,7 @@
-@import "../../../styles/package/allPackage.scss";
+@import '../../../styles/package/allPackage.scss';
 
 .title {
-	color: $primaryColorDark;
+	color: var(--primary-color-dark);
 	font-size: 18px;
 	display: flex;
 	align-items: center;

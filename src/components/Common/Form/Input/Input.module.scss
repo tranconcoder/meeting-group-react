@@ -31,10 +31,10 @@
 			}
 
 			&:focus {
-				border-color: $primaryColorBlack;
+				border-color: var(--primary-color-black);
 
 				& + p {
-					color: $primaryColorDark;
+					color: var(--primary-color-dark);
 				}
 			}
 		}

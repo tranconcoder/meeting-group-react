@@ -1,6 +1,7 @@
 import type {
 	CSSProperties,
 	Dispatch,
+	FunctionComponent,
 	PropsWithChildren,
 	ReactElement,
 	ReactNode,
@@ -48,7 +49,7 @@ export interface PanelBoxProps {
 
 // Layout1Props
 export interface Layout1Props {
-	Body: PropsWithChildren;
+	Body: FunctionComponent;
 }
 
 export interface AddTitleProps {
@@ -111,10 +112,7 @@ export interface InformationPageProfileTitleProps {
 const yupObject = YupObject();
 export interface FormProps {
 	initialValues: ObjectAnyKey;
-	onSubmit: (
-		values: Values,
-		formikHelpers?: FormikHelpers<Values>
-	) => void;
+	onSubmit: (values: Values, formikHelpers?: FormikHelpers<Values>) => void;
 	validationSchema: typeof yupObject;
 	children: ReactNode;
 	className?: string;

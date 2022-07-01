@@ -4,14 +4,14 @@
 	@include size(100%, false);
 	@include position(fixed, 0, 0);
 	z-index: 100;
-	height: $headerHeight;
+	height: var(--header-height);
 	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-	background-color: $white;
+	background-color: var(--white-color);
 
 	> .header-container {
 		margin: 0 auto;
 		height: 100%;
-		width: $windowWidth;
+		width: var(--window-width);
 		max-width: 100%;
 		padding: 0 20px;
 		display: flex;

@@ -1,0 +1,70 @@
+@import '../../../../../../styles/package/allPackage.scss';
+
+.slide-panel-list {
+	$padSize: 10px;
+
+	color: var(--white-color);
+
+	> * {
+		background-color: var(--primary-color);
+		border-radius: 4px;
+		margin-top: 14px;
+	}
+
+	svg {
+		font-size: 18px;
+	}
+
+	> .single,
+	> .multiple > .main-slide,
+	> .multiple > .child-list-container > * {
+		&:hover {
+			background-color: var(--primary-color-light);
+		}
+	}
+
+	> .single {
+		@include flex(row, center);
+		padding: $padSize;
+		transition: all 300ms ease;
+
+		> span {
+			@include maxSize(80%, false);
+			@include webkitMaxLine(1);
+			margin: 0 auto;
+			transform: translateX(-7px);
+		}
+	}
+
+	> .multiple {
+		overflow: hidden;
+
+		> .main-slide {
+			@include size(100%, false);
+			@include flex(row, center, space-between);
+			padding: $padSize;
+			transition: all 300ms ease;
+		}
+
+		> .child-list-container {
+			@include size(100%, false);
+			@include maxSize(false, 0);
+			overflow: hidden;
+
+			&.expand {
+				@include maxSize(false, 100rem);
+			}
+
+			> * {
+				@include flex(row, center, space-between);
+				padding: $padSize;
+				background-color: var(--primary-color-light);
+
+				> span {
+					margin: 0 auto;
+					transform: translateX(calc(-1 * ($padSize / 2)));
+				}
+			}
+		}
+	}
+}

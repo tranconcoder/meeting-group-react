@@ -28,7 +28,12 @@
 	}
 }
 
-@mixin flex($direction: row, $alignItems: flex-start, $justifyContent: flex-start, $inline: false) {
+@mixin flex(
+	$direction: row,
+	$alignItems: flex-start,
+	$justifyContent: flex-start,
+	$inline: false
+) {
 	@if $inline == true {
 		display: inline-flex;
 	} @else {
@@ -52,7 +57,13 @@
 	}
 }
 
-@mixin position($position, $top: false, $right: false, $bottom: false, $left: false) {
+@mixin position(
+	$position,
+	$top: false,
+	$right: false,
+	$bottom: false,
+	$left: false
+) {
 	position: $position;
 
 	@if $top != false {

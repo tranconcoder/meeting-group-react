@@ -25,12 +25,12 @@ ol {
 }
 
 a {
-	color: $primaryColorBlack;
+	color: var(--primary-color-black);
 	text-decoration: none;
 	transition: color 300ms ease;
 
 	&:hover {
-		color: $primaryColorDark;
+		color: var(--primary-color-dark);
 		cursor: pointer;
 	}
 }

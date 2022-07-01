@@ -3,21 +3,21 @@ import { MdSwitchAccount } from 'react-icons/md';
 import { FaUserLock } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
 
+import * as Yup from 'yup';
 import classNames from 'classnames/bind';
 import { login } from '../../../redux/slices/auth';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
 import { v4 as uuidv4 } from 'uuid';
-import * as Yup from 'yup';
-
-import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
-import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
-import FormikForm from '../../Common/Form/Form';
 import {
 	passwordValidate,
 	usernameValidate,
 } from '../../../config/validateConfig';
+
+import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
+import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
+import FormikForm from '../../Common/Form/Form';
 import Input from '../../Common/Form/Input/Input';
 
 const cx = classNames.bind(styles);

@@ -16,7 +16,7 @@
 		@include position(absolute, 50%, false, false, 100%);
 		border-radius: 4px;
 		background-color: #fff;
-		color: $primaryColor;
+		color: var(--primary-color);
 		pointer-events: none;
 		opacity: 0;
 		transform: translate(0, -50%);

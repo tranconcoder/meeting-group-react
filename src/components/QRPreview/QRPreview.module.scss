@@ -13,7 +13,7 @@
 		transform: translate(50%, -50%);
 		padding: $paddingEdge;
 		border-radius: 10px;
-		background-color: $white;
+		background-color: var(--white-color);
 		z-index: 2;
 
 		> .header {
@@ -42,8 +42,8 @@
 			@include flex(row, center);
 			padding: 10px;
 			border-radius: 4px;
-			background-color: $primaryColor;
-			color: $white;
+			background-color: var(--primary-color);
+			color: var(--white-color);
 			font-size: 15px;
 			margin-top: 10px;
 

@@ -1,6 +1,7 @@
 import './styles/reset.scss';
 import './styles/fonts.scss';
 import './styles/aos/aos.css';
+import './styles/global.scss';
 
 import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';

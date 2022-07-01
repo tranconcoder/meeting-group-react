@@ -3,7 +3,6 @@ import { Layout1Props } from '../../types/props';
 
 import Header from '../Header/Header';
 
-//
 import classNames from 'classnames/bind';
 import styles from './Layout1.module.scss';
 

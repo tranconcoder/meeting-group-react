@@ -9,7 +9,7 @@
 
 	> .title-box-container {
 		@include position(fixed, false, 50%, 30px);
-		color: $white;
+		color: var(--white-color);
 		transform: translate(50%, 4px);
 		padding: 10px 30px;
 		border-radius: 4px;
@@ -64,7 +64,7 @@
 
 			> svg {
 				transition: inherit;
-				color: $primaryColorBlack;
+				color: var(--primary-color-black);
 			}
 
 			&:hover {
