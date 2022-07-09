@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 
 import classNames from 'classnames/bind';
 import styles from './Layout1.module.scss';
+import Footer from '../Footer/Footer';
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +17,8 @@ function Layout1({ Body }: Layout1Props) {
 			<div className={cx('body-container')}>
 				<Body />
 			</div>
+
+			<Footer />
 		</Fragment>
 	);
 }

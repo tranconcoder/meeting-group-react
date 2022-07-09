@@ -117,3 +117,12 @@ export interface FormProps {
 	children: ReactNode;
 	className?: string;
 }
+
+// FooterDirectoryConfig
+export interface FooterDirectoryConfig {
+	title: string;
+	linkList: Array<{
+		content: string;
+		link: string;
+	}>;
+}

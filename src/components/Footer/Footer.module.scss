@@ -1,0 +1,13 @@
+@import '../../styles/package/allPackage.scss';
+
+.footer {
+	@include size(100vw, false);
+	@include flex(row, center, center);
+	padding: 100px 140px;
+	background-color: var(--primary-color-black);
+	color: var(--white-color);
+
+	> .tab-list {
+		@include flex(row, center, space-between);
+	}
+}
