@@ -11,8 +11,6 @@ const cx = classNames.bind(styles);
 function Profile() {
 	return (
 		<div className={cx('container')}>
-			<InformationBox />
-
 			<ChangeInfo />
 		</div>
 	);

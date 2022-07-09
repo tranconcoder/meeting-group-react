@@ -1,17 +1,17 @@
 import type { PanelSlide } from '../../../../../../types/componentsType/PanelBox';
 
-import styles from './SlideList.module.scss';
+import { FaUserEdit } from 'react-icons/fa';
 import { IoMdLogOut } from 'react-icons/io';
-import { useAppDispatch } from '../../../../../../common/reduxHooks';
+import { TiArrowSortedDown } from 'react-icons/ti';
+import styles from './SlideList.module.scss';
 
 import classNames from 'classnames/bind';
-import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaUserEdit } from 'react-icons/fa';
+import { v4 as uuidv4 } from 'uuid';
+import { useAppDispatch } from '../../../../../../common/reduxHooks';
 import { logout } from '../../../../../../redux/slices/auth';
 import routeRoot from '../../../../../../routes';
-import { TiArrowSortedDown } from 'react-icons/ti';
 
 const cx = classNames.bind(styles);
 
@@ -28,17 +28,6 @@ function SlideList() {
 				navigate(
 					routeRoot.informationPage.childrenRoute.profile.fullPath
 				),
-			childList: [
-				{
-					id: uuidv4(),
-					title: 'Đăng xuất',
-					Icon: IoMdLogOut,
-					handleClick: () => {
-						dispatch(logout());
-						navigate(routeRoot.authPage.fullPath);
-					},
-				},
-			],
 		},
 		{
 			id: uuidv4(),

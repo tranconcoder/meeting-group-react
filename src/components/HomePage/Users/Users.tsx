@@ -3,7 +3,6 @@ import { IconType } from 'react-icons';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
 import { FaChalkboardTeacher, FaHome, FaSchool, FaUser } from 'react-icons/fa';
 
-//
 import classNames from 'classnames/bind';
 import styles from './Users.module.scss';
 

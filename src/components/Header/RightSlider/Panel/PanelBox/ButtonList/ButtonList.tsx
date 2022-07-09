@@ -1,5 +1,3 @@
-import type { PanelButton } from '../../../../../../types/componentsType/PanelBox';
-
 import styles from './ButtonList.module.scss';
 
 import classNames from 'classnames/bind';

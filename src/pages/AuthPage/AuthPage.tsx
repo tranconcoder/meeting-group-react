@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router';
 
-//
 import classNames from 'classnames/bind';
 import styles from './AuthPage.module.scss';
 import { IoMdArrowRoundBack } from 'react-icons/io';

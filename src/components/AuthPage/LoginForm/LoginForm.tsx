@@ -37,8 +37,6 @@ function LoginForm() {
 	const isLogged = useAppSelector(state => state.auth.isLogged);
 
 	const handleSubmitLogin = (formData: typeof formInitValues) => {
-		console.log(formData);
-
 		dispatch(
 			login({
 				id: uuidv4(),

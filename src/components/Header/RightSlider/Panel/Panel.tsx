@@ -1,4 +1,3 @@
-//
 import classNames from 'classnames/bind';
 import { useAppSelector } from '../../../../common/reduxHooks';
 import styles from './Panel.module.scss';

@@ -1,6 +1,5 @@
 import { Link, To } from 'react-router-dom';
 
-//
 import classNames from 'classnames/bind';
 import styles from './NothingPage.module.scss';
 

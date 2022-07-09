@@ -1,12 +1,6 @@
-import type {
-	PanelButton,
-	PanelSlide,
-} from '../../../../../types/componentsType/PanelBox';
 import type { PanelBoxProps } from '../../../../../types/props';
 
 import styles from './PanelBox.module.scss';
-import { BiTable } from 'react-icons/bi';
-import { FiMessageSquare, FiBell } from 'react-icons/fi';
 
 import classNames from 'classnames/bind';
 
