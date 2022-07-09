@@ -7,20 +7,7 @@ import styles from './ChangeInfo.module.scss';
 const cx = classNames.bind(styles);
 
 function ChangeInfo() {
-	return (
-		<div className={cx('container')}>
-			<Title
-				tag="h2"
-				content="Thay đổi thông tin"
-				icon={{
-					src: BiMessageSquareEdit,
-					scale: 1.2,
-					style: { marginRight: 4 },
-				}}
-				style={{ alignItems: 'flex-start' }}
-			/>
-		</div>
-	);
+	return <div className={cx('container')}></div>;
 }
 
 export default ChangeInfo;

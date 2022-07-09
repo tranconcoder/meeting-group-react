@@ -2,8 +2,6 @@ import type {
 	CSSProperties,
 	Dispatch,
 	FunctionComponent,
-	PropsWithChildren,
-	ReactElement,
 	ReactNode,
 	SetStateAction,
 } from 'react';
@@ -119,7 +117,7 @@ export interface FormProps {
 }
 
 // FooterDirectoryConfig
-export interface FooterDirectoryConfig {
+export interface FooterDirectionConfig {
 	title: string;
 	linkList: Array<{
 		content: string;

@@ -1,6 +1,23 @@
-import type { FooterDirectoryConfig } from '../types/props';
+import type { FooterDirectionConfig } from '../types/props';
 
-export const footerDirectoryConfig: Array<FooterDirectoryConfig> = [
+const footerDirectionConfig: Array<FooterDirectionConfig> = [
+	{
+		title: 'Thông tin trang',
+		linkList: [
+			{
+				content: 'Tại sao có trang web này',
+				link: 'https://google.com/',
+			},
+			{
+				content: 'Các tính năng chính',
+				link: 'https://google.com/',
+			},
+			{
+				content: 'Điều khoản sử dụng',
+				link: 'https://google.com/',
+			},
+		],
+	},
 	{
 		title: 'Tài nguyên sử dụng',
 		linkList: [
@@ -12,15 +29,29 @@ export const footerDirectoryConfig: Array<FooterDirectoryConfig> = [
 				content: 'Freepik',
 				link: 'https://freepik.com',
 			},
+			{
+				content: 'Google Fonts',
+				link: 'https://fonts.google.com/',
+			},
 		],
 	},
 	{
-		title: 'Thông tin trang',
+		title: 'Hỗ trợ',
 		linkList: [
 			{
-				content: 'Tại sao có trang web này',
+				content: 'Blog hỏi đáp',
+				link: 'https://google.com/',
+			},
+			{
+				content: 'Nhóm hỗ trợ người dùng',
+				link: 'https://google.com/',
+			},
+			{
+				content: 'Liên hệ quản trị viên',
 				link: 'https://google.com/',
 			},
 		],
 	},
 ];
+
+export default footerDirectionConfig;

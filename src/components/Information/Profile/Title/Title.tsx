@@ -23,7 +23,7 @@ function Title({
 
 	// CSS
 	const styles: CSSProperties = {
-		fontSize: 24,
+		fontSize: 26,
 		...style,
 	};
 	const iconStyle: CSSProperties = {

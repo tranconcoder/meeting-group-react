@@ -3,11 +3,32 @@
 .footer {
 	@include size(100vw, false);
 	@include flex(row, center, center);
-	padding: 100px 140px;
+	padding: 60px 140px;
 	background-color: var(--primary-color-black);
 	color: var(--white-color);
 
-	> .tab-list {
-		@include flex(row, center, space-between);
+	> .direction-list {
+		@include size(100%, false);
+		@include flex(row, flex-start, space-between);
+
+		> .direction-list__item {
+			@include flex(column, flex-start, center);
+
+			> .title {
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+
+			> a {
+				color: var(--white-color);
+				font-size: 16px;
+				opacity: 0.7;
+				padding: 10px 0;
+
+				&:hover {
+					opacity: 0.9;
+				}
+			}
+		}
 	}
 }
