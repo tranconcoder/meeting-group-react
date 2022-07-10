@@ -1,18 +1,12 @@
 import type { RouteInformationType } from '../types/routes';
 
-import { Profile } from '../components/Information';
-import InformationLayout from '../components/Layouts/Information/InformationLayout';
-import NeedAuth from '../components/NeedAuth';
+import { ProfilePage } from '../pages';
 
 const informationRoute: RouteInformationType = {
 	profile: {
 		path: 'profile',
 		fullPath: '',
-		reactElement: (
-			<NeedAuth>
-				<InformationLayout ContentBoard={Profile} />
-			</NeedAuth>
-		),
+		reactElement: <ProfilePage />,
 	},
 };
 

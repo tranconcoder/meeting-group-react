@@ -1,10 +1,9 @@
-import { Link, To } from 'react-router-dom';
-
-import classNames from 'classnames/bind';
+import { TiArrowLeft } from 'react-icons/ti';
+import nothingBackground from '../../images/nothing-page/nothing-background.svg';
 import styles from './NothingPage.module.scss';
 
-import nothingBackground from '../../images/nothing-page/nothing-background.svg';
-import { TiArrowLeft } from 'react-icons/ti';
+import classNames from 'classnames/bind';
+import { Link, To } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 

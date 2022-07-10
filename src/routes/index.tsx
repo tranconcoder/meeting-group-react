@@ -2,9 +2,7 @@ import type { RouteRootType, RouteType } from '../types/routes';
 
 import informationRoute from './informationRoute';
 
-import AuthPage from '../pages/AuthPage/AuthPage';
-import HomePage from '../pages/HomePage/HomePage';
-import NothingPage from '../pages/NothingPage/NothingPage';
+import { AuthPage, HomePage, NothingPage } from '../pages';
 
 const routeRoot: RouteRootType = getAndFormatRouteRoot({
 	homePage: {

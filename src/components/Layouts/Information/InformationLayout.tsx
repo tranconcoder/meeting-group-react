@@ -1,12 +1,12 @@
 import type { InformationLayoutProps } from '../../../types/componentsType/InformationLayout';
 
-import { useState } from 'react';
-import classNames from 'classnames/bind';
-
 import styles from './InformationLayout.module.scss';
 import { TiChevronLeft } from 'react-icons/ti';
 
-import { SlideBar } from '../../Information';
+import { useState } from 'react';
+import classNames from 'classnames/bind';
+
+import SlideBar from './SlideBar/SlideBar';
 
 const cx = classNames.bind(styles);
 

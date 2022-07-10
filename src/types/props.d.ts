@@ -37,10 +37,11 @@ export interface GoogleLoginButtonProps {
 }
 
 // ButtonProps
-export interface ButtonProps {
+export interface ButtonProps extends AllHTMLAttributes<any> {
 	children?: ReactNode;
 	styles?: CSSProperties;
 	to?: string | number;
+	type?: 'normal-purple' | 'normal-blue' | 'change' | 'warning' | 'error';
 }
 
 // PanelBoxProps

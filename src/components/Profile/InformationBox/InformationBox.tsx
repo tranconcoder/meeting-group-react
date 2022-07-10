@@ -8,10 +8,10 @@ import styles from './InformationBox.module.scss';
 
 import classNames from 'classnames/bind';
 import { useRef } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../common/reduxHooks';
-import { setDataToPreview } from '../../../../redux/slices/qrCode';
+import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
+import { setDataToPreview } from '../../../redux/slices/qrCode';
 
-import { CopyButton, QRCode } from '../../../Common';
+import { CopyButton, QRCode } from '../../Common';
 import Title from '../Title/Title';
 
 const cx = classNames.bind(styles);

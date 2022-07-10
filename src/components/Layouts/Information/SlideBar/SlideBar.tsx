@@ -1,15 +1,15 @@
 import type {
 	InformationSlideBarProps,
 	TimeoutOrNull,
-} from '../../../types/componentsType/InformationSlideBar';
-import type { SlideBarSelectionList } from '../../../types/storage/slideBar';
+} from '../../../../types/componentsType/InformationSlideBar';
+import type { SlideBarSelectionList } from '../../../../types/storage/slideBar';
 
 import styles from './SlideBar.module.scss';
 
 import classNames from 'classnames/bind';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import slideBarSelectionList from '../../../storage/informationSlideBar';
+import slideBarSelectionList from '../../../../storage/informationSlideBar';
 
 const cx = classNames.bind(styles);
 

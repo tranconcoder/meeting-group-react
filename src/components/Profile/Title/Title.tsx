@@ -1,7 +1,7 @@
 import styles from './Title.module.scss';
 
 import classNames from 'classnames/bind';
-import { InformationPageProfileTitleProps } from '../../../../types/props';
+import { InformationPageProfileTitleProps } from '../../../types/props';
 import { CSSProperties } from 'react';
 import { FaHome } from 'react-icons/fa';
 

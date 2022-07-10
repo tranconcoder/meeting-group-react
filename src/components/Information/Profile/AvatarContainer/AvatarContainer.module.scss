@@ -1,9 +1,0 @@
-@import '../../../../styles/package/allPackage.scss';
-
-.avatar-container {
-	margin-top: 20px;
-
-	.avatar {
-		@include size(80px);
-	}
-}

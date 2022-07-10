@@ -1,4 +1,4 @@
-import type { InformationPageProfileTitleProps } from '../../../types/props';
+import type { InformationPageProfileTitleProps } from '../../types/props';
 
 import { BiMessageSquareEdit } from 'react-icons/bi';
 import styles from './Profile.module.scss';

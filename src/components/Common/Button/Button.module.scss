@@ -1,22 +1,54 @@
-.button {
-	padding: 8px 16px;
-	border-radius: 8px;
-	background-color: $whiteColor;
+$normalBlueColor: $primaryColor;
+$normalPurpleColor: #e600ff;
+$changeColor: #0077ff;
+$warningColor: #ff8000;
+$errorColor: #ff4000;
+
+@mixin setButtonColorStyle($primaryColor) {
 	border: 2px solid $primaryColor;
-	transition: all 300ms ease;
-	cursor: pointer;
 
 	&:hover {
 		background-color: $primaryColor;
+	}
 
-		> p {
-			color: $whiteColor;
-		}
+	> p {
+		color: $primaryColor;
+	}
+}
+
+.button {
+	padding: 8px 16px;
+	border-radius: 8px;
+	transition: all 300ms ease;
+	background-color: $whiteColor;
+	cursor: pointer;
+
+	&.normal-blue {
+		@include setButtonColorStyle($normalBlueColor);
+	}
+
+	&.normal-purple {
+		@include setButtonColorStyle($normalPurpleColor);
+	}
+
+	&.change {
+		@include setButtonColorStyle($changeColor);
+	}
+
+	&.warning {
+		@include setButtonColorStyle($warningColor);
+	}
+
+	&.error {
+		@include setButtonColorStyle($errorColor);
+	}
+
+	&:hover > p {
+		color: $whiteColor;
 	}
 
 	> p {
 		@include flex(row, center);
-		color: $primaryColor;
 		font-size: 14px;
 		font-weight: 600;
 		transition: inherit;

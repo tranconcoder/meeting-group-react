@@ -1,0 +1,59 @@
+.avatar-wrapper {
+	@include flex(row, center, space-between);
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 30px 0;
+	margin-top: 20px;
+
+	> .avatar-container {
+		@include size(120px);
+		@include position(relative);
+		border-radius: 50%;
+		overflow: hidden;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+		&:hover {
+			cursor: pointer;
+
+			> .hover-layer {
+				opacity: 1;
+			}
+		}
+
+		> .avatar {
+			@include size(100%);
+			object-fit: cover;
+			object-position: center;
+		}
+
+		> .hover-layer {
+			@include position(absolute, 0, 0, 0, 0);
+			@include flexCenter();
+			background-color: rgba(0, 0, 0, 0.3);
+			backdrop-filter: blur(2px);
+			opacity: 0;
+			transition: all 300ms ease;
+
+			> svg {
+				font-size: 24px;
+				color: $whiteColor;
+			}
+		}
+	}
+
+	> .tool-list {
+		@include flex(row);
+
+		> li {
+			&:not(:first-child) > button {
+				margin-left: 10px;
+			}
+
+			> button {
+				font-size: 16px;
+				font-weight: 500;
+				cursor: pointer;
+			}
+		}
+	}
+}
