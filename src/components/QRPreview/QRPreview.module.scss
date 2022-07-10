@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 .qr-code-preview-wrapper {
 	@include position(fixed, 0, 0, 0, 0);
 	animation: showQrCodePreview 400ms ease forwards;
@@ -13,7 +11,7 @@
 		transform: translate(50%, -50%);
 		padding: $paddingEdge;
 		border-radius: 10px;
-		background-color: var(--white-color);
+		background-color: $whiteColor;
 		z-index: 2;
 
 		> .header {
@@ -42,8 +40,8 @@
 			@include flex(row, center);
 			padding: 10px;
 			border-radius: 4px;
-			background-color: var(--primary-color);
-			color: var(--white-color);
+			background-color: $primaryColor;
+			color: $whiteColor;
 			font-size: 15px;
 			margin-top: 10px;
 

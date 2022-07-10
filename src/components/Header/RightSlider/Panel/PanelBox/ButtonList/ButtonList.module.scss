@@ -1,9 +1,7 @@
-@import 'src/styles/package/allPackage.scss';
-
 .button-panel-list {
 	margin-top: 10px;
-	background-color: var(--primary-color);
-	color: var(--white-color);
+	background-color: $primaryColor;
+	color: $whiteColor;
 	border-radius: 4px;
 	padding: 10px;
 	display: grid;
@@ -16,7 +14,7 @@
 		border-radius: 4px;
 
 		&:hover {
-			background-color: var(--primary-color-light);
+			background-color: $primaryColorLight;
 		}
 
 		> svg {

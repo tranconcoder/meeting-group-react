@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 * {
 	padding: 0;
 	margin: 0;
@@ -25,12 +23,12 @@ ol {
 }
 
 a {
-	color: var(--primary-color-black);
+	color: $primaryColorBlack;
 	text-decoration: none;
 	transition: color 300ms ease;
 
 	&:hover {
-		color: var(--primary-color-dark);
+		color: $primaryColorDark;
 		cursor: pointer;
 	}
 }

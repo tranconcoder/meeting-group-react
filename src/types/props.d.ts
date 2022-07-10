@@ -122,5 +122,6 @@ export interface FooterDirectionConfig {
 	linkList: Array<{
 		content: string;
 		link: string;
+		openInNewTab?: boolean;
 	}>;
 }

@@ -1,11 +1,9 @@
-@import 'src/styles/package/allPackage.scss';
-
 .wrapper {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: stretch;
-	background-color: var(--primary-color);
+	background-color: $primaryColor;
 }
 
 .left-slide {
@@ -19,7 +17,7 @@
 		position: fixed;
 		top: 10px;
 		left: 10px;
-		color: var(--white-color);
+		color: $whiteColor;
 		transition: all 300ms ease;
 
 		&:hover {
@@ -37,7 +35,7 @@
 	width: 480px;
 	max-width: 100%;
 	margin: 20px;
-	background-color: var(--white-color);
+	background-color: $whiteColor;
 	border-radius: 20px;
 	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
 		rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -57,14 +55,14 @@
 		> button {
 			padding: 10px 20px;
 			border-radius: 8px;
-			color: var(--primary-color-black);
+			color: $primaryColorBlack;
 			font-weight: 600;
 			cursor: pointer;
 			transition: all 300ms ease;
 
 			&.active {
-				background-color: var(--primary-color-dark);
-				color: var(--white-color);
+				background-color: $primaryColorDark;
+				color: $whiteColor;
 			}
 		}
 	}

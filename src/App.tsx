@@ -1,6 +1,5 @@
 import './styles/aos/aos.css';
 import './styles/fonts.scss';
-import './styles/global.scss';
 import './styles/reset.scss';
 
 import AOS from 'aos';

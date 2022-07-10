@@ -1,23 +1,15 @@
-/* config-overrides.js */
 module.exports = function override(config, env) {
-	return config;
+	config.module.rules.push({
+		test: /\.scss$/,
+		use: [
+			{
+				loader: 'sass-loader',
+				options: {
+					additionalData: `@import 'src/styles/package/allPackage.scss';`,
+				},
+			},
+		],
+	});
 
-	// return {
-	// 	...config,
-	// 	resolve: {
-	// 		...config.resolve,
-	// 		extensions: [
-	// 			...config.resolve.extensions,
-	// 			'.js',
-	// 			'.jsx',
-	// 			'.ts',
-	// 			'.tsx',
-	// 			'.d.ts',
-	// 		],
-	// 	},
-	// 	experiments: {
-	// 		...config.experiments,
-	// 		topLevelAwait: true,
-	// 	},
-	// };
+	return config;
 };

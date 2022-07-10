@@ -1,0 +1,19 @@
+.dev-info {
+	margin-top: 60px;
+
+	> .title {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	> .info-container {
+		margin-top: 40px;
+
+		> .avatar {
+			@include size(130px);
+			border-radius: 50%;
+			object-fit: cover;
+			box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+		}
+	}
+}

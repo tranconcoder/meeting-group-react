@@ -1,6 +1,6 @@
 import type { FooterDirectionConfig } from '../types/props';
 
-const footerDirectionConfig: Array<FooterDirectionConfig> = [
+const footerDirectoryConfig: Array<FooterDirectionConfig> = [
 	{
 		title: 'Thông tin trang',
 		linkList: [
@@ -24,14 +24,17 @@ const footerDirectionConfig: Array<FooterDirectionConfig> = [
 			{
 				content: 'FlatIcon',
 				link: 'https://flaticon.com/',
+				openInNewTab: true,
 			},
 			{
 				content: 'Freepik',
 				link: 'https://freepik.com',
+				openInNewTab: true,
 			},
 			{
 				content: 'Google Fonts',
 				link: 'https://fonts.google.com/',
+				openInNewTab: true,
 			},
 		],
 	},
@@ -41,6 +44,7 @@ const footerDirectionConfig: Array<FooterDirectionConfig> = [
 			{
 				content: 'Blog hỏi đáp',
 				link: 'https://google.com/',
+				openInNewTab: true,
 			},
 			{
 				content: 'Nhóm hỗ trợ người dùng',
@@ -52,6 +56,16 @@ const footerDirectionConfig: Array<FooterDirectionConfig> = [
 			},
 		],
 	},
+	{
+		title: 'Đề tài nổi bật',
+		linkList: [
+			{
+				content: 'Nổi bật',
+				link: 'https://google.com/',
+				openInNewTab: true,
+			},
+		],
+	},
 ];
 
-export default footerDirectionConfig;
+export default footerDirectoryConfig;

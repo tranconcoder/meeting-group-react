@@ -2,37 +2,7 @@
 
 .footer {
 	@include size(100vw, false);
-	@include flex(row, center, center);
 	padding: 60px 140px;
-	background-image: linear-gradient(
-		150deg,
-		var(--primary-color-dark),
-		var(--primary-color)
-	);
-	color: var(--white-color);
-
-	> .direction-list {
-		@include size(100%, false);
-		@include flex(row, flex-start, space-between);
-
-		> .direction-list__item {
-			@include flex(column, flex-start, center);
-
-			> .title {
-				font-size: 20px;
-				margin-bottom: 10px;
-			}
-
-			> a {
-				color: var(--white-color);
-				font-size: 16px;
-				opacity: 0.7;
-				padding: 10px 0;
-
-				&:hover {
-					opacity: 0.9;
-				}
-			}
-		}
-	}
+	background-image: linear-gradient(160deg, $primaryColorDark, $primaryColor);
+	color: $whiteColor;
 }

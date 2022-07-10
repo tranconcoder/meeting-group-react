@@ -1,17 +1,15 @@
-@import 'src/styles/package/allPackage.scss';
-
 .header-wrapper {
 	@include size(100%, false);
 	@include position(fixed, 0, 0);
 	z-index: 100;
-	height: var(--header-height);
+	height: $headerHeight;
 	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-	background-color: var(--white-color);
+	background-color: $whiteColor;
 
 	> .header-container {
 		margin: 0 auto;
 		height: 100%;
-		width: var(--window-width);
+		width: $windowWidth;
 		max-width: 100%;
 		padding: 0 20px;
 		display: flex;

@@ -1,8 +1,6 @@
-@import 'src/styles/package/allPackage.scss';
-
 .profile-information {
 	> h2 {
-		color: var(--primary-color);
+		color: $primaryColor;
 	}
 
 	> .container {
@@ -12,16 +10,16 @@
 		border-radius: 10px;
 		background-image: linear-gradient(
 			90deg,
-			var(--primary-color),
-			var(--primary-color-black)
+			$primaryColor,
+			$primaryColorBlack
 		);
 		margin-top: 10px;
-		border: 1px solid var(--primary-color);
+		border: 1px solid $primaryColor;
 
 		> .information {
 			flex: 1;
 			margin-top: 10px;
-			color: var(--white-color);
+			color: $whiteColor;
 
 			> .id-wrapper {
 				@include flex(row, center);
@@ -98,14 +96,14 @@
 
 			> .preview-button,
 			> .download-button {
-				color: var(--white-color);
+				color: $whiteColor;
 				opacity: 0;
 				transition: all 400ms ease;
 				box-sizing: content-box;
 				border-radius: 50%;
 
 				&:hover {
-					background-color: rgba(var(--white-color), 0.2);
+					background-color: rgba($whiteColor, 0.2);
 				}
 			}
 
@@ -126,13 +124,13 @@
 				@include size(60px);
 				border-radius: inherit;
 				padding: 10px;
-				background-color: var(--white-color);
+				background-color: $whiteColor;
 			}
 		}
 
 		> .avatar {
 			@include size(128px);
-			background-color: var(--white-color);
+			background-color: $whiteColor;
 			border-radius: inherit;
 			padding: 10px;
 

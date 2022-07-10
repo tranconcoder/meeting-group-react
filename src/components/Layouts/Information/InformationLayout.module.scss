@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 .information-layout {
 	$slideBarWidth: 70px;
 
@@ -9,7 +7,7 @@
 
 	> .title-box-container {
 		@include position(fixed, false, 50%, 30px);
-		color: var(--white-color);
+		color: $whiteColor;
 		transform: translate(50%, 4px);
 		padding: 10px 30px;
 		border-radius: 4px;
@@ -64,7 +62,7 @@
 
 			> svg {
 				transition: inherit;
-				color: var(--primary-color-black);
+				color: $primaryColorBlack;
 			}
 
 			&:hover {

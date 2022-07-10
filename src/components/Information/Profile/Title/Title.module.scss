@@ -1,8 +1,6 @@
-@import 'src/styles/package/allPackage.scss';
-
 .title {
 	@include flex(row, center);
-	color: var(--primary-color);
+	color: $primaryColor;
 
 	> svg {
 		font-size: 1.4em;

@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 .nothing-page {
 	@include size(100vw, 100vh);
 	@include flex(column, center, center);
@@ -29,7 +27,7 @@
 			font-size: 16px;
 			font-weight: 600;
 			padding: 14px 40px;
-			color: var(--primary-color-dark);
+			color: $primaryColorDark;
 			background-image: linear-gradient(
 				90deg,
 				rgb(0, 255, 187),

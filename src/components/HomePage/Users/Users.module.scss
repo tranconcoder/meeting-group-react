@@ -1,10 +1,8 @@
-@import 'src/styles/package/allPackage.scss';
-
 .features-container {
 	margin-top: 50px;
 
 	.title {
-		color: var(--primary-color-black);
+		color: $primaryColorBlack;
 
 		> span {
 			margin-left: 10px;
@@ -27,14 +25,14 @@
 
 			> li {
 				padding: 20px;
-				background-color: var(--primary-color);
+				background-color: $primaryColor;
 				border-radius: 8px;
-				color: var(--white-color);
+				color: $whiteColor;
 				transition: all 300ms ease !important;
 
 				&:hover {
 					cursor: pointer;
-					background-color: var(--primary-color-black);
+					background-color: $primaryColorBlack;
 				}
 
 				> h3 {

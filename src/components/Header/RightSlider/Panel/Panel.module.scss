@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 .panel {
 	@include flex(row, center);
 	@include position(relative);

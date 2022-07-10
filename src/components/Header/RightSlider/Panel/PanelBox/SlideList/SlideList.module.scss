@@ -1,12 +1,10 @@
-@import 'src/styles/package/allPackage.scss';
-
 .slide-panel-list {
 	$padSize: 10px;
 
-	color: var(--white-color);
+	color: $whiteColor;
 
 	> * {
-		background-color: var(--primary-color);
+		background-color: $primaryColor;
 		border-radius: 4px;
 		margin-top: 14px;
 	}
@@ -19,7 +17,7 @@
 	> .multiple > .main-slide,
 	> .multiple > .child-list-container > * {
 		&:hover {
-			background-color: var(--primary-color-light);
+			background-color: $primaryColorLight;
 		}
 	}
 
@@ -58,7 +56,7 @@
 			> * {
 				@include flex(row, center, space-between);
 				padding: $padSize;
-				background-color: var(--primary-color-light);
+				background-color: $primaryColorLight;
 
 				> span {
 					margin: 0 auto;

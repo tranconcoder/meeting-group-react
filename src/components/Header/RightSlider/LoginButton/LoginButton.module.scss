@@ -1,16 +1,14 @@
-@import 'src/styles/package/allPackage.scss';
-
 .link {
 	@include flex(row, center);
 	@include position(relative);
 	text-decoration: none;
-	color: var(--primary-color-dark);
+	color: $primaryColorDark;
 
 	&::before {
 		content: '';
 		@include size(0, 2px);
 		@include position(absolute, false, 50%, -3px);
-		background-color: var(--primary-color-dark);
+		background-color: $primaryColorDark;
 		transition: all 300ms ease;
 		transform: translateX(50%);
 	}

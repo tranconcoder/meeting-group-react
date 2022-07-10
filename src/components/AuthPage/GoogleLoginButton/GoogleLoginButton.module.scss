@@ -1,11 +1,9 @@
-@import 'src/styles/package/allPackage.scss';
-
 .google-login-button {
 	@include flex(row, center);
 	flex: 1;
 	padding: 16px;
 	background-color: rgb(255, 68, 68);
-	color: var(--white-color);
+	color: $whiteColor;
 	border-radius: 10px;
 	transition: all 300ms ease;
 

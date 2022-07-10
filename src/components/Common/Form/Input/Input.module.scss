@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 .input-wrapper {
 	margin-top: 30px;
 
@@ -31,10 +29,10 @@
 			}
 
 			&:focus {
-				border-color: var(--primary-color-black);
+				border-color: $primaryColorBlack;
 
 				& + p {
-					color: var(--primary-color-dark);
+					color: $primaryColorDark;
 				}
 			}
 		}

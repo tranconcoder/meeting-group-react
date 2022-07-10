@@ -1,5 +1,3 @@
-@import 'src/styles/package/allPackage.scss';
-
 .show-title-wrapper {
 	@include position(relative);
 
@@ -16,7 +14,7 @@
 		@include position(absolute, 50%, false, false, 100%);
 		border-radius: 4px;
 		background-color: #fff;
-		color: var(--primary-color);
+		color: $primaryColor;
 		pointer-events: none;
 		opacity: 0;
 		transform: translate(0, -50%);
