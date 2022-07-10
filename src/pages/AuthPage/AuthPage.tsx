@@ -1,16 +1,14 @@
-import { useState } from 'react';
+import type { LoginOrRegisterProps } from '../../types/state';
 
-import { useNavigate } from 'react-router';
-
-import classNames from 'classnames/bind';
-import styles from './AuthPage.module.scss';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import thumbnails from '../../images/auth-form-left-slide-thumb-2.svg';
+import styles from './AuthPage.module.scss';
 
-import LoginForm from '../../components/AuthPage/LoginForm/LoginForm';
-import RegisterForm from '../../components/AuthPage/RegisterForm/RegisterForm';
+import classNames from 'classnames/bind';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
-import type { LoginOrRegisterProps } from '../../types/state';
+import { LoginForm, RegisterForm } from '../../components/AuthPage';
 
 const cx = classNames.bind(styles);
 

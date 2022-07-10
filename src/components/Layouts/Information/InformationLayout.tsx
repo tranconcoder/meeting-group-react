@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import styles from './InformationLayout.module.scss';
 import { TiChevronLeft } from 'react-icons/ti';
 
-import InformationSlideBar from '../../Information/SlideBar/SlideBar';
+import { SlideBar } from '../../Information';
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +35,7 @@ function InformationLayout({ ContentBoard }: InformationLayoutProps) {
 				})}
 			>
 				<div className={cx('container')}>
-					<InformationSlideBar
+					<SlideBar
 						setTitleContent={setTitleContent}
 						titleContent={titleContent}
 					/>

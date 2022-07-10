@@ -1,10 +1,8 @@
-import styles from './HomePageComp.module.scss';
+import styles from './HomePage.module.scss';
 
 import classNames from 'classnames/bind';
 
-import Banner from './Banner/Banner';
-import ImagesSlide from './ImagesSlide/ImagesSlide';
-import Users from './Users/Users';
+import { Banner, ImagesSlide, Users } from '../HomePage';
 
 const cx = classNames.bind(styles);
 

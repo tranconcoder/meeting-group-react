@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
+
 import { BsFillPersonCheckFill } from 'react-icons/bs';
 import { FaChalkboardTeacher, FaHome, FaSchool, FaUser } from 'react-icons/fa';
-
-import classNames from 'classnames/bind';
+import userSlideListThumb from '../../../images/user-list-slide-thumb-2.svg';
 import styles from './Users.module.scss';
 
-import userSlideListThumb from '../../../images/user-list-slide-thumb-2.svg';
+import classNames from 'classnames/bind';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 

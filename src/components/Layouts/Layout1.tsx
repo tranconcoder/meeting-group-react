@@ -1,11 +1,12 @@
-import { Fragment } from 'react';
-import { Layout1Props } from '../../types/props';
+import type { Layout1Props } from '../../types/props';
 
-import Header from '../Header/Header';
+import styles from './Layout1.module.scss';
 
 import classNames from 'classnames/bind';
-import styles from './Layout1.module.scss';
-import Footer from '../Footer/Footer';
+import { Fragment } from 'react';
+
+import Footer from '../Footer';
+import Header from '../Header';
 
 const cx = classNames.bind(styles);
 

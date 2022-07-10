@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
-import classNames from 'classnames/bind';
-
-import styles from './ImagesSlide.module.scss';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import styles from './ImagesSlide.module.scss';
+
+import classNames from 'classnames/bind';
+import { useEffect, useRef, useState } from 'react';
 
 const cx = classNames.bind(styles);
 

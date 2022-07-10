@@ -4,7 +4,11 @@
 	@include size(100vw, false);
 	@include flex(row, center, center);
 	padding: 60px 140px;
-	background-color: var(--primary-color-black);
+	background-image: linear-gradient(
+		150deg,
+		var(--primary-color-dark),
+		var(--primary-color)
+	);
 	color: var(--white-color);
 
 	> .direction-list {

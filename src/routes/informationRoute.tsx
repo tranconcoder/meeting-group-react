@@ -1,8 +1,8 @@
 import type { RouteInformationType } from '../types/routes';
 
-import Profile from '../components/Information/Profile/Profile';
+import { Profile } from '../components/Information';
 import InformationLayout from '../components/Layouts/Information/InformationLayout';
-import NeedAuth from '../components/NeedAuth/NeedAuth';
+import NeedAuth from '../components/NeedAuth';
 
 const informationRoute: RouteInformationType = {
 	profile: {

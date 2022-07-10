@@ -1,15 +1,14 @@
+import { HiFolderDownload } from 'react-icons/hi';
 import { IoIosCopy, IoMdClose } from 'react-icons/io';
 import styles from './QRPreview.module.scss';
 
-import { Dispatch, Fragment, SetStateAction, useRef } from 'react';
-import { HiFolderDownload } from 'react-icons/hi';
 import classNames from 'classnames/bind';
+import { Dispatch, Fragment, SetStateAction, useRef } from 'react';
 import { copyToClipBoard } from '../../common/commonMethods';
 import { useAppDispatch, useAppSelector } from '../../common/reduxHooks';
 import { setDataToPreview } from '../../redux/slices/qrCode';
 
-import AddTitle from '../Common/AddTitle/AddTitle';
-import QRCode from '../Common/QRCode/QRCode';
+import { AddTitle, QRCode } from '../Common';
 
 const cx = classNames.bind(styles);
 

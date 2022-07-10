@@ -4,13 +4,12 @@ import type {
 } from '../../../types/componentsType/InformationSlideBar';
 import type { SlideBarSelectionList } from '../../../types/storage/slideBar';
 
-import classNames from 'classnames/bind';
-import slideBarSelectionList from '../../../storage/informationSlideBar';
-
 import styles from './SlideBar.module.scss';
 
-import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames/bind';
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import slideBarSelectionList from '../../../storage/informationSlideBar';
 
 const cx = classNames.bind(styles);
 

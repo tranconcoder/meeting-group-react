@@ -1,9 +1,8 @@
 import { FaLongArrowAltRight } from 'react-icons/fa';
-
-import classNames from 'classnames/bind';
-
 import thumb from '../../../images/home-thumb.svg';
 import styles from './Banner.module.scss';
+
+import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 

@@ -1,8 +1,10 @@
+import styles from './RightSlider.module.scss';
+
 import classNames from 'classnames/bind';
 import { useAppSelector } from '../../../common/reduxHooks';
+
 import LoginButton from './LoginButton/LoginButton';
 import Panel from './Panel/Panel';
-import styles from './RightSlider.module.scss';
 
 const cx = classNames.bind(styles);
 

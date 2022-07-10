@@ -1,13 +1,14 @@
-import './styles/reset.scss';
-import './styles/fonts.scss';
 import './styles/aos/aos.css';
+import './styles/fonts.scss';
 import './styles/global.scss';
+import './styles/reset.scss';
 
+import AOS from 'aos';
 import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import AOS from 'aos';
-import QRPreview from './components/QRPreview/QRPreview';
-import RouteList from './components/RouteList/RouteList';
+
+import QRPreview from './components/QRPreview';
+import RouteList from './components/RouteList';
 
 function App() {
 	useEffect(() => {

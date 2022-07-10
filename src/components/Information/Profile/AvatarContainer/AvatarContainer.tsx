@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import classNames from 'classnames/bind';
 import styles from './AvatarContainer.module.scss';
 import defaultAvatar from '../../../../images/default-avatar-2.png';

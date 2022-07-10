@@ -1,18 +1,17 @@
+import { FaStickyNote } from 'react-icons/fa';
+import { FiUser } from 'react-icons/fi';
 import { HiDownload } from 'react-icons/hi';
 import { IoMdEye } from 'react-icons/io';
-import { FaStickyNote } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import defaultAvatar from '../../../../images/default-avatar-2.png';
 import styles from './InformationBox.module.scss';
 
-import { useRef } from 'react';
 import classNames from 'classnames/bind';
+import { useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../common/reduxHooks';
 import { setDataToPreview } from '../../../../redux/slices/qrCode';
 
-import CopyButton from '../../../Common/CopyButton/CopyButton';
-import QRCode from '../../../Common/QRCode/QRCode';
-import { FiUser } from 'react-icons/fi';
+import { CopyButton, QRCode } from '../../../Common';
 import Title from '../Title/Title';
 
 const cx = classNames.bind(styles);

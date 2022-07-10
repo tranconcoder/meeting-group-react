@@ -1,10 +1,7 @@
+import type { QRCodeProps } from '../../../types/props';
+
 import { useEffect, useRef } from 'react';
-import { QRCodeProps } from '../../../types/props';
-
-// import styles from './QRCode.module.scss';
 import { QRCodeCanvas } from 'qrcode.react';
-
-// const cx = classNames.bind(styles);
 
 function QRCode({
 	value,

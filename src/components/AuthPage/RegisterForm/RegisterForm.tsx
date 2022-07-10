@@ -1,10 +1,12 @@
-import styles from './RegisterForm.module.scss';
+import { CgRename } from 'react-icons/cg';
+import { FaUser } from 'react-icons/fa';
+import { HiOutlineMail } from 'react-icons/hi';
 import { MdPersonAdd } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
-import { HiOutlineMail } from 'react-icons/hi';
-import { CgRename } from 'react-icons/cg';
+import styles from './RegisterForm.module.scss';
 
-import FormikForm from '../../Common/Form/Form';
+import classNames from 'classnames/bind';
+import * as Yup from 'yup';
 import {
 	emailValidate,
 	fullNameValidate,
@@ -12,12 +14,9 @@ import {
 	passwordValidate,
 	usernameValidate,
 } from '../../../config/validateConfig';
-import classNames from 'classnames/bind';
-import * as Yup from 'yup';
 
-import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
-import Input from '../../Common/Form/Input/Input';
-import { FaUser } from 'react-icons/fa';
+import { FormikForm, Input } from '../../Common';
+import { SubmitFormButton } from '../../AuthPage';
 
 const cx = classNames.bind(styles);
 

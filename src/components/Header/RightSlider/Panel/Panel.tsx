@@ -1,9 +1,10 @@
-import classNames from 'classnames/bind';
-import { useAppSelector } from '../../../../common/reduxHooks';
+import defaultAvatar from '../../../../images/default-avatar-2.png';
 import styles from './Panel.module.scss';
 
-import defaultAvatar from '../../../../images/default-avatar-2.png';
+import classNames from 'classnames/bind';
 import { useState } from 'react';
+import { useAppSelector } from '../../../../common/reduxHooks';
+
 import PanelBox from './PanelBox/PanelBox';
 
 const cx = classNames.bind(styles);

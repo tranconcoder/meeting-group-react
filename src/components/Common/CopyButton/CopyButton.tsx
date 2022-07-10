@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import type { CopyButtonProps } from '../../../types/props';
+
 import { RiFileCopyFill, RiFileCopyLine } from 'react-icons/ri';
+import styles from './CopyButton.module.scss';
 
 import classNames from 'classnames/bind';
-import { CopyButtonProps } from '../../../types/props';
-import AddTitle from '../AddTitle/AddTitle';
-import styles from './CopyButton.module.scss';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { AddTitle } from '../';
 
 const cx = classNames.bind(styles);
 

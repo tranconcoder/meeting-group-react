@@ -1,4 +1,4 @@
-import HomePageComp from '../../components/HomePage/HomePageComp';
+import HomePageComp from '../../components/HomePage';
 import Layout1 from '../../components/Layouts/Layout1';
 
 function HomePage() {

@@ -15,10 +15,8 @@ import {
 	usernameValidate,
 } from '../../../config/validateConfig';
 
-import SubmitFormButton from '../SubmitFormButton/SubmitFormButton';
-import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
-import FormikForm from '../../Common/Form/Form';
-import Input from '../../Common/Form/Input/Input';
+import { SubmitFormButton, GoogleLoginButton } from '../../AuthPage';
+import { Input, FormikForm } from '../../Common';
 
 const cx = classNames.bind(styles);
 

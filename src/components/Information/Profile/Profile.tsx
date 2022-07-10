@@ -1,15 +1,14 @@
 import type { InformationPageProfileTitleProps } from '../../../types/props';
 
-import { memo } from 'react';
-import classNames from 'classnames/bind';
-
+import { BiMessageSquareEdit } from 'react-icons/bi';
 import styles from './Profile.module.scss';
 
-import InformationBox from './InformationBox/InformationBox';
-import ChangeInfo from './ChangeInfo/ChangeInfo';
+import classNames from 'classnames/bind';
+import { memo } from 'react';
+
 import AvatarContainer from './AvatarContainer/AvatarContainer';
+import ChangeInfo from './ChangeInfo/ChangeInfo';
 import Title from './Title/Title';
-import { BiMessageSquareEdit } from 'react-icons/bi';
 
 const cx = classNames.bind(styles);
 
