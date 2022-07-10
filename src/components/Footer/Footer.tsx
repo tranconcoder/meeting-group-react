@@ -3,6 +3,7 @@ import styles from './Footer.module.scss';
 import classNames from 'classnames/bind';
 import DirectoryList from './Directory/Directory';
 import DevInfo from './DevInfo/DevInfo';
+import Introduction from './Introduction/Introduction';
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +12,11 @@ function Footer() {
 		<div className={cx('footer')}>
 			<DirectoryList />
 
-			<DevInfo />
+			<div className={cx('dev-and-web-introduction')}>
+				<DevInfo />
+
+				<Introduction />
+			</div>
 		</div>
 	);
 }

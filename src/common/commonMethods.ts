@@ -21,7 +21,13 @@ export const isSpecialLetter = (str: string) => {
 	return specialChars.test(str);
 };
 
-export const copyToClipBoard = (blob: Blob) => {
-	const dataToCopy = [new ClipboardItem({ [blob.type]: blob })];
-	navigator.clipboard.write(dataToCopy);
+export const copyToClipBoard = (dataToSave: Blob | string) => {
+	if (typeof dataToSave === 'string') {
+		navigator.clipboard.writeText(dataToSave);
+	} else {
+		const dataToCopy = [
+			new ClipboardItem({ [dataToSave.type]: dataToSave }),
+		];
+		navigator.clipboard.write(dataToCopy);
+	}
 };

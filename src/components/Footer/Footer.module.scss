@@ -5,4 +5,12 @@
 	padding: 60px 140px;
 	background-image: linear-gradient(160deg, $primaryColorDark, $primaryColor);
 	color: $whiteColor;
+
+	> .dev-and-web-introduction {
+		@include flex(row, center, space-between);
+
+		> * {
+			flex: 1;
+		}
+	}
 }

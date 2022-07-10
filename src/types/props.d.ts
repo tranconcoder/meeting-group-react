@@ -1,4 +1,6 @@
 import type {
+	AllHTMLAttributes,
+	Attributes,
 	CSSProperties,
 	Dispatch,
 	FunctionComponent,
@@ -9,6 +11,7 @@ import type { IconType } from 'react-icons';
 import type { ObjectAnyKey } from './common';
 
 import { object as YupObject } from 'yup';
+import React from 'react';
 
 // SubmitFormButton
 export interface SubmitFormButtonProps {
@@ -50,13 +53,16 @@ export interface Layout1Props {
 	Body: FunctionComponent;
 }
 
-export interface AddTitleProps {
+export interface AddTitleProps extends AllHTMLAttributes<React.ElementType> {
 	children: ReactNode;
 	title: string;
 	onClick?: (
 		titleState: string,
 		setTitleState: Dispatch<SetStateAction<string>>
 	) => void;
+	className?: string;
+	copyOnClick?: string;
+	parentTag?: React.ElementType;
 }
 
 // QRCodeProps

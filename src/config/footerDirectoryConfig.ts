@@ -57,10 +57,25 @@ const footerDirectoryConfig: Array<FooterDirectionConfig> = [
 		],
 	},
 	{
-		title: 'Đề tài nổi bật',
+		title: 'Blog nổi bật',
 		linkList: [
 			{
-				content: 'Nổi bật',
+				content: 'Top ngày',
+				link: 'https://google.com/',
+				openInNewTab: true,
+			},
+			{
+				content: 'Top tuần',
+				link: 'https://google.com/',
+				openInNewTab: true,
+			},
+			{
+				content: 'Top tháng',
+				link: 'https://google.com/',
+				openInNewTab: true,
+			},
+			{
+				content: 'Từ trước đến nay',
 				link: 'https://google.com/',
 				openInNewTab: true,
 			},

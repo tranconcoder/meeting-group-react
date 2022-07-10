@@ -6,14 +6,27 @@
 		margin-bottom: 10px;
 	}
 
-	> .info-container {
-		margin-top: 40px;
+	> .contact-container {
+		@include flex(column, flex-start);
 
-		> .avatar {
-			@include size(130px);
-			border-radius: 50%;
-			object-fit: cover;
-			box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+		> .facebook:hover {
+			text-decoration: underline;
+		}
+
+		> .facebook,
+		> .google,
+		> .phone-number {
+			@include flex(row, center);
+			margin-top: 20px;
+			color: $whiteColor;
+
+			> img {
+				@include size(40px, false);
+			}
+
+			> span {
+				margin-left: 10px;
+			}
 		}
 	}
 }
