@@ -18,3 +18,17 @@ export interface InitAuthStore {
 export interface InitQrCodeStore {
 	dataToPreview: string;
 }
+
+// toastMessageList store
+export interface ToastMessageItemStore {
+	id: string;
+	state: 'creating' | 'normal' | 'deleting';
+	type: 'success' | 'notify' | 'warning' | 'error';
+	title: string;
+	content: string;
+	duration: number;
+	handleAction?: () => any;
+	actionTitle?: string;
+}
+
+export interface ToastMessageListStore extends Array<ToastMessageItemStore> {}

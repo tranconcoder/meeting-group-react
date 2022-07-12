@@ -9,6 +9,7 @@ const cx = classNames.bind(styles);
 
 function Button({
 	children,
+	tagName = 'button',
 	to,
 	type = 'normal-blue',
 	...allAttributes
@@ -17,14 +18,19 @@ function Button({
 
 	const handleNavigate = to ? () => navigate(to as To) : () => {};
 
+	const Button = tagName;
+
 	return (
-		<button
+		<Button
 			{...allAttributes}
 			className={cx('button', type)}
-			onClick={handleNavigate}
+			onClick={(e: any) => {
+				handleNavigate();
+				allAttributes.onClick && allAttributes.onClick(e);
+			}}
 		>
 			<p>{children}</p>
-		</button>
+		</Button>
 	);
 }
 

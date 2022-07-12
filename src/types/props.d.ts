@@ -39,6 +39,7 @@ export interface GoogleLoginButtonProps {
 // ButtonProps
 export interface ButtonProps extends AllHTMLAttributes<any> {
 	children?: ReactNode;
+	tagName?: React.ElementType;
 	styles?: CSSProperties;
 	to?: string | number;
 	type?: 'normal-purple' | 'normal-blue' | 'change' | 'warning' | 'error';
@@ -132,3 +133,6 @@ export interface FooterDirectionConfig {
 		openInNewTab?: boolean;
 	}>;
 }
+
+// ToastMessageProps
+export interface ToastMessageProps {}

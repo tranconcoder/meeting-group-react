@@ -2,6 +2,7 @@ import styles from './LoginForm.module.scss';
 import { MdSwitchAccount } from 'react-icons/md';
 import { FaUserLock } from 'react-icons/fa';
 import { HiLockClosed } from 'react-icons/hi';
+import devAvatar128 from '../../../images/dev-avatar-128.png';
 
 import * as Yup from 'yup';
 import classNames from 'classnames/bind';
@@ -43,7 +44,7 @@ function LoginForm() {
 				email: 'tranconcoder@gmail.com',
 				username: formData.username,
 				fullName: 'Trần Văn Còn',
-				avatar: 'https://lh3.googleusercontent.com/ogw/ADea4I5shoTR4FEGvFq0eAbpcVH-FwE9ALF7Flps5uDz=s128-c-mo',
+				avatar: devAvatar128,
 				rank: null,
 				className: '12A12',
 				sharedUrl: 'https://www.google.com/',

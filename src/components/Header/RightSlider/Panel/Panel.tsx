@@ -1,4 +1,4 @@
-import defaultAvatar from '../../../../images/default-avatar-2.png';
+import defaultAvatar from '../../../../images/default-avatar-512.png';
 import styles from './Panel.module.scss';
 
 import classNames from 'classnames/bind';

@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import QRPreview from './components/QRPreview';
 import RouteList from './components/RouteList';
+import ToastMessage from './components/Common/ToastMessage/ToastMessage';
 
 function App() {
 	useEffect(() => {
@@ -17,6 +18,8 @@ function App() {
 	return (
 		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<QRPreview />
+
+			<ToastMessage />
 
 			<RouteList />
 		</BrowserRouter>

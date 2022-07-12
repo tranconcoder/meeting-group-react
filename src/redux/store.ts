@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './slices/auth';
 import qrCodeReducer from './slices/qrCode';
+import toastMessageReducer from './slices/toastMessage';
 
 export const store = configureStore({
 	reducer: {
 		auth: authReducer,
 		qrCode: qrCodeReducer,
+		toastMessage: toastMessageReducer,
 	},
 });
 

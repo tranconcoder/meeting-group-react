@@ -6,7 +6,7 @@
 	margin-top: 20px;
 
 	> .avatar-container {
-		@include size(120px);
+		@include size(160px);
 		@include position(relative);
 		border-radius: 50%;
 		overflow: hidden;
@@ -24,6 +24,8 @@
 			@include size(100%);
 			object-fit: cover;
 			object-position: center;
+			padding: 20px;
+			border-radius: 50%;
 		}
 
 		> .hover-layer {
@@ -45,11 +47,13 @@
 		@include flex(row);
 
 		> li {
-			&:not(:first-child) > button {
+			&:not(:first-child) > button,
+			&:not(:first-child) > label {
 				margin-left: 10px;
 			}
 
-			> button {
+			> button,
+			> label {
 				font-size: 16px;
 				font-weight: 500;
 				cursor: pointer;

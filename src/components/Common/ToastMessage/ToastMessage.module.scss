@@ -1,0 +1,22 @@
+.toast-message {
+	@include position(fixed, 10px, 10px);
+	z-index: 101;
+
+	> .message-list {
+		@include size(500px, false);
+	}
+
+	> .delete-all-message-button {
+		@include size(100%, 40px);
+		background-color: $whiteColor;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		margin-top: 10px;
+		border-radius: 8px;
+		transition: all ease 300ms;
+
+		&:hover {
+			cursor: pointer;
+			filter: brightness(0.9);
+		}
+	}
+}

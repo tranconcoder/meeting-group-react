@@ -1,3 +1,7 @@
+import type { FormatImageOptions } from '../types/common';
+
+import FileResizer from 'react-image-file-resizer';
+
 export const validateEmail = (email: string) => {
 	return String(email)
 		.toLowerCase()
@@ -30,4 +34,48 @@ export const copyToClipBoard = (dataToSave: Blob | string) => {
 		];
 		navigator.clipboard.write(dataToCopy);
 	}
+};
+
+export const downloadFile = (url: string, fileName: string) => {
+	const link = document.createElement('a');
+
+	link.href = url;
+	link.download = fileName;
+
+	link.click();
+	link.remove();
+};
+
+export const sleep = (ms: number) =>
+	new Promise(resolve => {
+		setTimeout(resolve, ms);
+	});
+
+export const dataUrlToBlob = async (url: string): Promise<Blob> => {
+	return await fetch(url).then(res => res.blob());
+};
+
+export const formatImage = async (
+	data: Blob | string,
+	options: FormatImageOptions
+): Promise<string> => {
+	const fileBlob =
+		typeof data === 'string' ? await dataUrlToBlob(data) : data;
+
+	return new Promise(resolve => {
+		FileResizer.imageFileResizer(
+			fileBlob,
+			options.maxWidth,
+			options.maxHeight,
+			options.compressFormat,
+			options.quality,
+			options.rotation,
+			uri => {
+				resolve(uri as string);
+			},
+			options.outputFile || 'base64',
+			options.minWidth,
+			options.minHeight
+		);
+	});
 };
