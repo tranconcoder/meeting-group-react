@@ -9,7 +9,7 @@ export interface InitAuthStore {
 	avatar: null | string;
 	// HS -> GV -> GThị -> BGH -> HTrưởng
 	rank: null | 'student' | 'teacher' | 'manager' | 'admin' | 'owner';
-	className: null | string | string[];
+	classList: null | string[];
 	sharedUrl: null | string;
 	description: null | string;
 }

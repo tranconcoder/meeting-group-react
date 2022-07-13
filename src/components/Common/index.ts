@@ -8,3 +8,5 @@ export { default as FormikForm } from './Form/FormikForm';
 export { default as Input } from './Form/Input/Input';
 
 export { default as QRCode } from './QRCode/QRCode';
+
+export { default as ToastMessage } from './ToastMessage/ToastMessage';

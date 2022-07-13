@@ -15,8 +15,8 @@ function Input({
 	Icon,
 	toggleVisiblePassword = true,
 	type = 'text',
-	styles = {},
 	name,
+	...allAttribute
 }: InputProps) {
 	const [passwordIsVisible, setPasswordIsVisible] = useState(false);
 

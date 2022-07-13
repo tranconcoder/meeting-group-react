@@ -20,12 +20,11 @@ export interface SubmitFormButtonProps {
 }
 
 // InputForm
-export interface InputProps {
+export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
 	placeholder?: string;
 	type?: 'text' | 'password';
 	isFastField?: boolean;
 	Icon?: IconType;
-	styles?: CSSProperties;
 	toggleVisiblePassword?: boolean;
 	getValidateHandler?: [{ current: any }, (cloneObject: {}) => any];
 	name: string;
@@ -134,5 +133,14 @@ export interface FooterDirectionConfig {
 	}>;
 }
 
-// ToastMessageProps
-export interface ToastMessageProps {}
+// DropListProps
+interface DropItem {
+	name: string;
+	value: string;
+}
+
+export interface DropListProps {
+	valueList: Array<DropItem>;
+	currentValueName?: string;
+	children?: ReactNode;
+}

@@ -1,6 +1,6 @@
 import type { FormatImageOptions } from '../../../types/common';
 
-import { FiEdit } from 'react-icons/fi';
+import { FiDownload, FiEdit } from 'react-icons/fi';
 import defaultAvatar from '../../../images/default-avatar-512.png';
 import styles from './AvatarContainer.module.scss';
 
@@ -12,6 +12,9 @@ import { downloadFile, formatImage } from '../../../common/commonMethods';
 import { addMessage } from '../../../redux/slices/toastMessage';
 
 import { Button } from '../../Common';
+import { HiDownload } from 'react-icons/hi';
+import { FaDownload, FaEdit } from 'react-icons/fa';
+import { RiImageEditFill } from 'react-icons/ri';
 
 const cx = classNames.bind(styles);
 
@@ -105,7 +108,7 @@ function AvatarContainer() {
 	}, [avatar]);
 
 	return (
-		<div className={cx('avatar-wrapper')}>
+		<section className={cx('avatar-wrapper')}>
 			<label
 				className={cx('avatar-container')}
 				htmlFor={avatarInputFileId}
@@ -136,7 +139,10 @@ function AvatarContainer() {
 				)}
 
 				<li className={cx('download')}>
-					<Button onClick={handleDownloadAvatar}>Tải xuống</Button>
+					<Button onClick={handleDownloadAvatar}>
+						<FaDownload size={14} style={{ marginRight: 10 }} />
+						<span>Tải xuống</span>
+					</Button>
 				</li>
 
 				<li className={cx('change')}>
@@ -145,7 +151,11 @@ function AvatarContainer() {
 						tagName="label"
 						htmlFor={avatarInputFileId}
 					>
-						Chỉnh sửa
+						<RiImageEditFill
+							size={20}
+							style={{ marginRight: 10 }}
+						/>
+						<span>Đổi ảnh</span>
 					</Button>
 				</li>
 			</ul>
@@ -158,7 +168,7 @@ function AvatarContainer() {
 				style={{ display: 'none' }}
 				accept="image/*"
 			/>
-		</div>
+		</section>
 	);
 }
 

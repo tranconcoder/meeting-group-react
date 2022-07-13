@@ -9,6 +9,7 @@ import { memo } from 'react';
 import AvatarContainer from './AvatarContainer/AvatarContainer';
 import ChangeInfo from './ChangeInfo/ChangeInfo';
 import Title from './Title/Title';
+import InfoContainer from './InfoContainer/InfoContainer';
 
 const cx = classNames.bind(styles);
 
@@ -28,6 +29,8 @@ function Profile() {
 			<Title {...titleProps} />
 
 			<AvatarContainer />
+
+			<InfoContainer />
 
 			<ChangeInfo />
 		</div>

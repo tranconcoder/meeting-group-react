@@ -11,7 +11,7 @@ const initialState: InitAuthStore = {
 	fullName: null,
 	avatar: null,
 	rank: null,
-	className: null,
+	classList: null,
 	sharedUrl: null,
 	description: null,
 };

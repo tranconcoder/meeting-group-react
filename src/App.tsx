@@ -6,9 +6,9 @@ import AOS from 'aos';
 import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+import { ToastMessage } from './components/Common';
 import QRPreview from './components/QRPreview';
 import RouteList from './components/RouteList';
-import ToastMessage from './components/Common/ToastMessage/ToastMessage';
 
 function App() {
 	useEffect(() => {

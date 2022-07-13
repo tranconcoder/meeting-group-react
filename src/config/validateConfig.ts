@@ -62,3 +62,13 @@ const EMAIL_LABEL = 'Email';
 export const emailValidate = Yup.string()
 	.required(getRequiredMessage(EMAIL_LABEL))
 	.email(emailMessage);
+
+// ClassList
+const CLASS_LIST_LABEL = 'Lớp học tham gia';
+
+export const classListValidate = Yup.array().of(
+	Yup.string().required(getRequiredMessage(CLASS_LIST_LABEL))
+);
+
+// Description
+export const descriptionValidate = Yup.string();
