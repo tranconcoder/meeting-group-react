@@ -1,49 +1,42 @@
-import * as Yup from 'yup';
+import { createContext, useState } from 'react';
+
 import classNames from 'classnames/bind';
 import styles from './InfoContainer.module.scss';
-import { FormikForm, Input } from '../../Common';
-import { useAppSelector } from '../../../common/reduxHooks';
-import {
-	classListValidate,
-	descriptionValidate,
-	emailValidate,
-	fullNameValidate,
-} from '../../../config/validateConfig';
+import InfoForm from './InfoForm/InfoForm';
+import InfoTools from './InfoTools/InfoTools';
+import { InfoContainerContextType } from '../../../types/context';
 
 const cx = classNames.bind(styles);
+const InfoContainerContext = createContext<InfoContainerContextType>({
+	setHandleResetForm: () => {},
+	setHandleSubmitForm: () => {},
+	handleResetForm: () => {},
+	handleSubmitForm: () => {},
+});
 
 function InfoContainer() {
-	const fullName = useAppSelector(state => state.auth.fullName);
-	const email = useAppSelector(state => state.auth.email);
-	const rank = useAppSelector(state => state.auth.rank);
-	const classList = useAppSelector(state => state.auth.classList);
-	const description = useAppSelector(state => state.auth.description);
-
-	const initialFormValues = {
-		fullName,
-		email,
-		rank,
-		classList,
-		description,
-	};
-
-	const formValidationsSchema = Yup.object({
-		fullName: fullNameValidate,
-		email: emailValidate,
-		classList: classListValidate,
-		description: descriptionValidate,
-	});
+	const [handleResetForm, setHandleResetForm] = useState<() => any>(() => {});
+	const [handleSubmitForm, setHandleSubmitForm] = useState<() => any>(
+		() => {}
+	);
 
 	return (
-		<FormikForm
-			className={cx('info-wrapper')}
-			initialValues={initialFormValues}
-			validationSchema={formValidationsSchema}
-			onSubmit={console.log}
+		<InfoContainerContext.Provider
+			value={{
+				handleResetForm,
+				handleSubmitForm,
+				setHandleResetForm,
+				setHandleSubmitForm,
+			}}
 		>
-			<Input name="fullName" />
-		</FormikForm>
+			<div className={cx('info-container')}>
+				<InfoForm />
+
+				<InfoTools />
+			</div>
+		</InfoContainerContext.Provider>
 	);
 }
 
+export { InfoContainerContext };
 export default InfoContainer;

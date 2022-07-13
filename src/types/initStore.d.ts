@@ -1,17 +1,19 @@
 // Auth store
+export type RankType = 'student' | 'teacher' | 'manager' | 'admin' | 'owner';
+
 export interface InitAuthStore {
-	id: null | string;
+	id: string;
 	isLogged: boolean;
 	accountType: null | 'default' | 'google';
-	email: null | string;
-	username: null | string;
-	fullName: null | string;
-	avatar: null | string;
+	email: string;
+	username: string;
+	fullName: string;
+	avatar: string;
 	// HS -> GV -> GThị -> BGH -> HTrưởng
-	rank: null | 'student' | 'teacher' | 'manager' | 'admin' | 'owner';
-	classList: null | string[];
-	sharedUrl: null | string;
-	description: null | string;
+	rank: '' | RankType;
+	classList: string[];
+	sharedUrl: string;
+	description: string;
 }
 
 // qrCode store

@@ -1,0 +1,12 @@
+.info-tools-wrapper {
+	@include size(30%, false);
+	@include minSize(200px, false);
+	@include maxSize(400px, false);
+	padding: 40px 0 40px 30px;
+
+	> .save-button,
+	> .reset-button {
+		@include size(100%, 48px);
+		text-align: center;
+	}
+}

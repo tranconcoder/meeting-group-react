@@ -1,5 +1,7 @@
-export interface ObjectAnyKey {
-	[key: string]: any;
+import { RankType } from './initStore';
+
+export interface ObjectAnyKey<T> extends Object {
+	[key: string]: T;
 }
 
 export type Timeout = NodeJS.Timeout;
@@ -14,3 +16,8 @@ export interface FormatImageOptions {
 	minHeight?: number;
 	outputFile?: 'base64' | 'blob' | 'file';
 }
+
+// RankConfig
+export type RankConfig = {
+	[Key in RankType]: string;
+};

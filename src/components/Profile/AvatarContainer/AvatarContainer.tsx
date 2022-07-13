@@ -124,12 +124,12 @@ function AvatarContainer() {
 				{avatar !== defaultAvatar && (
 					<>
 						<li className={cx('save')}>
-							<Button type="warning">Lưu thay đổi</Button>
+							<Button colorStyle="warning">Lưu thay đổi</Button>
 						</li>
 
 						<li className={cx('reset')}>
 							<Button
-								type="warning"
+								colorStyle="warning"
 								onClick={handleResetChangeImage}
 							>
 								Chọn ảnh ban đầu
@@ -147,7 +147,7 @@ function AvatarContainer() {
 
 				<li className={cx('change')}>
 					<Button
-						type="change"
+						colorStyle="change"
 						tagName="label"
 						htmlFor={avatarInputFileId}
 					>

@@ -1,15 +1,26 @@
-import { useContext, useState } from 'react';
+import type { DropItemProps } from '../../../../../types/props';
+
+import styles from './DropItem.module.scss';
 
 import classNames from 'classnames/bind';
+import { useContext } from 'react';
 import { DropListContext } from '../DropList';
-import styles from './DropItem.module.scss';
 
 const cx = classNames.bind(styles);
 
-function DropItem() {
-	const { currentValueName, valueList } = useContext(DropListContext);
+function DropItem({ children: label, value }: DropItemProps) {
+	const { handleChangeValue, currentValue } = useContext(DropListContext);
 
-	return <div>{currentValueName}</div>;
+	return (
+		<li
+			className={cx('drop-item', {
+				selected: value === currentValue,
+			})}
+			onClick={() => handleChangeValue(value)}
+		>
+			{label}
+		</li>
+	);
 }
 
 export default DropItem;

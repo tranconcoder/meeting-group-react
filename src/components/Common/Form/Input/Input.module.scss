@@ -1,30 +1,22 @@
 .input-wrapper {
-	margin-top: 30px;
-
 	.input-container {
 		position: relative;
-		color: #666;
+		color: $textColor;
+		display: block;
 
-		> input {
+		> input,
+		> textarea {
 			width: 100%;
 			padding: 10px 34px 10px 14px;
 			border-radius: 8px;
 			font-size: 16px;
 			border: 2px solid rgb(212, 212, 212);
-			transition: all 300ms ease;
 
 			&.error {
 				border-color: red;
 
 				& + p {
 					color: red;
-				}
-			}
-
-			&:focus,
-			&:not(:placeholder-shown) {
-				& + p {
-					top: calc(-100% - 14px);
 				}
 			}
 
@@ -35,11 +27,36 @@
 					color: $primaryColorDark;
 				}
 			}
+
+			&:focus,
+			&:not(:placeholder-shown) {
+				& + p {
+					top: 0;
+					transform: translateY(calc(-50% - 14px));
+				}
+			}
+		}
+
+		> input {
+			transition: all 300ms ease;
+			min-height: 50px;
+
+			& + p {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		> textarea {
+			min-height: 80px;
+
+			& + p {
+				top: 16px;
+			}
 		}
 
 		> p {
 			position: absolute;
-			top: 0px;
 			left: 16px;
 			display: flex;
 			align-items: center;
@@ -71,7 +88,7 @@
 		transition: max-height 1000ms ease;
 
 		&.show {
-			max-height: 2rem;
+			max-height: 20px;
 		}
 	}
 }

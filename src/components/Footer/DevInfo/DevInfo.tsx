@@ -10,8 +10,13 @@ const cx = classNames.bind(styles);
 
 function DevInfo() {
 	const OWNER_EMAIL = 'tranvanconkg@gmail.com';
+	const SEND_EMAIL_TO_OWNER_URL = `https://mail.google.com/mail/u/0/?to=${OWNER_EMAIL}&fs=1&tf=cm`;
 	const OWNER_FACEBOOK_URL = 'https://www.facebook.com/tranvanconkg0/';
 	const OWNER_PHONE_NUMBER = '0123456789';
+
+	const handleSendEmailToOwner = () => {
+		window.open(SEND_EMAIL_TO_OWNER_URL, '_blank');
+	};
 
 	return (
 		<div className={cx('dev-info')}>
@@ -34,6 +39,7 @@ function DevInfo() {
 					className={cx('google')}
 					title="Nhấn để sao chép Email này"
 					copyOnClick={OWNER_EMAIL}
+					onClick={handleSendEmailToOwner}
 				>
 					<img src={googlePlusImage} alt="google-plus" />
 					<span>{OWNER_EMAIL}</span>

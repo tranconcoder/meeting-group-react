@@ -3,11 +3,21 @@ import type { FormProps } from '../../../types/props';
 import { Form, Formik } from 'formik';
 
 function FormikForm(props: FormProps) {
-	const { children } = props;
+	const {
+		children,
+		initialValues,
+		validationSchema,
+		onSubmit,
+		...allAttribute
+	} = props;
 
 	return (
-		<Formik {...props}>
-			<Form>{children}</Form>
+		<Formik
+			initialValues={initialValues}
+			onSubmit={onSubmit}
+			validationSchema={validationSchema}
+		>
+			<Form {...allAttribute}>{children}</Form>
 		</Formik>
 	);
 }

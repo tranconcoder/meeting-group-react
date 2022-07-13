@@ -11,7 +11,7 @@ function Button({
 	children,
 	tagName = 'button',
 	to,
-	type = 'normal-blue',
+	colorStyle = 'normal-blue',
 	...allAttributes
 }: ButtonProps) {
 	const navigate = useNavigate();
@@ -23,7 +23,7 @@ function Button({
 	return (
 		<Button
 			{...allAttributes}
-			className={cx('button', type)}
+			className={`${cx('button', colorStyle)} ${allAttributes.className}`}
 			onClick={(e: any) => {
 				handleNavigate();
 				allAttributes.onClick && allAttributes.onClick(e);

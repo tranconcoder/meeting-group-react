@@ -20,7 +20,8 @@ export interface SubmitFormButtonProps {
 }
 
 // InputForm
-export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+	extends AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
 	placeholder?: string;
 	type?: 'text' | 'password';
 	isFastField?: boolean;
@@ -28,6 +29,8 @@ export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
 	toggleVisiblePassword?: boolean;
 	getValidateHandler?: [{ current: any }, (cloneObject: {}) => any];
 	name: string;
+	tagName?: 'input' | 'textarea';
+	separate?: number;
 }
 
 // GoogleLoginButton
@@ -41,7 +44,12 @@ export interface ButtonProps extends AllHTMLAttributes<any> {
 	tagName?: React.ElementType;
 	styles?: CSSProperties;
 	to?: string | number;
-	type?: 'normal-purple' | 'normal-blue' | 'change' | 'warning' | 'error';
+	colorStyle?:
+		| 'normal-purple'
+		| 'normal-blue'
+		| 'change'
+		| 'warning'
+		| 'error';
 }
 
 // PanelBoxProps
@@ -115,12 +123,11 @@ export interface InformationPageProfileTitleProps {
 
 // FormProps
 const yupObject = YupObject();
-export interface FormProps {
+export interface FormProps extends AllHTMLAttributes<HTMLFormElement> {
 	initialValues: ObjectAnyKey;
 	onSubmit: (values: Values, formikHelpers?: FormikHelpers<Values>) => void;
 	validationSchema: typeof yupObject;
 	children: ReactNode;
-	className?: string;
 }
 
 // FooterDirectoryConfig
@@ -134,13 +141,24 @@ export interface FooterDirectionConfig {
 }
 
 // DropListProps
-interface DropItem {
+export interface DropItem {
+	value: string;
+	label: string;
+}
+
+export interface DropListProps extends AllHTMLAttributes<HTMLButtonElement> {
 	name: string;
+	children?: ReactNode;
+	labelMap: ObjectAnyKey<string>;
+}
+
+export interface DropItemProps {
+	children: string;
 	value: string;
 }
 
-export interface DropListProps {
-	valueList: Array<DropItem>;
-	currentValueName?: string;
-	children?: ReactNode;
+// SelectProps
+export interface SelectProps {
+	name: string;
+	children: ReactNode;
 }

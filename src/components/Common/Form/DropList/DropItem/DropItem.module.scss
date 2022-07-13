@@ -1,0 +1,16 @@
+.drop-item {
+	padding: 10px 20px;
+	color: $textColor;
+	transition: background-color, color ease 300ms;
+
+	&.selected {
+		color: $primaryColorBlack;
+		font-weight: 500;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: $primaryColorBlack;
+		background-color: #eee;
+	}
+}

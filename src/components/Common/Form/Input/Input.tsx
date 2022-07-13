@@ -14,13 +14,16 @@ function Input({
 	isFastField = false,
 	Icon,
 	toggleVisiblePassword = true,
-	type = 'text',
+	type: type = 'text',
 	name,
+	separate = 30,
+	tagName = 'input',
 	...allAttribute
 }: InputProps) {
 	const [passwordIsVisible, setPasswordIsVisible] = useState(false);
 
-	const Input = isFastField ? FastField : Field;
+	const InputWrapper = isFastField ? FastField : Field;
+	const Input = tagName;
 
 	const inputType =
 		type === 'password' && toggleVisiblePassword
@@ -43,16 +46,21 @@ function Input({
 	};
 
 	return (
-		<Input name={name} placeholder=" ">
+		<InputWrapper name={name} placeholder=" ">
 			{(fieldProps: FieldProps) => {
 				const errorMessage = fieldProps.meta.error;
 				const hasError = errorMessage && fieldProps.meta.touched;
 
 				return (
-					<div className={cx('input-wrapper')} style={styles}>
+					<div
+						className={cx('input-wrapper')}
+						style={{ marginTop: separate }}
+					>
 						<label className={cx('input-container')}>
 							{/* Input element */}
-							<input
+
+							<Input
+								{...allAttribute}
 								{...fieldProps.field}
 								className={cx({ error: hasError })}
 								type={inputType}
@@ -85,7 +93,7 @@ function Input({
 					</div>
 				);
 			}}
-		</Input>
+		</InputWrapper>
 	);
 }
 
