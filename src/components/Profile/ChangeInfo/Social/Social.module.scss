@@ -1,0 +1,3 @@
+.social-wrapper {
+	@include flex(row, flex-start, space-between);
+}

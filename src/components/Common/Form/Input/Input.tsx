@@ -14,7 +14,7 @@ function Input({
 	isFastField = false,
 	Icon,
 	toggleVisiblePassword = true,
-	type: type = 'text',
+	type = 'text',
 	name,
 	separate = 30,
 	tagName = 'input',

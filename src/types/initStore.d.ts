@@ -6,6 +6,7 @@ export interface InitAuthStore {
 	isLogged: boolean;
 	accountType: null | 'default' | 'google';
 	email: string;
+	facebook: string;
 	username: string;
 	fullName: string;
 	avatar: string;

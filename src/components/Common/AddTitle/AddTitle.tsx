@@ -2,9 +2,9 @@ import type { AddTitleProps } from '../../../types/props';
 
 import classNames from 'classnames/bind';
 
-import styles from './AddTitle.module.scss';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { copyToClipBoard } from '../../../common/commonMethods';
+import styles from './AddTitle.module.scss';
 
 const cx = classNames.bind(styles);
 

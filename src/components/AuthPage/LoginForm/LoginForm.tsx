@@ -42,6 +42,7 @@ function LoginForm() {
 				isLogged: true,
 				accountType: 'google',
 				email: 'tranconcoder@gmail.com',
+				facebook: 'https://www.facebook.com/tranvanconkg0/',
 				username: formData.username,
 				fullName: 'Trần Văn Còn',
 				avatar: devAvatar128,

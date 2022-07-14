@@ -7,6 +7,7 @@ const initialState: InitAuthStore = {
 	isLogged: false,
 	accountType: null,
 	email: '',
+	facebook: '',
 	username: '',
 	fullName: '',
 	avatar: '',
@@ -21,6 +22,11 @@ const authSlice = createSlice({
 	initialState,
 	reducers: {
 		login: (state, action: PayloadAction<InitAuthStore>) => {
+			action.payload.facebook = action.payload.facebook.replace(
+				/^.*\/\/[^\/]+/,
+				''
+			);
+
 			return action.payload;
 		},
 		logout: () => initialState,

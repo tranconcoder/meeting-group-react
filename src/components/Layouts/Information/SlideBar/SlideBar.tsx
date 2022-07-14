@@ -24,7 +24,7 @@ function InformationSlideBar({
 	let { current: blurTimeoutId } = useRef<TimeoutOrNull>(null);
 
 	const [slideActived, setSlideActived] = useState(
-		slideBarSelectionList[0].id
+		slideBarSelectionList[1].id
 	);
 
 	const handleOnMouseEnter = (selectionTitle: string) => {

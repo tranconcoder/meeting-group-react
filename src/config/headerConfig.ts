@@ -1,4 +1,4 @@
-import type { PanelButton, PanelSlide } from '../types/componentsType/PanelBox';
+import type { PanelButton } from '../types/componentsType/PanelBox';
 
 import { BiTable } from 'react-icons/bi';
 import { FiBell, FiMessageSquare } from 'react-icons/fi';

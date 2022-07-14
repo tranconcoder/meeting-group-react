@@ -1,9 +1,9 @@
 import styles from './InfoTools.module.scss';
 
 import classNames from 'classnames/bind';
-import { Button } from '../../../Common';
 import { useContext } from 'react';
-import { InfoContainerContext } from '../InfoContainer';
+import { Button } from '../../../Common';
+import { InfoContainerContext } from '../ChangeInfo';
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +16,7 @@ function InfoTools() {
 			<Button className={cx('save-button')} onClick={handleSubmitForm}>
 				Lưu thay đổi
 			</Button>
+
 			<Button
 				onClick={handleResetForm}
 				className={cx('reset-button')}

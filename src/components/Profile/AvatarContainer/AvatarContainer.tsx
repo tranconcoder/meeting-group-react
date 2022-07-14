@@ -1,20 +1,19 @@
 import type { FormatImageOptions } from '../../../types/common';
 
-import { FiDownload, FiEdit } from 'react-icons/fi';
+import { FaDownload } from 'react-icons/fa';
+import { FiEdit } from 'react-icons/fi';
+import { RiImageEditFill } from 'react-icons/ri';
 import defaultAvatar from '../../../images/default-avatar-512.png';
 import styles from './AvatarContainer.module.scss';
 
 import classNames from 'classnames/bind';
 import { ChangeEvent, useEffect, useId, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
 import { v4 as uuidv4 } from 'uuid';
 import { downloadFile, formatImage } from '../../../common/commonMethods';
+import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
 import { addMessage } from '../../../redux/slices/toastMessage';
 
 import { Button } from '../../Common';
-import { HiDownload } from 'react-icons/hi';
-import { FaDownload, FaEdit } from 'react-icons/fa';
-import { RiImageEditFill } from 'react-icons/ri';
 
 const cx = classNames.bind(styles);
 

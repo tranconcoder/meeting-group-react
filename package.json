@@ -4,7 +4,6 @@
 	"homepage": "https://tranconcoder.github.io/meeting-group-react",
 	"private": true,
 	"dependencies": {
-		"@craco/craco": "^6.4.5",
 		"@reduxjs/toolkit": "^1.8.1",
 		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^13.2.0",
@@ -22,6 +21,8 @@
 		"react-router-dom": "^6.3.0",
 		"react-scripts": "^5.0.1",
 		"sass-loader": "^13.0.2",
+		"suneditor": "^2.43.14",
+		"suneditor-react": "^3.4.1",
 		"uuid": "^8.3.2",
 		"web-vitals": "^2.1.4",
 		"yup": "^0.32.11"

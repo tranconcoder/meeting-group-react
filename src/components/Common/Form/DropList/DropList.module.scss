@@ -21,6 +21,10 @@
 		}
 	}
 
+	> .current-value {
+		color: #000;
+	}
+
 	> .triangle {
 		@include size(10px);
 		@include position(absolute, 50%, 16px);
@@ -53,11 +57,13 @@
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 	border-radius: 8px;
 	opacity: 0;
+	transform: translateY(-10px);
 	transition: all ease 300ms;
 	z-index: 99;
 	overflow: hidden;
 
 	&.expanding {
+		transform: translateY(0px);
 		opacity: 1;
 	}
 

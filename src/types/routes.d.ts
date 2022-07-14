@@ -24,4 +24,5 @@ export interface RouteRootType {
 	authPage: RouteNotChildType;
 	informationPage: RouteType<RouteInformationType>;
 	nothingPage: RouteNotChildType;
+	editTextPage: RouteNotChildType;
 }

@@ -41,7 +41,7 @@ function MessageItem(props: ToastMessageItemStore) {
 		const timeoutId = setTimeout(handleDeleteMessage, duration);
 
 		return () => clearTimeout(timeoutId);
-	}, []);
+	}, []); // eslint-disable-line
 
 	return (
 		<li className={cx('message-item', type, state)}>

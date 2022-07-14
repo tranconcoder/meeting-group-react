@@ -1,16 +1,26 @@
 .drop-item {
-	padding: 10px 20px;
-	color: $textColor;
-	transition: background-color, color ease 300ms;
+	> label {
+		@include flex(row, center, space-between);
+		text-align: left;
+		padding: 10px 20px;
+		color: $textColor;
+		transition: background-color, color ease 300ms;
+		user-select: none;
+		-webkit-user-drag: none;
 
-	&.selected {
-		color: $primaryColorBlack;
-		font-weight: 500;
-	}
+		> input {
+			display: none;
+		}
 
-	&:hover {
-		cursor: pointer;
-		color: $primaryColorBlack;
-		background-color: #eee;
+		&.selected {
+			color: $primaryColorBlack;
+			font-weight: 500;
+		}
+
+		&:hover {
+			cursor: pointer;
+			color: $primaryColorBlack;
+			background-color: #eee;
+		}
 	}
 }

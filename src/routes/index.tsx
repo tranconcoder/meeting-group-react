@@ -3,6 +3,7 @@ import type { RouteRootType, RouteType } from '../types/routes';
 import informationRoute from './informationRoute';
 
 import { AuthPage, HomePage, NothingPage } from '../pages';
+import EditTextPage from './EditTextPage';
 
 const routeRoot: RouteRootType = getAndFormatRouteRoot({
 	homePage: {
@@ -24,6 +25,11 @@ const routeRoot: RouteRootType = getAndFormatRouteRoot({
 		path: '*',
 		fullPath: '',
 		reactElement: <NothingPage />,
+	},
+	editTextPage: {
+		path: 'edit',
+		fullPath: '',
+		reactElement: <EditTextPage />,
 	},
 });
 

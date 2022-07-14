@@ -1,21 +1,21 @@
 import styles from './InfoForm.module.scss';
 
-import * as Yup from 'yup';
 import classNames from 'classnames/bind';
-import { Button, FormikForm, Input } from '../../../Common';
+import * as Yup from 'yup';
+import { useContext, useEffect, useRef } from 'react';
 import { useAppSelector } from '../../../../common/reduxHooks';
+import rankConfig from '../../../../config/rankConfig';
 import {
 	classListValidate,
 	descriptionValidate,
 	emailValidate,
 	fullNameValidate,
 } from '../../../../config/validateConfig';
-import rankConfig from '../../../../config/rankConfig';
-import { InfoContainerContext } from '../InfoContainer';
+import { FormikForm, Input } from '../../../Common';
+import { InfoContainerContext } from '../ChangeInfo';
 
-import DropList from '../../../Common/Form/DropList/DropList';
 import DropItem from '../../../Common/Form/DropList/DropItem/DropItem';
-import { useContext, useEffect, useRef } from 'react';
+import DropList from '../../../Common/Form/DropList/DropList';
 
 const cx = classNames.bind(styles);
 
@@ -57,7 +57,7 @@ function InfoForm() {
 			formButton.type = 'reset';
 			formButton.click();
 		});
-	}, []);
+	}, []); // eslint-disable-line
 
 	return (
 		<FormikForm
@@ -77,9 +77,9 @@ function InfoForm() {
 			</DropList>
 			<Input
 				name="description"
-				placeholder="Mô tả bản thân (giới thiệu với mọi người)"
+				placeholder="Giới thiệu với mọi người"
 				tagName="textarea"
-				style={{ resize: 'vertical', maxHeight: 300, minHeight: 100 }}
+				style={{ resize: 'vertical', maxHeight: 500, minHeight: 200 }}
 			/>
 
 			<button style={{ display: 'none' }} ref={buttonRef}></button>

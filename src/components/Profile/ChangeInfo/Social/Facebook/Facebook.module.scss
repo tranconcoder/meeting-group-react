@@ -1,0 +1,38 @@
+.facebook {
+	@include size(30%, false);
+	@include flex(row, center);
+	padding: 10px;
+	border-radius: 10px;
+	background-color: $primaryColorBlack;
+	color: $whiteColor;
+
+	> .icon {
+		@include flexCenter();
+		@include size(30px);
+	}
+
+	> p,
+	> input {
+		@include webkitMaxLine(1);
+		flex: 1;
+		margin-left: 10px;
+		text-overflow: ellipsis;
+	}
+
+	> .edit-icon,
+	> .save-icon {
+		@include size(30px);
+		padding: 6px;
+		border-radius: 50%;
+		transition: all ease 300ms;
+
+		&:hover {
+			cursor: pointer;
+			background-color: rgba($whiteColor, 0.1);
+		}
+	}
+
+	> .save-icon {
+		margin-inline: 10px 4px;
+	}
+}
