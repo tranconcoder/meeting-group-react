@@ -35,3 +35,8 @@ export interface ToastMessageItemStore {
 }
 
 export interface ToastMessageListStore extends Array<ToastMessageItemStore> {}
+
+// urlManager
+export interface URLManagerStore {
+	accessWhenLogged: string;
+}

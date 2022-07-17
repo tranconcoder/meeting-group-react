@@ -34,6 +34,9 @@ function LoginForm() {
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
 	const isLogged = useAppSelector(state => state.auth.isLogged);
+	const accessWhenLoggedUrl = useAppSelector(
+		state => state.urlManager.accessWhenLogged
+	);
 
 	const handleSubmitLogin = (formData: typeof formInitValues) => {
 		dispatch(
@@ -55,10 +58,8 @@ function LoginForm() {
 	};
 
 	useEffect(() => {
-		if (isLogged) navigate('/');
-
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isLogged]);
+		if (isLogged) navigate(accessWhenLoggedUrl || '/');
+	}, [isLogged]); // eslint-disable-line
 
 	return (
 		<FormikForm

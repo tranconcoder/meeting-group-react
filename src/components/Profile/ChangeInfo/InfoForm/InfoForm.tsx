@@ -67,8 +67,8 @@ function InfoForm() {
 			onSubmit={console.log}
 		>
 			<Input name="fullName" placeholder="Họ và tên" separate={0} />
-			<Input name="email" placeholder="Email" />
-			<DropList name="rank" labelMap={rankConfig}>
+			<Input name="email" placeholder="Email" separate={40} />
+			<DropList name="rank" labelMap={rankConfig} separate={40}>
 				<DropItem value="student">{rankConfig.student}</DropItem>
 				<DropItem value="teacher">{rankConfig.teacher}</DropItem>
 				<DropItem value="manager">{rankConfig.manager}</DropItem>
@@ -80,6 +80,7 @@ function InfoForm() {
 				placeholder="Giới thiệu với mọi người"
 				tagName="textarea"
 				style={{ resize: 'vertical', maxHeight: 500, minHeight: 200 }}
+				separate={40}
 			/>
 
 			<button style={{ display: 'none' }} ref={buttonRef}></button>

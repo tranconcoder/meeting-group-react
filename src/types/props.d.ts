@@ -150,6 +150,7 @@ export interface DropListProps extends AllHTMLAttributes<HTMLButtonElement> {
 	name: string;
 	children?: ReactNode;
 	labelMap: ObjectAnyKey<string>;
+	separate?: number;
 }
 
 export interface DropItemProps {

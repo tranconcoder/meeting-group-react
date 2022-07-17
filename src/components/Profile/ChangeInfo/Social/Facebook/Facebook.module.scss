@@ -1,7 +1,7 @@
 .facebook {
-	@include size(30%, false);
+	@include size(500px, false);
 	@include flex(row, center);
-	padding: 10px;
+	padding: 30px;
 	border-radius: 10px;
 	background-color: $primaryColorBlack;
 	color: $whiteColor;
@@ -16,11 +16,22 @@
 		@include webkitMaxLine(1);
 		flex: 1;
 		margin-left: 10px;
+		font-size: 16px;
 		text-overflow: ellipsis;
 	}
 
+	> input {
+		color: $whiteColor;
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px solid $whiteColor;
+	}
+
 	> .edit-icon,
-	> .save-icon {
+	> .save-icon,
+	> .reset-icon,
+	> .access-icon,
+	> .copy-icon {
 		@include size(30px);
 		padding: 6px;
 		border-radius: 50%;
@@ -30,9 +41,9 @@
 			cursor: pointer;
 			background-color: rgba($whiteColor, 0.1);
 		}
-	}
 
-	> .save-icon {
-		margin-inline: 10px 4px;
+		&:not(:first-child) {
+			margin-left: 10px;
+		}
 	}
 }

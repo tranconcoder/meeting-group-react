@@ -14,12 +14,14 @@ import { useAppDispatch, useAppSelector } from '../../../common/reduxHooks';
 import { addMessage } from '../../../redux/slices/toastMessage';
 
 import { Button } from '../../Common';
+import { changeProfile } from '../../../redux/slices/auth';
 
 const cx = classNames.bind(styles);
 
 function AvatarContainer() {
-	const username = useAppSelector(state => state.auth.username) || '';
-	const [avatar, setAvatar] = useState(defaultAvatar);
+	const username = useAppSelector(state => state.auth.username);
+	const avatar = useAppSelector(state => state.auth.avatar);
+	const [avatarInput, setAvatarInput] = useState(avatar || defaultAvatar);
 	const dispatch = useAppDispatch();
 
 	const avatarInputFileId = useId();
@@ -32,6 +34,7 @@ function AvatarContainer() {
 		const fileExtension =
 			(imageFile && imageFile.name.split('.').pop()) || '';
 
+		const FILE_MAX_SIZE = 5;
 		const ACCEPT_FILE = ['png', 'jpg', 'jpeg', 'svg'];
 
 		// Validate image file
@@ -64,12 +67,12 @@ function AvatarContainer() {
 			);
 		}
 
-		if (imageFile.size > 5 * 1024 * 1024) {
+		if (imageFile.size > FILE_MAX_SIZE * 1024 * 1024) {
 			target.value = '';
 
 			return dispatch(
 				getAddErrorMessageAction(
-					'Dung lượng ảnh không được vượt quá 10MB. '
+					`Dung lượng ảnh không được vượt quá ${FILE_MAX_SIZE}MB. `
 				)
 			);
 		}
@@ -89,15 +92,16 @@ function AvatarContainer() {
 		const imageFormatted = await formatImage(imageUrl, formatImageOptions);
 
 		// Show formatted image on view
-		setAvatar(imageFormatted);
+		setAvatarInput(imageFormatted);
 	};
-
 	const handleDownloadAvatar = (e: any) => {
 		downloadFile(avatar, 'avatar.png');
 	};
-
 	const handleResetChangeImage = () => {
-		setAvatar(defaultAvatar);
+		setAvatarInput(avatar);
+	};
+	const handleSaveAvatar = () => {
+		dispatch(changeProfile({ avatar: avatarInput }));
 	};
 
 	useEffect(() => {
@@ -112,7 +116,11 @@ function AvatarContainer() {
 				className={cx('avatar-container')}
 				htmlFor={avatarInputFileId}
 			>
-				<img className={cx('avatar')} src={avatar} alt={username} />
+				<img
+					className={cx('avatar')}
+					src={avatarInput}
+					alt={username}
+				/>
 
 				<div className={cx('hover-layer')}>
 					<FiEdit />
@@ -120,10 +128,15 @@ function AvatarContainer() {
 			</label>
 
 			<ul className={cx('tool-list')}>
-				{avatar !== defaultAvatar && (
+				{avatar !== avatarInput && (
 					<>
 						<li className={cx('save')}>
-							<Button colorStyle="warning">Lưu thay đổi</Button>
+							<Button
+								colorStyle="warning"
+								onClick={handleSaveAvatar}
+							>
+								Lưu thay đổi
+							</Button>
 						</li>
 
 						<li className={cx('reset')}>

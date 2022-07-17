@@ -22,12 +22,11 @@ const authSlice = createSlice({
 	initialState,
 	reducers: {
 		login: (state, action: PayloadAction<InitAuthStore>) => {
-			action.payload.facebook = action.payload.facebook.replace(
-				/^.*\/\/[^\/]+/,
-				''
-			);
-
-			return action.payload;
+			return {
+				...state,
+				...action.payload,
+				facebook: action.payload.facebook.replace(/^.*\/\/[^\/]+/, ''),
+			};
 		},
 		logout: () => initialState,
 		changeProfile: (
@@ -36,6 +35,8 @@ const authSlice = createSlice({
 		) => ({
 			...state,
 			...action.payload,
+			facebook:
+				action.payload.facebook?.replace(/^.*\/\/[^\/]+/, '') || '',
 		}),
 	},
 });

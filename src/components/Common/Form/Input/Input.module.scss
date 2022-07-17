@@ -71,11 +71,10 @@
 		}
 
 		> .eye-container {
-			width: 20px;
-			text-align: center;
-			position: absolute;
-			top: 0;
-			right: 14px;
+			@include size(20px, false);
+			@include position(absolute, 50%, 14px);
+			@include flexCenter();
+			transform: translateY(-50%);
 		}
 	}
 

@@ -18,21 +18,20 @@ function DropList({
 	name,
 	labelMap = {},
 	children,
+	separate = 30,
 	...allAttribute
 }: DropListProps) {
 	const [expanding, setExpanding] = useState(false);
-	const [field, meta, helpers] = useField({ name, type: 'radio' });
+	const [, meta, helpers] = useField({ name, type: 'radio' });
 	const dropListRef = useRef<HTMLUListElement>(null);
 
 	const label = labelMap[meta.value] || '--- Chọn giá trị ---';
-	const hasError = meta.error;
+	const hasError = meta.error && meta.touched;
 
 	const handleToggleExpanding = () => {
 		setExpanding(!expanding);
 
-		if (expanding) {
-			helpers.setValue(meta.value);
-		}
+		if (expanding && !meta.touched) helpers.setTouched(true);
 	};
 
 	useEffect(() => {
@@ -49,6 +48,10 @@ function DropList({
 		<DropListContext.Provider value={{ name }}>
 			<button
 				{...allAttribute}
+				style={{
+					...allAttribute.style,
+					marginTop: separate,
+				}}
 				className={cx('drop-list-wrapper', {
 					error: hasError,
 				})}
